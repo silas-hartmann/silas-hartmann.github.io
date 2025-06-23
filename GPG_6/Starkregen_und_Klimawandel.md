@@ -147,24 +147,8 @@ Lücken: Klimawandel, wärmer, mehr, stärkeren
 
 ---
 
+
 ### Aufgabe 5 [SC]
-Was war besonders am Ahrtal-Hochwasser 2021?
-
-- Es war völlig normal
-- Durch den Klimawandel sind solche Ereignisse wahrscheinlicher geworden (richtig)
-- Es hatte nichts mit dem Klima zu tun
-- Es war das erste Hochwasser überhaupt
-
----
-
-### Aufgabe 6 [OFFEN]
-Erkläre in eigenen Worten, warum der Klimawandel zu mehr Starkregenereignissen führt. Nutze dabei die 7%-Regel.
-
-Antwort: Durch den Klimawandel wird es wärmer. Nach der 7%-Regel kann wärmere Luft mehr Wasserdampf aufnehmen - pro Grad 7% mehr. Wenn diese feuchte Luft kondensiert, entstehen stärkere Regenfälle. Deshalb werden Starkregenereignisse wie im Ahrtal häufiger und intensiver.
-
----
-
-### Aufgabe 7 [SC]
 Was ist die wichtigste Botschaft für das Ahrtal?
 
 - Solche Katastrophen wird es nie wieder geben
@@ -174,7 +158,7 @@ Was ist die wichtigste Botschaft für das Ahrtal?
 
 ---
 
-### Aufgabe 8 [MC]
+### Aufgabe 6 [MC]
 Was können wir aus den wissenschaftlichen Erkenntnissen lernen?
 
 - Wir müssen uns besser auf Extremwetter vorbereiten (richtige Option)
