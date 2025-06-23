@@ -7,6 +7,7 @@ In den vorherigen Stunden hast du gelernt:
 - Dass 2021 eine schwere Flutkatastrophe im Ahrtal passierte
 - Wie der Wasserkreislauf funktioniert  
 - Dass die Form des Ahrtals (Kerbtal) die Überschwemmung verstärkt hat
+- Dass Flächenversiegelung das Risiko für Überschwemmungen steigert
 
 **Heute lernen wir:** Warum solche Extremwetter-Ereignisse durch den Klimawandel häufiger werden!
 
@@ -60,11 +61,6 @@ Wissenschaftler haben eine wichtige Entdeckung gemacht: **Wärmere Luft kann meh
     </div>
     <p style="margin-bottom: 0; font-size: 14px;">Wärmere Luft = mehr Platz für Wasserdampf</p>
   </div>
-</div>
-
-<div style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); border: 3px solid #f57c00; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: center;">
-  <h4 style="color: #e65100; margin-top: 0;">🔬 Das Geheimnis dahinter:</h4>
-  <p style="margin-bottom: 0;">Die Wassermoleküle bewegen sich bei höheren Temperaturen schneller und haben mehr Energie. Dadurch können mehr Wassermoleküle gleichzeitig in der Luft "schweben", ohne zu winzigen Tröpfchen zu kondensieren.</p>
 </div>
 
 ### Was bedeutet das für unser Wetter?
