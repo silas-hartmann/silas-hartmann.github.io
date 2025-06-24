@@ -10,7 +10,7 @@ Bitte wähle die richtige Jahrgangsstufe:
 
 - Klasse 6: ➡️ [Starkregen_und_Klimawandel](GPG_6/Starkregen_und_Klimawandel)
 
-- Klasse 7: ➡️ [Übersicht Gesetze Jugendrecht](GPG_7/Sequenz_Recht/gesetzestexte_jugendrecht.html)
+- Klasse 7: ➡️ [Vanitas-Stilleben](Kunst_7/Vanitas-Stilleben)
 
  
 ---
