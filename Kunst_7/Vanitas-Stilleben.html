@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanitas Stilleben im Barock - Digitales Arbeitsblatt</title>
+    <title>Vanitas Stilleben: Von der Barockzeit bis heute</title>
     
     <!-- Externe Ressourcen von Ihrem GitHub-Repository -->
     <link rel="stylesheet" href="https://silas-hartmann.github.io/assets/css/quiz-styles.css">
@@ -20,7 +20,7 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -51,12 +51,60 @@
             padding: 30px;
         }
         
+        .timeline {
+            background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .timeline h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .era {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        
+        .era.baroque { background: #8b4513; }
+        .era.modern { background: #dc3545; }
+        .era.today { background: #28a745; }
+        
+        .section {
+            margin: 40px 0;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
         .info-box {
             background: #f8f9fa;
             border-left: 5px solid #2c3e50;
             padding: 20px;
             margin: 20px 0;
             border-radius: 0 10px 10px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
         }
         
         .image-gallery {
@@ -67,11 +115,11 @@
         }
         
         .image-item {
-            text-align: center;
             background: #f8f9fa;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
         }
         
         .image-item img {
@@ -86,6 +134,12 @@
             font-size: 0.9em;
             color: #666;
             font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .image-source {
+            font-size: 0.8em;
+            color: #999;
         }
         
         .symbols-grid {
@@ -114,18 +168,27 @@
             margin-bottom: 10px;
         }
         
-        .section {
-            margin: 40px 0;
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
         }
         
-        .section h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #2c3e50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .comparison-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid;
         }
         
-
+        .comparison-card.baroque {
+            border-color: #8b4513;
+        }
+        
+        .comparison-card.modern {
+            border-color: #dc3545;
+        }
         
         .source-note {
             background: #e9ecef;
@@ -136,40 +199,81 @@
             color: #666;
         }
         
-        .highlight {
-            background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎨 Vanitas Stilleben im Barock</h1>
-            <p>Entdecke die Welt der vergänglichen Schönheit</p>
+            <h1>🎨 Vanitas Stilleben</h1>
+            <p>Von der Barockzeit bis zur modernen Kunst</p>
         </div>
         
         <div class="content">
+            <!-- Zeitleiste -->
+            <div class="timeline">
+                <h3>📅 Zeitreise: Vanitas durch die Jahrhunderte</h3>
+                <span class="era baroque">1600-1700: Barock</span>
+                <span class="era">1700-1900: Pause</span>
+                <span class="era modern">1900-2000: Wiederentdeckung</span>
+                <span class="era today">2000-heute: Moderne Interpretationen</span>
+            </div>
+
+            <!-- Teil 1: Grundlagen -->
             <section class="section">
-                <h2>Was sind Vanitas Stilleben?</h2>
+                <h2>🎭 1. Was sind Vanitas Stilleben?</h2>
                 <div class="info-box">
-                    <p><strong>Vanitas</strong> kommt aus dem Lateinischen und bedeutet <span class="highlight">"Eitelkeit" oder "Vergänglichkeit"</span>. Vanitas Stilleben sind Gemälde aus der Barockzeit (17. Jahrhundert), die uns daran erinnern sollen, dass alles Leben einmal zu Ende geht.</p>
+                    <p><strong>"Vanitas"</strong> ist Lateinisch und bedeutet <span class="highlight">"Eitelkeit" oder "Vergänglichkeit"</span>.</p>
                     
-                    <p>Diese besonderen Kunstwerke entstanden vor allem in den <strong>Niederlanden</strong> zwischen 1620 und 1650. Sie waren besonders bei reichen Bürgern beliebt, die sich daran erinnern lassen wollten, dass Reichtum und Luxus nicht ewig halten.</p>
+                    <p>Vanitas Stilleben sind besondere Gemälde aus der <strong>Barockzeit (17. Jahrhundert)</strong>, die uns eine wichtige Botschaft vermitteln wollen:</p>
+                    
+                    <p><em>"Das Leben ist schön, aber es geht einmal zu Ende. Deshalb sollten wir es weise nutzen und nicht zu sehr an materiellen Dingen hängen."</em></p>
+                </div>
+                
+                <div class="image-gallery">
+                    <div class="image-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Pieter_Claesz%2C_Still_Life_with_a_Skull_and_a_Writing_Quill.jpg/1200px-Pieter_Claesz%2C_Still_Life_with_a_Skull_and_a_Writing_Quill.jpg" alt="Pieter Claesz Vanitas Stillleben">
+                        <div class="image-caption">Pieter Claesz: Vanitas-Stillleben mit Totenschädel und Schreibfeder</div>
+                        <div class="image-source">Quelle: Wikimedia Commons (Public Domain)</div>
+                    </div>
                 </div>
             </section>
 
+            <!-- Teil 2: Historischer Kontext -->
             <section class="section">
-                <h2>Typische Vanitas-Symbole</h2>
-                <p>Künstler verwendeten bestimmte Gegenstände, um verschiedene Botschaften zu vermitteln:</p>
+                <h2>🏛️ 2. Woher kommen Vanitas Stilleben?</h2>
+                <div class="info-box">
+                    <h4>Entstehung in den Niederlanden (1620-1650)</h4>
+                    <p><strong>Warum entstanden sie?</strong></p>
+                    <ul>
+                        <li>⚔️ <strong>Krieg:</strong> 30-jähriger Krieg brachte viel Tod und Zerstörung</li>
+                        <li>🦠 <strong>Pest:</strong> Krankheiten töteten viele Menschen</li>
+                        <li>💰 <strong>Reichtum:</strong> Gleichzeitig wurden manche Menschen sehr reich</li>
+                        <li>⛪ <strong>Religion:</strong> Die Kirche lehrte, dass irdische Dinge vergänglich sind</li>
+                    </ul>
+                    
+                    <p><strong>Wichtige Begriffe:</strong></p>
+                    <ul>
+                        <li><strong>"Memento Mori"</strong> = "Bedenke, dass du sterben wirst!"</li>
+                        <li><strong>"Carpe Diem"</strong> = "Nutze den Tag!"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Teil 3: Symbole -->
+            <section class="section">
+                <h2>🔍 3. Die geheimen Symbole</h2>
+                <p>Jeder Gegenstand in einem Vanitas-Stillleben hat eine besondere Bedeutung:</p>
                 
                 <div class="symbols-grid">
                     <div class="symbol-card">
                         <div class="symbol-icon">💀</div>
                         <h4>Totenschädel</h4>
-                        <p>Erinnert direkt an den Tod</p>
+                        <p>Das deutlichste Symbol: "Du wirst einmal sterben"</p>
                     </div>
                     
                     <div class="symbol-card">
@@ -193,7 +297,7 @@
                     <div class="symbol-card">
                         <div class="symbol-icon">📚</div>
                         <h4>Bücher</h4>
-                        <p>Auch Wissen ist vergänglich</p>
+                        <p>Auch Wissen und Gelehrsamkeit sind vergänglich</p>
                     </div>
                     
                     <div class="symbol-card">
@@ -204,17 +308,86 @@
                 </div>
             </section>
 
+            <!-- Teil 4: Vergleich Barock vs. Heute -->
             <section class="section">
-                <h2>Wichtige Begriffe</h2>
-                <div class="info-box">
-                    <p><strong>"Memento Mori"</strong> = "Bedenke, dass du sterben wirst!" (Lateinisch)</p>
-                    <p><strong>"Carpe Diem"</strong> = "Nutze den Tag!" (Lateinisch)</p>
-                    <p>Zusammen bedeuten sie: <em>"Das Leben ist schön, aber kurz - nutze es, aber vergiss nicht, dass es endlich ist!"</em></p>
+                <h2>⚖️ 4. Damals und Heute im Vergleich</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card baroque">
+                        <h3>🎭 Barock (1600-1700)</h3>
+                        <h4>Klassische Symbole:</h4>
+                        <ul>
+                            <li>💀 Totenschädel</li>
+                            <li>🕯️ Kerzen</li>
+                            <li>⏳ Sanduhren</li>
+                            <li>🥀 Verwelkte Blumen</li>
+                            <li>📚 Bücher</li>
+                        </ul>
+                        <h4>Botschaft:</h4>
+                        <p>"Hänge nicht am Irdischen, denke an das ewige Leben!"</p>
+                        <small><em>Quelle: Wikipedia, Kunsthistorische Fachliteratur</em></small>
+                    </div>
+                    
+                    <div class="comparison-card modern">
+                        <h3>🎨 Heute (2000-2025)</h3>
+                        <h4>Moderne Symbole:</h4>
+                        <ul>
+                            <li>📱 Kaputte Handys</li>
+                            <li>💻 Alter Computerschrott</li>
+                            <li>🌊 Plastik im Meer</li>
+                            <li>🏥 Medizinische Geräte</li>
+                            <li>📺 Katastrophennachrichten</li>
+                        </ul>
+                        <h4>Botschaft:</h4>
+                        <p>"Auch unsere moderne Welt ist vergänglich - denke an die Umwelt!"</p>
+                        <small><em>Quelle: YouTube-Video, Moderne Kunstkritik</em></small>
+                    </div>
                 </div>
             </section>
 
+            <!-- Teil 5: Moderne Künstler -->
             <section class="section">
-                <h2>Quiz-Zeit! 🧠</h2>
+                <h2>🌟 5. Moderne Vanitas-Künstler</h2>
+                <p>Das Vanitas-Thema ist nicht verschwunden! Hier sind berühmte Künstler von heute:</p>
+                
+                <div class="symbols-grid">
+                    <div class="symbol-card">
+                        <div class="symbol-icon">💎</div>
+                        <h4>Damien Hirst</h4>
+                        <p><strong>"For the Love of God" (2007)</strong><br>
+                        Ein echter Totenschädel mit 8.601 Diamanten. Kritisiert, wie Menschen ihr Geld für eitle Dinge ausgeben.</p>
+                        <small><em>Quelle: MUCA München, Wikipedia</em></small>
+                    </div>
+                    
+                    <div class="symbol-card">
+                        <div class="symbol-icon">🏥</div>
+                        <h4>Jean-Pierre Raynaud</h4>
+                        <p><strong>"Container Zero" (1988)</strong><br>
+                        Weiß gekachelte Installation wie ein Krankenhaus. Zeigt die klinische Art, wie wir heute geboren werden und sterben.</p>
+                        <small><em>Quelle: Centre Pompidou Paris</em></small>
+                    </div>
+                    
+                    <div class="symbol-card">
+                        <div class="symbol-icon">💀</div>
+                        <h4>Ron Mueck</h4>
+                        <p><strong>"Mass" (2017)</strong><br>
+                        100 riesige Totenköpfe in einem Raum. Erinnert an Massengräber und überwältigt die Besucher.</p>
+                        <small><em>Quelle: National Gallery Victoria</em></small>
+                    </div>
+                    
+                    <div class="symbol-card">
+                        <div class="symbol-icon">🎨</div>
+                        <h4>Andy Warhol</h4>
+                        <p><strong>"Skull" Serie (1970er)</strong><br>
+                        Bunte Pop-Art-Totenköpfe. Macht alte Vanitas-Symbole modern und poppig.</p>
+                        <small><em>Quelle: Schunck Museum, Andy Warhol Museum</em></small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz -->
+            <section class="section">
+                <h2>🧠 6. Quiz: Teste dein Wissen!</h2>
                 
                 <h3>Aufgabe 1 [MC]: Was bedeutet "Vanitas"?</h3>
                 <ul>
@@ -224,7 +397,7 @@
                     <li>[ ] Kunst und Malerei</li>
                 </ul>
 
-                <h3>Aufgabe 2 [MC]: Welche Gegenstände findet man typischerweise in Vanitas Stilleben?</h3>
+                <h3>Aufgabe 2 [MC]: Welche Gegenstände findet man in klassischen Vanitas Stilleben?</h3>
                 <ul>
                     <li>[x] Totenschädel (richtige Option)</li>
                     <li>[x] Verwelkte Blumen (richtige Option)</li>
@@ -244,55 +417,88 @@
                 <p>Vanitas Stilleben entstanden im [17.] Jahrhundert in den [Niederlanden]. Sie sollten reiche [Bürger] daran erinnern, dass das [Leben] vergänglich ist. Typische Symbole sind der [Totenschädel], die [Kerze] und verwelkte [Blumen].</p>
                 <p><strong>Lücken:</strong> 17., Niederlanden, Bürger, Leben, Totenschädel, Kerze, Blumen</p>
 
-                <h3>Aufgabe 5 [OFFEN]: Was wollten die Künstler mit Vanitas Stilleben ausdrücken?</h3>
-                <p><strong>Antwort:</strong> Die Künstler wollten zeigen, dass alles im Leben vergänglich ist und dass man nicht zu sehr an weltlichen Dingen wie Reichtum oder Schönheit hängen sollte. Sie erinnerten daran, dass der Tod jeden erwartet, aber man trotzdem das Leben genießen soll.</p>
+                <h3>Aufgabe 5 [MC]: Welche modernen Künstler greifen das Vanitas-Thema auf?</h3>
+                <ul>
+                    <li>[x] Damien Hirst (richtige Option)</li>
+                    <li>[x] Andy Warhol (richtige Option)</li>
+                    <li>[x] Ron Mueck (richtige Option)</li>
+                    <li>[ ] Pablo Picasso</li>
+                </ul>
 
-                <h3>Aufgabe 6 [ORDER]: Bringe die Entstehung der Vanitas Stilleben in die richtige Reihenfolge</h3>
+                <h3>Aufgabe 6 [SC]: Was macht Damien Hirsts "For the Love of God" besonders?</h3>
+                <ul>
+                    <li>[ ] Es ist aus Holz geschnitzt</li>
+                    <li>[x] Es ist ein Totenschädel mit 8.601 Diamanten (richtige Option)</li>
+                    <li>[ ] Es zeigt verwelkte Blumen</li>
+                    <li>[ ] Es ist das älteste Vanitas Stillleben</li>
+                </ul>
+
+                <h3>Aufgabe 7 [OFFEN]: Welche neuen Symbole könnten heute als moderne "Vanitas" gelten?</h3>
+                <p><strong>Antwort:</strong> Moderne Vanitas-Symbole könnten technischer Müll wie alte Handys oder Computer sein, Plastik im Meer, medizinische Geräte in Krankenhäusern oder auch Nachrichten über Katastrophen in den Medien. Diese Dinge erinnern uns daran, dass auch unsere moderne Welt vergänglich ist und wir verantwortlich mit ihr umgehen sollten.</p>
+
+                <h3>Aufgabe 8 [ORDER]: Bringe die Entwicklung der Vanitas-Kunst in die richtige Reihenfolge</h3>
                 <ol>
-                    <li>Barockzeit beginnt in Europa</li>
-                    <li>Reiche Bürger in den Niederlanden werden wohlhabender</li>
-                    <li>Künstler entwickeln Vanitas Stilleben (1620-1650)</li>
-                    <li>Die Kunstform verbreitet sich in andere europäische Länder</li>
+                    <li>Barockzeit: Erste Vanitas Stilleben in den Niederlanden (1620-1650)</li>
+                    <li>Aufklärung: Vanitas-Kunst wird weniger populär (1700-1800)</li>
+                    <li>Moderne: Künstler wie Andy Warhol entdecken das Thema neu (1900-2000)</li>
+                    <li>Heute: Zeitgenössische Künstler nutzen neue Symbole (2000-heute)</li>
                 </ol>
             </section>
 
+            <!-- Zusammenfassung -->
             <section class="section">
-                <h2>Merksätze zum Mitnehmen 📝</h2>
+                <h2>📝 7. Das Wichtigste auf einen Blick</h2>
                 <div class="info-box">
+                    <h4>🎯 Kernpunkte:</h4>
                     <ul>
-                        <li><strong>Vanitas</strong> = Vergänglichkeit (aus dem Lateinischen)</li>
-                        <li><strong>Entstehungszeit:</strong> 17. Jahrhundert (Barock)</li>
-                        <li><strong>Entstehungsort:</strong> Niederlande</li>
-                        <li><strong>Wichtigste Symbole:</strong> Totenschädel, Kerzen, Sanduhren, verwelkte Blumen</li>
-                        <li><strong>Botschaft:</strong> "Das Leben ist schön, aber vergänglich - nutze es weise!"</li>
+                        <li><strong>Vanitas</strong> = Vergänglichkeit (Lateinisch)</li>
+                        <li><strong>Entstehung:</strong> 17. Jahrhundert in den Niederlanden</li>
+                        <li><strong>Klassische Symbole:</strong> Totenschädel, Kerzen, Sanduhren, verwelkte Blumen</li>
+                        <li><strong>Botschaft damals:</strong> "Denke an den Tod und das ewige Leben"</li>
+                        <li><strong>Botschaft heute:</strong> "Unsere moderne Welt ist auch vergänglich"</li>
+                        <li><strong>Moderne Künstler:</strong> Damien Hirst, Andy Warhol, Ron Mueck</li>
+                        <li><strong>Neue Symbole:</strong> Technik-Müll, Umweltzerstörung, Medizin</li>
                     </ul>
+                    
+                    <p><strong>🌟 Die große Erkenntnis:</strong> Das Vanitas-Thema ist zeitlos! Von 1600 bis heute beschäftigen sich Künstler damit, wie vergänglich unser Leben und unsere Welt sind.</p>
                 </div>
             </section>
 
+            <!-- Quellen -->
             <div class="source-note">
-                <h4>📚 Quellen:</h4>
-                <p><strong>Primäre Quellen:</strong></p>
+                <h4>📚 Quellen und Bildnachweise:</h4>
+                
+                <p><strong>Historische Informationen:</strong></p>
                 <ul>
                     <li>Wikipedia: "Vanitas-Stillleben" (https://de.wikipedia.org/wiki/Vanitas-Stillleben)</li>
-                    <li>Das Kreative Universum: "Vanitas Stillleben: Alles über das Vergänglichkeitsmotiv des 16./17. Jhdt." (https://www.daskreativeuniversum.de/vanitas-stillleben-motiv/)</li>
-                    <li>Art Affair: "Stillleben Kunst" (https://art-affair.net/stillleben-kunst/)</li>
-                    <li>StudySmarter: "Stillleben: Definition, Künstler & Motive" (https://www.studysmarter.de/schule/kunst/kunstgattung/stillleben/)</li>
-                    <li>Lernhelfer: "Stilllebenmalerei im Barock" (https://www.lernhelfer.de/schuelerlexikon/kunst/artikel/stilllebenmalerei-im-barock)</li>
+                    <li>Das Kreative Universum: "Vanitas Stillleben Motiv" (April 2023)</li>
+                    <li>StudySmarter: "Stillleben: Definition, Künstler & Motive"</li>
+                    <li>Lernhelfer: "Stilllebenmalerei im Barock"</li>
                 </ul>
-                <p><strong>Ergänzende Quellen:</strong></p>
+                
+                <p><strong>Moderne Interpretationen:</strong></p>
                 <ul>
-                    <li>Knowunity: "Barock Stillleben und ihre Merkmale - Vanitas, Prunk und mehr"</li>
-                    <li>Knowunity: "Vanitas-Stillleben von Pieter Claesz und Barock-Symbole"</li>
-                    <li>Frau Königs Erläuterungen: "Das Vanitas Stillleben" (http://frau-koenig.blogspot.com/2015/11/das-vanitas-stillleben.html)</li>
+                    <li>MUCA München: "Damien Hirst - For the Love of God" (2023)</li>
+                    <li>Centre Pompidou Paris: "Jean-Pierre Raynaud - Container Zero"</li>
+                    <li>National Gallery Victoria: "Ron Mueck - Mass Installation" (2017)</li>
+                    <li>Schunck Museum Heerlen: "Andy Warhol - Vanitas" (2024)</li>
+                    <li>YouTube-Video Analyse: Moderne Vanitas-Interpretationen</li>
                 </ul>
-                <p><em>Arbeitsblatt erstellt für Schüler der 7. Klasse (ca. 12 Jahre) - Anforderungsniveau: Grundlagen</em></p>
+                
+                <p><strong>Bildquellen:</strong></p>
+                <ul>
+                    <li>Pieter Claesz Stillleben: Wikimedia Commons (Public Domain)</li>
+                    <li>Alle historischen Kunstwerke: Public Domain (über 100 Jahre alt)</li>
+                </ul>
+                
+                <p><em>Arbeitsblatt für Schüler der 7. Klasse (ca. 12 Jahre) - Grundlagenniveau Kunstgeschichte</em></p>
             </div>
         </div>
     </div>
 
     <script>
         // Das Quiz-System wird automatisch durch das markdown-quiz.js geladen
-        console.log('Vanitas Stilleben Arbeitsblatt geladen');
+        console.log('Vanitas Stilleben Arbeitsblatt mit neuer Struktur geladen');
     </script>
 </body>
 </html>
