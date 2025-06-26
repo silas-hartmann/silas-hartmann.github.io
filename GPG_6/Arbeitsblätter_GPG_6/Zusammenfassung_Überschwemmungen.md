@@ -1,10 +1,14 @@
 # Die Ahrtal-Katastrophe 2021 - Wiederholung
 
+![Ahrtal](https://image.stern.de/31399376/t/3s/v5/w960/r1.7778/-/von-der-flut-ueberschwemmte-ahrtal.jpg)
+
 ## Was führte zur schlimmsten Überschwemmung der letzten Jahre?
 
 Am 14. und 15. Juli 2021 erlebte das Ahrtal in Rheinland-Pfalz eine der schlimmsten Naturkatastrophen in der deutschen Geschichte. Über 130 Menschen verloren ihr Leben, tausende Häuser wurden zerstört und ganze Dörfer standen unter Wasser. Doch wie konnte es zu einer so verheerenden Überschwemmung kommen?
 
 Die Antwort liegt nicht in einem einzelnen Faktor, sondern im **Zusammenwirken von drei verschiedenen Ursachen**. Wie bei einem Puzzle mussten alle Teile zusammenpassen, damit die Katastrophe entstehen konnte.
+
+![Gemini_Generated_Image_hnyhorhnyhorhnyh](../../Gemini_Generated_Image_hnyhorhnyhorhnyh.png)
 
 **Der erste Faktor** war ein extremes Wetterereignis: **Starkregen**. In wenigen Stunden fielen mehr als 100 Liter Regen pro Quadratmeter - das ist etwa so viel, wie normalerweise in zwei Monaten regnet! Solche Extremwetterereignisse werden durch den Klimawandel immer häufiger, weil wärmere Luft mehr Wasserdampf aufnehmen kann.
 
@@ -13,6 +17,22 @@ Die Antwort liegt nicht in einem einzelnen Faktor, sondern im **Zusammenwirken v
 **Der dritte Faktor** war die hohe **Flächenversiegelung** im Ahrtal. Viele Flächen sind mit Häusern, Straßen und Parkplätzen bebaut - das sind versiegelte Flächen, auf denen Regenwasser nicht versickern kann. Das Ahrtal hat sogar 38% mehr versiegelte Fläche pro Einwohner als der deutsche Durchschnitt! Das Wasser konnte also nicht im Boden versickern, sondern floss sofort oberflächlich ab und verstärkte die Überschwemmung.
 
 Nur weil alle drei Faktoren zusammenkamen - Starkregen, Kerbtal und hohe Versiegelung - entstand diese verheerende Katastrophe. Verstehe man diese Zusammenhänge, kann man auch andere gefährdete Gebiete erkennen und sich besser schützen.
+
+---
+
+## Lage des Ahrtals
+
+<iframe 
+  width="600" 
+  height="400" 
+  frameborder="0" 
+  scrolling="no" 
+  marginheight="0" 
+  marginwidth="0" 
+  src="https://www.openstreetmap.org/export/embed.html?bbox=6.7,50.4,7.2,50.6&layer=mapnik&marker=50.5,6.95" 
+  style="border: 1px solid black">
+</iframe>
+
 
 ---
 
@@ -130,6 +150,10 @@ Bewerte die folgenden Aussagen (wähle alle FALSCHEN Aussagen):
 
 Erinnerst du dich an den **Wasserkreislauf**? Normalerweise funktioniert er so: Die Sonne lässt Wasser aus Meeren und Flüssen verdunsten. Der Wasserdampf steigt auf, bildet Wolken und regnet wieder ab. Das Regenwasser versickert im Boden oder fließt langsam zurück in die Flüsse. So bleibt alles im Gleichgewicht.
 
+![Grafik_Wasserkreislauf](https://www.wv-nord.de/images/grafiken/wasserkreislauf_wvnord.jpg?m=1572953862)
+*Du willst nochmal das Arbeitsblatt zum Wasserkreislauf üben? [➡️ Hier geht's lang...](Wasserkreislauf)
+
+
 **Aber im Ahrtal 2021 wurde dieser natürliche Kreislauf gestört:**
 
 - **Beim Starkregen** regnete viel mehr Wasser ab, als normalerweise. Der Klimawandel sorgt dafür, dass die warme Luft mehr Wasserdampf aufnehmen kann - und wenn sich die Wolken entleeren, regnet es extremer.
@@ -164,5 +188,7 @@ Antwort: Der Klimawandel sorgte für extremen Starkregen, das Kerbtal sammelte d
 ## Zusammenfassung: Die drei Puzzleteile der Katastrophe
 
 🌧️ **Starkregen** (Klimawandel) + 🏔️ **Kerbtal** (Trichterwirkung) + 🏗️ **Versiegelung** (kein Versickern) = 🌊 **Überschwemmung**
+
+![Gemini_Generated_Image_hnyhorhnyhorhnyh](../../Gemini_Generated_Image_hnyhorhnyhorhnyh.png)
 
 Nur wenn alle drei Faktoren zusammenkommen, entsteht ein so hohes Risiko für Überschwemmungen. Das erklärt, warum manche Gebiete besonders gefährdet sind und andere nicht.
