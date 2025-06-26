@@ -6,10 +6,14 @@ Es kann sein, dass die genauen Wörter in deinem Heft ein bisschen anders sind. 
 
 # Hefteinträge zum Thema Überschwemmung
 
+![Pasted image 20250626223933](../../Pasted%20image%2020250626223933.png)
 
 
+![Pasted image 20250626223835](../../Pasted%20image%2020250626223835.png)
 
+![Pasted image 20250626224027](../../Pasted%20image%2020250626224027.png)
 
+![Tafelbild_Starkregen_und_Klimawandel](Tafelbild_Starkregen_und_Klimawandel.excalidraw)
 # Hefteinträge zum Thema Südamerika
 
 ---
