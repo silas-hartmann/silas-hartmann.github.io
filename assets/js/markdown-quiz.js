@@ -1,6 +1,12 @@
 // markdown-quiz.js - Wandelt Quiz-Listen in interaktive Elemente um
 
+// Globale Variable für das Codewort
+let extractedCodeword = null;
+
 document.addEventListener('DOMContentLoaded', function() {
+  // Extrahiere das Codewort beim Laden der Seite
+  extractCodewordFromMarkdown();
+  
   console.log('Quiz-System wird geladen...');
   
   // Wir sammeln alle h3-Überschriften als potentielle Quizfragen
@@ -854,7 +860,151 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
   container.appendChild(formattedQuestion);
 }
 
-// Überprüft alle Antworten und gibt Feedback
+/**
+ * Extrahiert das Codewort aus dem Markdown-Inhalt
+ */
+function extractCodewordFromMarkdown() {
+  // Suche nach dem Codewort-Pattern im gesamten Dokument
+  const bodyText = document.body.textContent || document.body.innerText || '';
+  const codewordRegex = /\[Codewort:\s*([^\]]+)\]/i;
+  const match = bodyText.match(codewordRegex);
+  
+  if (match) {
+    extractedCodeword = match[1].trim();
+    console.log('Codewort extrahiert:', extractedCodeword);
+    
+    // Verstecke das Codewort im sichtbaren Text
+    hideCodewordInDOM();
+  } else {
+    console.log('Kein Codewort im Markdown gefunden');
+  }
+}
+
+/**
+ * Versteckt das Codewort im DOM, damit es für Schüler nicht sichtbar ist
+ */
+function hideCodewordInDOM() {
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT,
+    null,
+    false
+  );
+  
+  let node;
+  while (node = walker.nextNode()) {
+    const codewordRegex = /\[Codewort:\s*([^\]]+)\]/i;
+    if (codewordRegex.test(node.textContent)) {
+      // Entferne das Codewort aus dem sichtbaren Text
+      node.textContent = node.textContent.replace(codewordRegex, '').trim();
+    }
+  }
+}
+
+/**
+ * Fügt CSS-Styles für das Codewort hinzu
+ */
+function addCodewordStyles() {
+  // Prüfe, ob die Styles bereits hinzugefügt wurden
+  if (document.getElementById('codewort-styles')) {
+    return;
+  }
+  
+  const style = document.createElement('style');
+  style.id = 'codewort-styles';
+  style.textContent = `
+    .codewort-success {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    
+    .success-header h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.4em;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .codewort-container {
+      margin-top: 15px;
+    }
+    
+    .codewort-box {
+      background: rgba(255,255,255,0.2);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    
+    .codewort-text {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #FFEB3B;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      letter-spacing: 1px;
+      display: inline-block;
+      margin: 10px 0;
+      padding: 5px 10px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+    }
+    
+    .codewort-instruction {
+      margin-top: 15px;
+      font-size: 1.1em;
+      font-style: italic;
+    }
+    
+    .good-result {
+      background: linear-gradient(135deg, #2196F3, #1976D2);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .good-result h3 {
+      margin: 0 0 10px 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .encouragement-result {
+      background: linear-gradient(135deg, #FF9800, #F57C00);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .encouragement-result h3 {
+      margin: 0 0 10px 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .quiz-base-result {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  `;
+  
+  document.head.appendChild(style);
+}
+
+/**
+ * Erweiterte checkAllAnswers Funktion mit Codewort-Anzeige
+ * Diese Funktion ersetzt die bestehende checkAllAnswers Funktion
+ */
 function checkAllAnswers() {
   const questions = document.querySelectorAll('.formatted-question');
   let correctCount = 0;
@@ -869,6 +1019,7 @@ function checkAllAnswers() {
     const feedbackDiv = question.querySelector('.feedback');
     feedbackDiv.style.display = 'block';
     
+    // Multiple Choice Aufgaben
     if (type === 'multiple-choice') {
       const checkedOptions = question.querySelectorAll('input[type="checkbox"]:checked');
       let correctIndices = [];
@@ -886,34 +1037,17 @@ function checkAllAnswers() {
       if (checkedOptions.length === 0) {
         feedbackDiv.textContent = 'Keine Antwort ausgewählt.';
         feedbackDiv.className = 'feedback no-answer';
-        
-        // Zeige die richtigen Antworten an
         showCorrectMCAnswers(question, correctIndices);
         return;
       }
       
       // Überprüfe, ob alle ausgewählten Optionen korrekt sind
-      let allCorrect = true;
       let selectedIndices = Array.from(checkedOptions).map(option => parseInt(option.dataset.index));
       
-      // Bei nur einer korrekten Antwort
-      if (correctIndices.length === 1 && selectedIndices.length === 1) {
-        allCorrect = selectedIndices[0] === correctIndices[0];
-      }
-      // Bei mehreren korrekten Antworten - alle ausgewählten müssen korrekt sein
-      else {
-        // Alle ausgewählten müssen in der korrekten Liste sein
-        selectedIndices.forEach(index => {
-          if (!correctIndices.includes(index)) {
-            allCorrect = false;
-          }
-        });
-        
-        // Zusätzlich muss mindestens eine korrekte Option gewählt sein
-        if (selectedIndices.length === 0 || !selectedIndices.some(index => correctIndices.includes(index))) {
-          allCorrect = false;
-        }
-      }
+      // Prüfe auf vollständige Übereinstimmung
+      let allCorrect = selectedIndices.length === correctIndices.length &&
+                       selectedIndices.every(index => correctIndices.includes(index)) &&
+                       correctIndices.every(index => selectedIndices.includes(index));
       
       if (allCorrect) {
         feedbackDiv.textContent = 'Richtig!';
@@ -922,11 +1056,11 @@ function checkAllAnswers() {
       } else {
         feedbackDiv.textContent = 'Falsche Antwort.';
         feedbackDiv.className = 'feedback incorrect';
-        
-        // Zeige die richtigen Antworten an
         showCorrectMCAnswers(question, correctIndices);
       }
-    } else if (type === 'text' || type === 'unknown') {
+    } 
+    // Text-Aufgaben (OFFEN)
+    else if (type === 'text') {
       const answerField = question.querySelector('.text-answer');
       if (!answerField) {
         console.error('Textantwortfeld nicht gefunden');
@@ -935,51 +1069,106 @@ function checkAllAnswers() {
       
       const userAnswer = answerField.value.trim();
       
-      if (type === 'text') {
-        // Bei offenen Aufgaben zeigen wir die Musterlösung und Selbsteinschätzung
-        const solutionContainer = question.querySelector('.solution-container');
-        const selfAssessment = question.querySelector('.self-assessment');
-        
-        if (solutionContainer) solutionContainer.style.display = 'block';
-        if (selfAssessment) selfAssessment.style.display = 'block';
-        
-        feedbackDiv.textContent = 'Vergleiche deine Antwort mit der Musterlösung und bewerte sie selbst.';
+      // Bei offenen Aufgaben zeigen wir die Musterlösung und Selbsteinschätzung
+      const solutionContainer = question.querySelector('.solution-container');
+      const selfAssessment = question.querySelector('.self-assessment');
+      
+      if (solutionContainer) solutionContainer.style.display = 'block';
+      if (selfAssessment) selfAssessment.style.display = 'block';
+      
+      // Für Selbsteinschätzungsaufgaben zählen wir sie als richtig, wenn eine Bewertung abgegeben wurde
+      const selectedAssessment = selfAssessment ? selfAssessment.querySelector('.assessment-button.selected') : null;
+      
+      if (selectedAssessment) {
+        // Zähle als richtig, wenn "Korrekt" oder "Teilweise korrekt" gewählt wurde
+        if (selectedAssessment.textContent === 'Korrekt' || selectedAssessment.textContent === 'Teilweise korrekt') {
+          correctCount++;
+        }
+        feedbackDiv.textContent = 'Selbsteinschätzung abgegeben.';
+        feedbackDiv.className = 'feedback info';
+      } else {
+        feedbackDiv.textContent = 'Bitte bewerte deine Antwort mit den Buttons unten.';
         feedbackDiv.className = 'feedback info';
       }
-      else if (type === 'unknown') {
-        feedbackDiv.textContent = 'Diese Antwort kann nicht automatisch überprüft werden.';
+    }
+    // Lückentext-Aufgaben
+    else if (type === 'gap-text') {
+      const gapDropzones = question.querySelectorAll('.gap-dropzone');
+      let totalGaps = gapDropzones.length;
+      let correctGaps = 0;
+      
+      if (gapDropzones.length === 0) {
+        feedbackDiv.textContent = 'Fehler: Keine Lücken gefunden.';
         feedbackDiv.className = 'feedback no-answer';
+        return;
       }
-      else if (!userAnswer) {
-        feedbackDiv.textContent = 'Keine Antwort eingegeben.';
-        feedbackDiv.className = 'feedback no-answer';
-      }
-      else {
-        // Verbesserte Überprüfung für Textantworten
-        const possibleAnswers = correctAnswer.split('|').map(a => a.trim());
-        const userAnswerLower = userAnswer.toLowerCase();
+      
+      try {
+        const correctAnswers = JSON.parse(correctAnswer);
         
-        // Überprüfen, ob eine der möglichen Antworten exakt übereinstimmt oder in der Benutzerantwort enthalten ist
-        const isCorrect = possibleAnswers.some(answer => {
-          const answerLower = answer.toLowerCase();
-          return userAnswerLower === answerLower || userAnswerLower.includes(answerLower);
+        // Prüfe jede Lücke
+        gapDropzones.forEach((dropzone, index) => {
+          const userAnswer = dropzone.dataset.filledWith || '';
+          
+          if (!userAnswer || dropzone.textContent === 'Wort hier ablegen...') {
+            dropzone.classList.add('gap-empty');
+            return;
+          }
+          
+          dropzone.classList.remove('gap-empty');
+          
+          // Hole die korrekten Antworten für diese Lücke
+          const correctOptions = correctAnswers[index] ? correctAnswers[index].split('|').map(a => a.trim()) : [];
+          const userAnswerLower = userAnswer.toLowerCase();
+          
+          // Überprüfe, ob die Antwort korrekt ist
+          const isCorrect = correctOptions.some(option => {
+            const optionLower = option.toLowerCase();
+            return userAnswerLower === optionLower;
+          });
+          
+          if (isCorrect) {
+            dropzone.classList.add('gap-correct');
+            dropzone.classList.remove('gap-incorrect');
+            correctGaps++;
+          } else {
+            dropzone.classList.add('gap-incorrect');
+            dropzone.classList.remove('gap-correct');
+            
+            // Zeige die richtige Antwort an
+            const correctTip = document.createElement('div');
+            correctTip.className = 'gap-correct-answer';
+            correctTip.textContent = "Richtig wäre: " + correctOptions[0];
+            dropzone.appendChild(correctTip);
+          }
+          
+          // Deaktiviere den Click-Handler nach der Überprüfung
+          if (dropzone.clickHandler) {
+            dropzone.removeEventListener('click', dropzone.clickHandler);
+            dropzone.style.cursor = 'default';
+          }
         });
         
-        if (isCorrect) {
-          feedbackDiv.textContent = 'Richtig!';
+        // Bewerte das Ergebnis
+        if (totalGaps === correctGaps) {
+          feedbackDiv.textContent = 'Alle Lücken richtig ausgefüllt!';
           feedbackDiv.className = 'feedback correct';
           correctCount++;
         } else {
-          feedbackDiv.textContent = 'Falsche oder unvollständige Antwort. Die richtige Antwort wäre: ' + possibleAnswers[0];
+          feedbackDiv.textContent = `${correctGaps} von ${totalGaps} Lücken richtig ausgefüllt.`;
           feedbackDiv.className = 'feedback incorrect';
         }
+      } catch (error) {
+        console.error('Fehler beim Parsen der korrekten Antworten:', error);
+        feedbackDiv.textContent = 'Fehler bei der Lückentext-Prüfung.';
+        feedbackDiv.className = 'feedback no-answer';
       }
-    } else if (type === 'order') {
-      // Überprüfung für die Reihenfolge-Aufgaben
+    }
+    // Reihenfolge-Aufgaben
+    else if (type === 'order') {
       const sortableList = question.querySelector('.sortable-list');
       
       if (!sortableList) {
-        console.error('Sortierbare Liste nicht gefunden');
         feedbackDiv.textContent = 'Fehler: Keine sortierbaren Elemente gefunden.';
         feedbackDiv.className = 'feedback no-answer';
         return;
@@ -1018,7 +1207,7 @@ function checkAllAnswers() {
           const correctItemsList = document.createElement('ol');
           correctItemsList.className = 'correct-order-list';
           
-          // Sortiere die Items nach den korrekten Positionen und füge sie zur Liste hinzu
+          // Sortiere die Items nach den korrekten Positionen
           const itemsWithCorrectOrder = currentItems
             .map((item, i) => ({ item: item.textContent, originalPosition: parseInt(item.dataset.originalPosition) }))
             .sort((a, b) => a.originalPosition - b.originalPosition);
@@ -1034,98 +1223,76 @@ function checkAllAnswers() {
         }
       } catch (error) {
         console.error('Fehler bei der Überprüfung der Reihenfolge:', error);
-        feedbackDiv.textContent = 'Fehler bei der Überprüfung: ' + error.message;
+        feedbackDiv.textContent = 'Fehler bei der Überprüfung.';
         feedbackDiv.className = 'feedback no-answer';
       }
     }
-    else if (type === 'gap-text') {
-      // Überprüfung für Lückentext mit Drag & Drop
-      const gapDropzones = question.querySelectorAll('.gap-dropzone');
-      let allCorrect = true;
-      let totalGaps = gapDropzones.length;
-      let correctGaps = 0;
-      
-      if (gapDropzones.length === 0) {
-        console.error('Keine Lückentext-Dropzones gefunden');
-        feedbackDiv.textContent = 'Fehler: Keine Dropzones gefunden.';
-        feedbackDiv.className = 'feedback no-answer';
-        return;
-      }
-      
-      try {
-        const correctAnswers = JSON.parse(correctAnswer);
-        
-      // Prüfe jede Lücke
-      gapDropzones.forEach((dropzone, index) => {
-        const userAnswer = dropzone.dataset.filledWith || '';
-        
-        if (!userAnswer || dropzone.textContent === 'Wort hier ablegen...') {
-          allCorrect = false;
-          dropzone.classList.add('gap-empty');
-          return;
-        }
-        
-        dropzone.classList.remove('gap-empty');
-        
-        // Hole die korrekten Antworten für diese Lücke
-        const correctOptions = correctAnswers[index] ? correctAnswers[index].split('|').map(a => a.trim()) : [];
-        const userAnswerLower = userAnswer.toLowerCase();
-        
-        // Überprüfe, ob die Antwort korrekt ist
-        const isCorrect = correctOptions.some(option => {
-          const optionLower = option.toLowerCase();
-          return userAnswerLower === optionLower;
-        });
-        
-        if (isCorrect) {
-          dropzone.classList.add('gap-correct');
-          dropzone.classList.remove('gap-incorrect');
-          correctGaps++;
-          
-          // Deaktiviere den Click-Handler nach der Überprüfung
-          dropzone.removeEventListener('click', dropzone.clickHandler);
-          dropzone.style.cursor = 'default';
-        } else {
-          dropzone.classList.add('gap-incorrect');
-          dropzone.classList.remove('gap-correct');
-          allCorrect = false;
-          
-          // Zeige die richtige Antwort an
-          const correctTip = document.createElement('div');
-          correctTip.className = 'gap-correct-answer';
-          correctTip.textContent = "Richtig wäre: " + correctOptions[0];
-          dropzone.appendChild(correctTip);
-          
-          // Deaktiviere den Click-Handler nach der Überprüfung
-          dropzone.removeEventListener('click', dropzone.clickHandler);
-          dropzone.style.cursor = 'default';
-        }
-      });
-        
-        // Zeige das Ergebnis an
-        if (gapDropzones.length === 0) {
-          feedbackDiv.textContent = 'Fehler bei der Lückentext-Prüfung.';
-          feedbackDiv.className = 'feedback no-answer';
-        } else if (gapDropzones.length > 0 && totalGaps === correctGaps) {
-          feedbackDiv.textContent = 'Alle Lücken richtig ausgefüllt!';
-          feedbackDiv.className = 'feedback correct';
-          correctCount++;
-        } else {
-          feedbackDiv.textContent = `${correctGaps} von ${totalGaps} Lücken richtig ausgefüllt.`;
-          feedbackDiv.className = 'feedback incorrect';
-        }
-      } catch (error) {
-        console.error('Fehler beim Parsen der korrekten Antworten:', error);
-        feedbackDiv.textContent = 'Fehler bei der Lückentext-Prüfung: ' + error.message;
-        feedbackDiv.className = 'feedback no-answer';
-      }
+    // Unbekannte Aufgabentypen
+    else {
+      feedbackDiv.textContent = 'Dieser Aufgabentyp kann nicht automatisch überprüft werden.';
+      feedbackDiv.className = 'feedback no-answer';
     }
   });
   
-  // Zeige Gesamtergebnis
+  // Berechne Erfolgsquote
+  const successRate = totalCount > 0 ? (correctCount / totalCount) : 0;
+  const percentageCorrect = Math.round(successRate * 100);
+  
+  // Zeige Gesamtergebnis mit Codewort-Funktionalität
   const resultDiv = document.getElementById('quiz-total-result');
   if (resultDiv) {
-    resultDiv.textContent = `Gesamtergebnis: ${correctCount} von ${totalCount} Fragen richtig beantwortet!`;
+    // Lösche vorherigen Inhalt
+    resultDiv.innerHTML = '';
+    
+    // Basis-Ergebnis
+    const baseResultDiv = document.createElement('div');
+    baseResultDiv.className = 'quiz-base-result';
+    baseResultDiv.textContent = `Gesamtergebnis: ${correctCount} von ${totalCount} Fragen richtig beantwortet! (${percentageCorrect}%)`;
+    resultDiv.appendChild(baseResultDiv);
+    
+    // Codewort anzeigen, wenn mindestens 80% richtig und Codewort vorhanden
+    if (successRate >= 0.8 && extractedCodeword) {
+      const codewordDiv = document.createElement('div');
+      codewordDiv.className = 'codewort-success';
+      codewordDiv.innerHTML = `
+        <div class="success-header">
+          <h3>🎉 Ausgezeichnet! Du hast ${percentageCorrect}% der Aufgaben richtig gelöst!</h3>
+        </div>
+        <div class="codewort-container">
+          <div class="codewort-box">
+            <strong>Dein Codewort für die Lehrkraft:</strong><br>
+            <span class="codewort-text">"${extractedCodeword}"</span>
+          </div>
+          <p class="codewort-instruction"><em>🗣️ Teile dieses Codewort mündlich mit deiner Lehrkraft!</em></p>
+        </div>
+      `;
+      
+      resultDiv.appendChild(codewordDiv);
+      
+      // Zusätzliches Styling für das Codewort
+      addCodewordStyles();
+    } else if (successRate >= 0.8) {
+      // Gute Leistung, aber kein Codewort verfügbar
+      const goodResultDiv = document.createElement('div');
+      goodResultDiv.className = 'good-result';
+      goodResultDiv.innerHTML = `
+        <h3>🎉 Sehr gut! Du hast ${percentageCorrect}% der Aufgaben richtig gelöst!</h3>
+        <p>Zeige dein Ergebnis deiner Lehrkraft.</p>
+      `;
+      resultDiv.appendChild(goodResultDiv);
+    } else {
+      // Ergebnis unter 80%
+      const encouragementDiv = document.createElement('div');
+      encouragementDiv.className = 'encouragement-result';
+      const missingQuestions = totalCount - correctCount;
+      encouragementDiv.innerHTML = `
+        <h3>📚 Weiter üben!</h3>
+        <p>Du hast ${percentageCorrect}% richtig. Schau dir die Lösungen an und versuche es nochmal!</p>
+        <p><em>Für das Codewort benötigst du mindestens 80% richtige Antworten.</em></p>
+      `;
+      resultDiv.appendChild(encouragementDiv);
+    }
+    
     resultDiv.style.display = 'block';
     
     // Scroll zum Ergebnis
