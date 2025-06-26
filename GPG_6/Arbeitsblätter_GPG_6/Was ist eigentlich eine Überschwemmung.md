@@ -13,8 +13,8 @@
 
 ## 📕 Hefteintrag 
 
-![TB_Was_ist_eine_Überschwemmung 1](../TB_Was_ist_eine_Überschwemmung%201.png)
-→ [TB_Was_ist_eine_Überschwemmung 1](../TB_Was_ist_eine_Überschwemmung%201.png)
+![TB_Was_ist_eine_Überschwemmung 1](TB_Was_ist_eine_Überschwemmung%201.png)
+→ [TB_Was_ist_eine_Überschwemmung 1](TB_Was_ist_eine_Überschwemmung%201.png)
 
 
 

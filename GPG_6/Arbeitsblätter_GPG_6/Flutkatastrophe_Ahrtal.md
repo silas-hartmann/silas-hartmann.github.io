@@ -68,4 +68,4 @@ Um welche Art von Überschwemmung handelte es sich bei der Flutkatastrophe im Ah
 
 Informiere dich dann auf [dieser Website](https://reportage.wdr.de/chronik-ahrtal-hochwasser-katastrophe) genauer zu den Erlebnissen von Michael Lang während der Flutkatastrophe:
 
-🏠 Zurück zum heutigen Thema [Was ist eigentlich eine Überschwemmung](../Was%20ist%20eigentlich%20eine%20Überschwemmung)
+🏠 Zurück zum heutigen Thema [Was ist eigentlich eine Überschwemmung](Was%20ist%20eigentlich%20eine%20Überschwemmung.md)

@@ -8,7 +8,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 
 Bitte wähle die richtige Jahrgangsstufe:
 
-- Klasse 6: ➡️ [Starkregen_und_Klimawandel](GPG_6/Starkregen_und_Klimawandel)
+- Klasse 6: ➡️ [Zusammenfassung_Überschwemmungen](GPG_6/Arbeitsblätter_GPG_6/Zusammenfassung_Überschwemmungen)
 
 - Klasse 7: ➡️ [Vanitas-Stilleben](Kunst_7/Vanitas-Stilleben)
 
