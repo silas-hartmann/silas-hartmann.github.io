@@ -33,6 +33,9 @@ Nur weil alle drei Faktoren zusammenkamen - Starkregen, Kerbtal und hohe Versieg
   style="border: 1px solid black">
 </iframe>
 
+Übung: WO liegt das Ahrtal? Auf der Karte unterhalb findest du mehrere blaue Marker. Suche sie und klicke bei jedem an, ob dort das Ahrtal liegt, oder nicht. Überprüfe dann deine Antwort. 
+
+<iframe src="https://learningapps.org/watch?v=pbsnuofqj25" style="border:0px;width:100%;height:500px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
 
 ---
 
