@@ -14,6 +14,10 @@ Es kann sein, dass die genauen Wörter in deinem Heft ein bisschen anders sind. 
 ![Pasted image 20250626224027](../../Pasted%20image%2020250626224027.png)
 
 ![Tafelbild_Starkregen_und_Klimawandel](Tafelbild_Starkregen_und_Klimawandel.excalidraw)
+
+[Tafelbild_Zusammenfassung_Ahrtal](Tafelbild_Zusammenfassung_Ahrtal.excalidraw)
+
+
 # Hefteinträge zum Thema Südamerika
 
 ---
