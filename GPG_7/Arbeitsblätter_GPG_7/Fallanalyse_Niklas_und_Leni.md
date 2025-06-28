@@ -2,7 +2,7 @@
 
 **Du hast gerade den Fall von Leni und Niklas kennengelernt. Jetzt ist deine Meinung gefragt! Stell dir vor, du bist Richter*in: Welches Urteil würdest du für Niklas fällen? Lies dir die wichtigsten Gesetze durch, um deine Entscheidung zu begründen.**
 
-![[Pasted image 20250628151807.png]]
+![Pasted image 20250628151807](../../Pasted%20image%2020250628151807.png)
 
 ---
 
