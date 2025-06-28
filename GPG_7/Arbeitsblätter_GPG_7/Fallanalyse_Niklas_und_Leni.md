@@ -75,7 +75,7 @@
 
 ---
 
-# Dein Urteil!
+# Dein Urteil! Schreibe dein Urteil auf eine Wortkarte. Folgende Strafen hast du zur Auswahl:
 
 ![judge](https://images.pexels.com/photos/6077296/pexels-photo-6077296.jpeg)
 
@@ -86,7 +86,8 @@
 - **Zuchtmittel:** Diese sind strenger als Erziehungsmaßnahmen. Dazu gehören zum Beispiel Arbeitsauflagen (noch mehr Sozialstunden), Geldstrafen oder Jugendarrest (kurze Zeit im Gefängnis für Jugendliche).
 - **Jugendstrafe / Freiheitsstrafe:** Dies ist die härteste Strafe für Jugendliche, vergleichbar mit einer Gefängnisstrafe für Erwachsene. Sie wird nur bei sehr schweren Straftaten oder bei Wiederholungstätern verhängt, wenn Erziehungsmaßnahmen oder Zuchtmittel nicht mehr ausreichen.
 
-### 📝 Schreibe dein Urteil auf eine Wortkarte - was soll mit Niklas geschehen? 
+
+---
 
 
 Überprüfe deine Lösung - wenn du mehr als 80% richtig hast, erhältst du ein Codewort!
