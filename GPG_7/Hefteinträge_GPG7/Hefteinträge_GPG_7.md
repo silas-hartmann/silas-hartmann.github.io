@@ -1,3 +1,14 @@
+
+# Thema: Recht und Kriminalität
+
+ 
+![Pasted image 20250628155631](../../Pasted%20image%2020250628155631.png)
+
+
+---
+
+# Alte Hefteinträge
+
 # Der Verlauf der Revolution 1848/49
 
 die Ergebnisse dieser Stunde haben wir auf folgendem Arbeitsblatt festgehalten: [Der Verlauf der Revolution 184849 - Lösung](../Arbeitsblätter_GPG_7/Der%20Verlauf%20der%20Revolution%20184849%20-%20Lösung.pdf)
