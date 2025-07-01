@@ -14,6 +14,7 @@ Bitte wähle die richtige Jahrgangsstufe:
 	- GPG: [Fallanalyse_Niklas_und_Leni](GPG_7/Arbeitsblätter_GPG_7/Fallanalyse_Niklas_und_Leni)
 	- Kunst: [Vanitas-Stilleben](Kunst_7/Vanitas-Stilleben)
 
+ [GG_Art2](GPG_6/Arbeitsblätter_GPG_6/GG_Art2)
  
 ---
 ## Archiv: Unterrichtsmaterial
