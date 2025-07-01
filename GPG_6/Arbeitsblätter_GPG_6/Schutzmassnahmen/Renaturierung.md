@@ -32,7 +32,8 @@ In München war die Isar früher ein gerader Kanal aus Beton. Heute dürfen die 
 
 
 **In diesem Video siehst du, wie eine Stelle der Isar wieder renaturiert wurde. Achte auf die Unterschiede zwischen vorher und nachher! (Das Video hat keinen Ton 🔇)**
-![Isar Renaturierung](https://www.youtube.com/watch?v=JAmpgEieg9o)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JAmpgEieg9o?si=hw9tiwYHNAU8zG5i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ---
 

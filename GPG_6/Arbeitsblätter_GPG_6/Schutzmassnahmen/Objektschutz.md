@@ -9,8 +9,8 @@ Objektschutz bedeutet, dass man sein eigenes Haus, seinen Betrieb oder ein einze
 Sandsäcke sind der klassische Objektschutz. Man stapelt sie vor Türen und um Gebäude herum, um eine Wasserbarriere zu bauen. Moderne mobile Hochwasserschutzwände funktionieren wie Lego-Steine für Erwachsene: Man steckt sie zusammen und kann schnell eine wasserdichte Wand um sein Haus bauen. Spezielle Systeme für Türen und Fenster funktionieren wie riesige Dichtungen. Man klemmt oder schraubt sie vor die Öffnungen und das Wasser kann nicht mehr eindringen. Wassergefüllte Schläuche werden vor das Haus gelegt und mit Wasser gefüllt. Sie sind leichter als Sandsäcke, aber genauso wirksam.
 
 **In diesem Video siehst du, wie moderne mobile Hochwasserschutzwände funktionieren. (Das Video hat keinen Ton 🔇)**
-![m-Hochwasserschutzwand](https://www.youtube.com/watch?v=eHY24T3uTt0)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eHY24T3uTt0?si=aj9sxoy94bQ3_TmT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 In vielen deutschen Städten haben Hausbesitzer in hochwassergefährdeten Gebieten mobile Schutzsysteme im Keller oder in der Garage. Wenn eine Hochwasserwarnung kommt, bauen sie diese schnell auf. Unternehmen nutzen Objektschutz besonders oft, um ihre teuren Maschinen und Computer zu schützen. Ein Autohaus kann zum Beispiel in wenigen Stunden eine Schutzwand um seine Fahrzeuge bauen. Viele Gemeinden haben Sandsäcke und mobile Systeme eingelagert, die bei Hochwassergefahr schnell verteilt werden. Feuerwehr und THW nutzen mobile Hochwasserschutzsysteme, um schnell kritische Gebäude wie Krankenhäuser oder Schulen zu schützen.
 
