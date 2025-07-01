@@ -15,7 +15,7 @@ In Bayern gibt es den Hochwassernachrichtendienst, der alle Flüsse überwacht. 
 Schau dir die Website des Hochwassernachrichtendienst doch einmal selber an: https://www.hnd.bayern.de/
 
 **Die Warnapp "Nina" kannst du auch auf deinem Handy installieren**
-![Nina](https://www.nuernberg.de/imperia/zentral/bilder/smartphone_nina_app.jpg)
+![Nina](https://blaulicht-magazin.net/wp-content/uploads/2020/04/Symbolbild_NINA-scaled.jpg)
 
 ---
 
