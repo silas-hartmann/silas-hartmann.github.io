@@ -8,6 +8,10 @@ Frühwarnsysteme sind wie ein Rauchmelder für Hochwasser. Sie messen ständig, 
 
 An vielen Stellen entlang der Flüsse stehen Messstationen, die den Wasserstand messen. Diese Stationen schicken ihre Daten alle paar Minuten an eine Zentrale. Gleichzeitig messen Wetterstationen, wie viel Regen fällt und ob noch mehr Regen kommt. Computer rechnen dann aus, wie hoch das Wasser steigen wird und wann es wo ankommt. Wenn die Gefahr groß wird, schicken die Warndienste automatisch Nachrichten an alle wichtigen Stellen: Bürgermeister, Feuerwehr, THW und die Bevölkerung. Die Menschen bekommen dann SMS, Push-Nachrichten auf ihr Handy oder hören Warnungen im Radio.
 
+
+**Messstation für Hochwasserfrühwarnsysteme**
+![Messtelle](https://blog.otthydromet.com/wp-content/uploads/2025/05/FMS_Blog4-1210x1536.jpg)
+
 ---
 
 In Bayern gibt es den Hochwassernachrichtendienst, der alle Flüsse überwacht. Wenn Hochwassergefahr droht, werden automatisch alle Gemeinden gewarnt. Die Menschen können im Internet jederzeit schauen, wie hoch das Wasser in ihrem Fluss steht. In Baden-Württemberg warnt die Hochwasser-Vorhersage-Zentrale seit 1991 vor Überschwemmungen. Sie hat schon viele Hochwasser richtig vorhergesagt und damit große Schäden verhindert. Moderne Gemeinden wie Lenzkirch im Schwarzwald haben eigene Messstationen an kleinen Bächen. Wenn dort der Wasserstand steigt, bekommen Bürgermeister und Feuerwehr sofort eine Warnung aufs Handy. Apps wie "NINA" warnen alle Bürger vor Unwettern und Hochwasser und geben Tipps, was zu tun ist.
