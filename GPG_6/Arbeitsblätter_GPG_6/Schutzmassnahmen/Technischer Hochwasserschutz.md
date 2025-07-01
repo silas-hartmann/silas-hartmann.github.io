@@ -5,17 +5,17 @@
 
 Beim technischen Hochwasserschutz baut man Anlagen, die wie eine Barriere zwischen dem Wasser und den Menschen wirken. Das sind vor allem Deiche, Dämme, Mauern und große Becken, die Wasser zurückhalten können. Die Idee ist einfach: Man baut eine Wand oder einen Wall, damit das Hochwasser nicht zu den Häusern gelangen kann. Diese Bauwerke werden meist aus Erde, Beton oder Stahl gemacht und sollen auch bei extremem Hochwasser standhalten.
 
-**Auf diesem Bild siehst du einen Flussdeich. Vielleicht kennst du auch den Deich am Main in Schweinfurt?*
+**Auf diesem Bild siehst du einen Flussdeich. Vielleicht kennst du auch den Deich am Main in Schweinfurt?**
 ![Bild_Deich](https://media0.faz.net/ppmedia/aktuell/1787040131/1.8825656/default/fluss-mit-zwei-gesichtern-die.jpg)
 
 Deiche sind große Erdwälle, die entlang von Flüssen gebaut werden. Sie sind wie künstliche Hügel, die das Wasser daran hindern, über die Ufer zu treten. Hochwasser-Rückhaltebecken sind riesige Seen oder Becken, die bei normalem Wetter meist leer sind. Wenn ein Hochwasser kommt, wird viel Wasser in diese Becken geleitet, damit weniger Wasser in den Flüssen ankommt. 
 
-**Auf diesem Bild siehst du ein (leeres) Hochwasserrückhaltebecken
+**Auf diesem Bild siehst du ein (leeres) Hochwasserrückhaltebecken**
 ![Hochwasserrückhaltebecken](https://www.wasserwirtschaft.sachsen.de/ltv/HRB_Neuwuerschnitz_Albrecht_Hollaender_AHA_20210601_192157_0272_1750_750_rdax_1760x752_87s.jpg)
 
 Hochwassermauern funktionieren wie Deiche, brauchen aber weniger Platz. Sie werden oft in Städten gebaut, wo kein Raum für breite Deiche ist.
 
-**So kann eine Hochwassermauer aussehen: 
+**So kann eine Hochwassermauer aussehen:** 
 ![Hochwassermauer](https://wasserverband-murrtal.de/wp-content/uploads/slide-6-Bau_HWS_BK.jpg)
 
 
