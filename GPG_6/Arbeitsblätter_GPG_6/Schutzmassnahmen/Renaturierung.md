@@ -8,7 +8,7 @@ Stell dir vor, ein Fluss ist wie ein Mensch in einem zu engen Anzug. Er kann sic
 
 **ℹ️ In der oberen Hälfte des Bildes erkennst du wie der Rhein früher geflossen ist. In der unteren Hälfte des Bildes siehst du, wie der Flusslauf begradigt wurde.**
 
-### Aufgabe [MC] Welche Unterschiede kannst du zwischen dem Rhein in der oberen Hälfte des Bild und dem in der unteren Hälfte erkennen?
+### Aufgabe 1 [MC] Welche Unterschiede kannst du zwischen dem Rhein in der oberen Hälfte des Bild und dem in der unteren Hälfte erkennen?
 
 - früher hatte der Rhein weniger Kurven
 - früher hatte der Rhein mehr Kurven (richtig)
