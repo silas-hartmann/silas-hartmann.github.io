@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspekte der IB die Wahrnehmungsstörungen auslösen - Wissenschaftlich fundiert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        .mindmap-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 40px);
+            position: relative;
+        }
+        
+        .mindmap {
+            position: relative;
+            width: 1700px;
+            height: 1300px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: visible;
+        }
+        
+        .central-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 340px;
+            height: 150px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            border-radius: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(238, 90, 82, 0.3);
+            z-index: 10;
+        }
+        
+        .branch {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .branch:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .branch.dragging {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            z-index: 100;
+            cursor: grabbing;
+        }
+        
+        .branch {
+            cursor: grab;
+        }
+        
+        .branch-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #333;
+        }
+        
+        .branch-content {
+            font-size: 11px;
+            line-height: 1.3;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .citation {
+            font-size: 9px;
+            color: #888;
+            font-style: italic;
+            border-top: 1px solid #eee;
+            padding-top: 4px;
+            line-height: 1.2;
+        }
+        
+        .citation-link {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        .citation-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Branch positioning and colors */
+        .branch1 {
+            top: 30px;
+            left: 60px;
+            width: 320px;
+            border-left-color: #4ecdc4;
+        }
+        
+        .branch2 {
+            top: 20px;
+            right: 60px;
+            width: 340px;
+            border-left-color: #45b7d1;
+        }
+        
+        .branch3 {
+            top: 250px;
+            right: 20px;
+            width: 360px;
+            border-left-color: #f39c12;
+        }
+        
+        .branch4 {
+            top: 520px;
+            right: 60px;
+            width: 330px;
+            border-left-color: #e74c3c;
+        }
+        
+        .branch5 {
+            bottom: 30px;
+            right: 120px;
+            width: 340px;
+            border-left-color: #9b59b6;
+        }
+        
+        .branch6 {
+            bottom: 20px;
+            left: 120px;
+            width: 350px;
+            border-left-color: #2ecc71;
+        }
+        
+        .branch7 {
+            top: 520px;
+            left: 30px;
+            width: 320px;
+            border-left-color: #ff7675;
+        }
+        
+        .branch8 {
+            top: 250px;
+            left: 20px;
+            width: 340px;
+            border-left-color: #6c5ce7;
+        }
+        
+        .branch9 {
+            top: 100px;
+            left: 280px;
+            width: 300px;
+            border-left-color: #fd79a8;
+        }
+        
+        .branch10 {
+            bottom: 180px;
+            left: 60px;
+            width: 320px;
+            border-left-color: #00b894;
+        }
+        
+        /* Connection lines */
+        .connection {
+            position: absolute;
+            background: #ddd;
+            z-index: 1;
+        }
+        
+        .conn1 {
+            top: 140px;
+            left: 360px;
+            width: 3px;
+            height: 200px;
+            transform: rotate(-20deg);
+            transform-origin: top;
+        }
+        
+        .conn2 {
+            top: 140px;
+            right: 360px;
+            width: 3px;
+            height: 200px;
+            transform: rotate(20deg);
+            transform-origin: top;
+        }
+        
+        .conn3 {
+            top: 420px;
+            right: 340px;
+            width: 3px;
+            height: 130px;
+            transform: rotate(30deg);
+            transform-origin: top;
+        }
+        
+        .conn4 {
+            top: 590px;
+            right: 360px;
+            width: 3px;
+            height: 130px;
+            transform: rotate(-30deg);
+            transform-origin: top;
+        }
+        
+        .conn5 {
+            bottom: 140px;
+            right: 420px;
+            width: 3px;
+            height: 150px;
+            transform: rotate(20deg);
+            transform-origin: bottom;
+        }
+        
+        .conn6 {
+            bottom: 140px;
+            left: 420px;
+            width: 3px;
+            height: 150px;
+            transform: rotate(-20deg);
+            transform-origin: bottom;
+        }
+        
+        .conn7 {
+            top: 590px;
+            left: 340px;
+            width: 3px;
+            height: 130px;
+            transform: rotate(30deg);
+            transform-origin: top;
+        }
+        
+        .conn8 {
+            top: 420px;
+            left: 340px;
+            width: 3px;
+            height: 130px;
+            transform: rotate(-30deg);
+            transform-origin: top;
+        }
+        
+        .conn9 {
+            top: 220px;
+            left: 560px;
+            width: 3px;
+            height: 110px;
+            transform: rotate(-5deg);
+            transform-origin: top;
+        }
+        
+        .conn10 {
+            bottom: 300px;
+            left: 360px;
+            width: 3px;
+            height: 160px;
+            transform: rotate(15deg);
+            transform-origin: bottom;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Aspekte der Intellektuellen Beeinträchtigung die Wahrnehmungsstörungen auslösen</h1>
+        <p>Wissenschaftlich fundierte Mindmap basierend auf peer-reviewed Forschung</p>
+    </div>
+    
+    <div class="mindmap-container">
+        <div class="mindmap">
+            <!-- Connection lines -->
+            <div class="connection conn1"></div>
+            <div class="connection conn2"></div>
+            <div class="connection conn3"></div>
+            <div class="connection conn4"></div>
+            <div class="connection conn5"></div>
+            <div class="connection conn6"></div>
+            <div class="connection conn7"></div>
+            <div class="connection conn8"></div>
+            <div class="connection conn9"></div>
+            <div class="connection conn10"></div>
+            
+            <!-- Central node -->
+            <div class="central-node">
+                Aspekte der<br>
+                Intellektuellen Beeinträchtigung<br>
+                die Wahrnehmungsstörungen<br>
+                auslösen können
+            </div>
+            
+            <!-- Branch 1: Strukturelle ZNS-Defekte -->
+            <div class="branch branch1">
+                <div class="branch-title">🧠 Strukturelle ZNS-Defekte</div>
+                <div class="branch-content">
+                    <strong>Atypische Hirnvernetzung:</strong> Abnormale strukturelle/funktionale Konnektivität primärer sensorischer und supramodaler Hirnregionen<br><br>
+                    <strong>Gestörte neuronale Netzwerke:</strong> Beeinträchtigte Default Mode, Salience und Central Executive Networks<br><br>
+                    <strong>Defekte in Inhibitionsmechanismen:</strong> Reduzierte Fähigkeit irrelevante Sinnesreize zu unterdrücken
+                </div>
+                <div class="citation">
+                    <strong>Robertson & Baron-Cohen (2017):</strong> Neural Correlates of Sensory Abnormalities Across Developmental Disabilities<br>
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6889889/" class="citation-link" target="_blank">PMC6889889</a>
+                </div>
+            </div>
+            
+            <!-- Branch 2: Kritische Perioden-Störungen -->
+            <div class="branch branch2">
+                <div class="branch-title">⏰ Kritische Perioden-Störungen</div>
+                <div class="branch-content">
+                    <strong>Gestörte Synaptogenese:</strong> Beeinträchtigte Entwicklung thalamokortikaler und kortiko-kortikaler Verbindungen<br><br>
+                    <strong>Verpasste Plastizitätsfenster:</strong> Disruption aktivitätsabhängiger Schaltkreisentwicklung<br><br>
+                    <strong>E/I-Balance-Dysregulation:</strong> Gestörtes Gleichgewicht exzitatorischer/inhibitorischer Transmission während kritischer Perioden
+                </div>
+                <div class="citation">
+                    <strong>LeBlanc & Fagiolini (2011):</strong> Investigating mechanisms underlying neurodevelopmental phenotypes of autistic and intellectual disability disorders<br>
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3814085/" class="citation-link" target="_blank">PMC3814085</a>
+                </div>
+            </div>
+            
+            <!-- Branch 3: Schweregrad-spezifische Defizite -->
+            <div class="branch branch3">
+                <div class="branch-title">📊 Schweregrad-spezifische Defizite</div>
+                <div class="branch-content">
+                    <strong>Milde IB:</strong> Subtile sensorische Verarbeitungsdefizite, höchste Prävalenz schwerer sensorischer Schwierigkeiten<br><br>
+                    <strong>Moderate IB:</strong> Deutliche Unterschiede in spezifischen sensorischen Verhaltensweisen<br><br>
+                    <strong>Schwere IB:</strong> Ausgeprägte Defizite über alle Sinnessysteme, reduzierte adaptive Responses
+                </div>
+                <div class="citation">
+                    <strong>Engel-Yeger et al. (2011):</strong> Sensory processing dysfunctions as expressed among children with different severities of intellectual developmental disabilities<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/21550770/" class="citation-link" target="_blank">PMID: 21550770</a>
+                </div>
+            </div>
+            
+            <!-- Branch 4: Genetische Syndrome -->
+            <div class="branch branch4">
+                <div class="branch-title">🧬 Genetische Syndrome</div>
+                <div class="branch-content">
+                    <strong>Fragiles-X-Syndrom:</strong> FMRP-Verlust führt zu gestörter synaptischer Plastizität, sensorischer Hypersensitivität durch E/I-Imbalance<br><br>
+                    <strong>SYNGAP1-Defekte:</strong> Spezifische sensorische Verarbeitungsstörungen als zuverlässige translationaler Biomarker<br><br>
+                    <strong>Sotos/TBRS-Syndrom:</strong> 77-85% zeigen klare Defizite in sensorischer Registrierung und Körperpositionswahrnehmung
+                </div>
+                <div class="citation">
+                    <strong>Ethridge et al. (2018):</strong> Sensory Processing Phenotypes in Fragile X Syndrome<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/30231625/" class="citation-link" target="_blank">PMID: 30231625</a><br>
+                    <strong>Hudac et al. (2024):</strong> Characterizing Sensory Phenotypes<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/37031308/" class="citation-link" target="_blank">PMID: 37031308</a>
+                </div>
+            </div>
+            
+            <!-- Branch 5: Kognitive Kerndefizite -->
+            <div class="branch branch5">
+                <div class="branch-title">🔍 Kognitive Kerndefizite</div>
+                <div class="branch-content">
+                    <strong>Reduzierte kognitive Kapazität:</strong> Beeinträchtigte Interpretation und Integration komplexer multisensorischer Information<br><br>
+                    <strong>Aufmerksamkeitsdefizite:</strong> Gestörte selektive Aufmerksamkeit führt zu Problems bei Reizdifferenzierung<br><br>
+                    <strong>Arbeitsgedächtnisdefizite:</strong> Unzureichende Zwischenspeicherung und Verknüpfung von Sinneseindrücken
+                </div>
+                <div class="citation">
+                    <strong>Joosten & Bundy (2010):</strong> Sensory processing and stereotypical and repetitive behaviour in children with autism and intellectual disability<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/21091701/" class="citation-link" target="_blank">PMID: 21091701</a>
+                </div>
+            </div>
+            
+            <!-- Branch 6: Zusätzliche sensorische Beeinträchtigungen -->
+            <div class="branch branch6">
+                <div class="branch-title">👁️👂 Zusätzliche sensorische Beeinträchtigungen</div>
+                <div class="branch-content">
+                    <strong>Höhere Prävalenz:</strong> Sensorische Beeinträchtigungen sind häufiger bei Menschen mit IB<br><br>
+                    <strong>Komplex-interaktive Effekte:</strong> Kombinierte Seh-/Hörbeeinträchtigungen verstärken Wahrnehmungsstörungen exponentiell<br><br>
+                    <strong>Diagnostische Verschleierung:</strong> Sensorische Defizite werden oft der IB zugeschrieben statt separat behandelt
+                </div>
+                <div class="citation">
+                    <strong>Collignon et al. (2001):</strong> Sensory impairments, intellectual disability and psychiatry<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/11737534/" class="citation-link" target="_blank">PMID: 11737534</a><br>
+                    <strong>van Schrojenstein Lantman-de Valk et al. (1997):</strong> Diagnosis of sensory impairment<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/9373823/" class="citation-link" target="_blank">PMID: 9373823</a>
+                </div>
+            </div>
+            
+            <!-- Branch 7: Emotionale Entwicklungsdefizite -->
+            <div class="branch branch7">
+                <div class="branch-title">😊 Emotionale Entwicklungsdefizite</div>
+                <div class="branch-content">
+                    <strong>Gestörte sozio-emotionale Entwicklung:</strong> Beeinträchtigte Verarbeitung sozialer Sinnesreize<br><br>
+                    <strong>Reduzierte emotionale Regulation:</strong> Schwierigkeiten bei angemessenen Responses auf sensorische Stimuli<br><br>
+                    <strong>Motorische Störungen verstärken Effekt:</strong> Bewegungsstörungen assoziiert mit niedrigerer emotionaler Entwicklung
+                </div>
+                <div class="citation">
+                    <strong>Sappok et al. (2022):</strong> More than a Physical Problem: The Effects of Physical and Sensory Impairments on the Emotional Development of Adults with Intellectual Disabilities<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/36554959/" class="citation-link" target="_blank">PMID: 36554959</a>
+                </div>
+            </div>
+            
+            <!-- Branch 8: Neuronale Entwicklungsdefekte -->
+            <div class="branch branch8">
+                <div class="branch-title">🌱 Neuronale Entwicklungsdefekte</div>
+                <div class="branch-content">
+                    <strong>Epigenetische Alterationen:</strong> Störungen in DNA-Methylierung und Histon-Modifikationen beeinträchtigen synaptische Plastizität<br><br>
+                    <strong>Gestörte Dendritenentwicklung:</strong> Anomalien in dendritischer Morphologie reduzieren Verarbeitungskapazität<br><br>
+                    <strong>Defekte Myelinisierung:</strong> Verlangsamte Signalübertragung in sensorischen Bahnen
+                </div>
+                <div class="citation">
+                    <strong>Cabal-Herrera et al. (2020):</strong> Where Environment Meets Cognition: A Focus on Two Developmental Intellectual Disability Disorders<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/27547454/" class="citation-link" target="_blank">PMID: 27547454</a>
+                </div>
+            </div>
+            
+            <!-- Branch 9: Adaptive Verhaltensstörungen -->
+            <div class="branch branch9">
+                <div class="branch-title">⚙️ Adaptive Verhaltensstörungen</div>
+                <div class="branch-content">
+                    <strong>Funktionale Beeinträchtigungen:</strong> Probleme in Kommunikation, Selbstversorgung und sozialer Partizipation verstärken sensorische Defizite<br><br>
+                    <strong>Reduzierte Coping-Mechanismen:</strong> Unzureichende Strategien im Umgang mit sensorischer Überreizung<br><br>
+                    <strong>Maladaptive Stereotypien:</strong> Repetitive Verhaltensweisen als Kompensation für sensorische Dysregulation
+                </div>
+                <div class="citation">
+                    <strong>Dunn et al. (1998):</strong> The sensory profile: a discriminant analysis of children with and without disabilities<br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/9544354/" class="citation-link" target="_blank">PMID: 9544354</a>
+                </div>
+            </div>
+            
+            <!-- Branch 10: Neurophysiologische Dysregulation -->
+            <div class="branch branch10">
+                <div class="branch-title">⚡ Neurophysiologische Dysregulation</div>
+                <div class="branch-content">
+                    <strong>Gestörte ereigniskorrelierte Potentiale:</strong> Abnormale P1, N2, P3a-Komponenten bei sensorischer Verarbeitung<br><br>
+                    <strong>Reduzierte Habituation:</strong> Fehlende Gewöhnung an wiederholte Sinnesreize<br><br>
+                    <strong>Atypische Gamma-Aktivität:</strong> Veränderte neuronale Oszillationen beeinträchtigen sensorische Integration<br><br>
+                    <strong>Defekte Top-Down-Kontrolle:</strong> Gestörte präfrontale Modulation sensorischer Verarbeitung
+                </div>
+                <div class="citation">
+                    <strong>Cellot & Cherubini (2022):</strong> Sensory Processing Disorders in Children and Adolescents: Taking Stock of Assessment and Novel Therapeutic Tools<br>
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9688399/" class="citation-link" target="_blank">PMC9688399</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Drag and Drop Functionality
+        let isDragging = false;
+        let currentElement = null;
+        let startX = 0;
+        let startY = 0;
+        let offsetX = 0;
+        let offsetY = 0;
+        let clickTimer = null;
+        
+        // Initialize drag and drop for all branches
+        document.querySelectorAll('.branch').forEach(branch => {
+            // Mouse Events
+            branch.addEventListener('mousedown', handleMouseDown);
+            branch.addEventListener('mouseenter', function() {
+                if (!isDragging) {
+                    this.style.zIndex = '20';
+                }
+            });
+            branch.addEventListener('mouseleave', function() {
+                if (!isDragging) {
+                    this.style.zIndex = '5';
+                }
+            });
+            
+            // Touch Events for mobile
+            branch.addEventListener('touchstart', handleTouchStart, {passive: false});
+        });
+        
+        // Global mouse events
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+        
+        // Global touch events
+        document.addEventListener('touchmove', handleTouchMove, {passive: false});
+        document.addEventListener('touchend', handleTouchEnd);
+        
+        function handleMouseDown(e) {
+            e.preventDefault();
+            startDrag(e, e.clientX, e.clientY);
+        }
+        
+        function handleTouchStart(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            startDrag(e, touch.clientX, touch.clientY);
+        }
+        
+        function startDrag(e, clientX, clientY) {
+            currentElement = e.currentTarget;
+            isDragging = true;
+            
+            // Calculate offset from mouse/touch to element position
+            const rect = currentElement.getBoundingClientRect();
+            const mindmapRect = document.querySelector('.mindmap').getBoundingClientRect();
+            
+            offsetX = clientX - rect.left;
+            offsetY = clientY - rect.top;
+            
+            startX = clientX;
+            startY = clientY;
+            
+            currentElement.classList.add('dragging');
+            currentElement.style.zIndex = '100';
+            
+            // Clear any click timer
+            if (clickTimer) {
+                clearTimeout(clickTimer);
+                clickTimer = null;
+            }
+        }
+        
+        function handleMouseMove(e) {
+            if (isDragging && currentElement) {
+                moveDrag(e.clientX, e.clientY);
+            }
+        }
+        
+        function handleTouchMove(e) {
+            if (isDragging && currentElement) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                moveDrag(touch.clientX, touch.clientY);
+            }
+        }
+        
+        function moveDrag(clientX, clientY) {
+            const mindmapRect = document.querySelector('.mindmap').getBoundingClientRect();
+            
+            // Calculate new position relative to mindmap container
+            let newX = clientX - mindmapRect.left - offsetX;
+            let newY = clientY - mindmapRect.top - offsetY;
+            
+            // Constrain to mindmap boundaries
+            const elementRect = currentElement.getBoundingClientRect();
+            const maxX = mindmapRect.width - elementRect.width;
+            const maxY = mindmapRect.height - elementRect.height;
+            
+            newX = Math.max(0, Math.min(newX, maxX));
+            newY = Math.max(0, Math.min(newY, maxY));
+            
+            // Apply new position
+            currentElement.style.left = newX + 'px';
+            currentElement.style.top = newY + 'px';
+            currentElement.style.right = 'auto';
+            currentElement.style.bottom = 'auto';
+        }
+        
+        function handleMouseUp(e) {
+            endDrag(e.clientX, e.clientY);
+        }
+        
+        function handleTouchEnd(e) {
+            const touch = e.changedTouches[0];
+            endDrag(touch.clientX, touch.clientY);
+        }
+        
+        function endDrag(clientX, clientY) {
+            if (isDragging && currentElement) {
+                isDragging = false;
+                currentElement.classList.remove('dragging');
+                currentElement.style.zIndex = '5';
+                
+                // Check if this was a click (minimal movement)
+                const moveDistance = Math.sqrt(
+                    Math.pow(clientX - startX, 2) + Math.pow(clientY - startY, 2)
+                );
+                
+                if (moveDistance < 5) {
+                    // This was a click, show popup after a short delay
+                    clickTimer = setTimeout(() => {
+                        showDetailPopup(currentElement);
+                    }, 100);
+                }
+                
+                currentElement = null;
+            }
+        }
+        
+        function showDetailPopup(branch) {
+            const title = branch.querySelector('.branch-title').textContent;
+            const content = branch.querySelector('.branch-content').textContent;
+            const citation = branch.querySelector('.citation').textContent;
+            
+            // Create detailed popup
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+                max-width: 600px;
+                max-height: 70vh;
+                overflow-y: auto;
+                z-index: 1000;
+                font-family: Arial, sans-serif;
+            `;
+            
+            popup.innerHTML = `
+                <h3 style="color: #333; margin-bottom: 15px;">${title}</h3>
+                <div style="color: #666; line-height: 1.6; margin-bottom: 15px;">${content}</div>
+                <div style="color: #888; font-size: 12px; border-top: 1px solid #eee; padding-top: 10px;">${citation}</div>
+                <button onclick="this.parentElement.remove(); document.querySelector('.overlay').remove();" style="
+                    margin-top: 15px;
+                    padding: 8px 16px;
+                    background: #4285f4;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                ">Schließen</button>
+            `;
+            
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 999;
+            `;
+            overlay.onclick = () => {
+                popup.remove();
+                overlay.remove();
+            };
+            
+            document.body.appendChild(overlay);
+            document.body.appendChild(popup);
+        }
+        
+        // Add reset button functionality
+        function addResetButton() {
+            const resetButton = document.createElement('button');
+            resetButton.innerHTML = '🔄 Positionen zurücksetzen';
+            resetButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                background: #4285f4;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 14px;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            `;
+            
+            resetButton.onclick = () => {
+                // Reset all branch positions to original
+                document.querySelectorAll('.branch').forEach(branch => {
+                    branch.style.left = '';
+                    branch.style.top = '';
+                    branch.style.right = '';
+                    branch.style.bottom = '';
+                });
+            };
+            
+            document.body.appendChild(resetButton);
+        }
+        
+        // Add instructions
+        function addInstructions() {
+            const instructions = document.createElement('div');
+            instructions.innerHTML = '💡 Ziehen Sie die Textblöcke frei herum • Klicken für Details';
+            instructions.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0,0,0,0.8);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 20px;
+                font-size: 14px;
+                z-index: 1000;
+                pointer-events: none;
+            `;
+            
+            document.body.appendChild(instructions);
+            
+            // Fade out after 5 seconds
+            setTimeout(() => {
+                instructions.style.opacity = '0';
+                instructions.style.transition = 'opacity 2s';
+                setTimeout(() => instructions.remove(), 2000);
+            }, 5000);
+        }
+        
+        // Initialize additional features
+        document.addEventListener('DOMContentLoaded', () => {
+            addResetButton();
+            addInstructions();
+        });
+        
+        // If DOM already loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                addResetButton();
+                addInstructions();
+            });
+        } else {
+            addResetButton();
+            addInstructions();
+        }
+    </script>
+</body>
+</html>
