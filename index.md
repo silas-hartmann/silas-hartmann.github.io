@@ -2,8 +2,6 @@
 layout: default
 title: Unterrichtsmaterial von Herrn Hartmann
 ---
-![freddie-marriage-vSchPA-YA_A-unsplash](freddie-marriage-vSchPA-YA_A-unsplash.jpg)
-
 # Aktuelles Unterrichtsmaterial
 
 Bitte wähle die richtige Jahrgangsstufe:
@@ -13,7 +11,7 @@ Bitte wähle die richtige Jahrgangsstufe:
 	- [Vulkane](GPG_6/Arbeitsblätter_GPG_6/Vulkane) - [Vulkane_Lösung](GPG_6/Arbeitsblätter_GPG_6/Vulkane_Lösung)
 
 - Klasse 7: ➡️ 
-	- GPG: [Fallanalyse_Niklas_und_Leni](GPG_7/Arbeitsblätter_GPG_7/Fallanalyse_Niklas_und_Leni)
+	- GPG: [Fallanalyse_Niklas_und_Leni](Fallanalyse_Niklas_und_Leni.md)
 	- Kunst: [Vanitas-Stilleben](Kunst_7/Vanitas-Stilleben)
 
  [GG_Art2](GPG_6/Arbeitsblätter_GPG_6/GG_Art2)

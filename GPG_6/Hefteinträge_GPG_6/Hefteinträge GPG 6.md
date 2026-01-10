@@ -101,7 +101,7 @@ Die drei G:
 ---
 ## Wieso wird der Regenwald für Soja abgeholzt?
 
-![Abb_Soja](../../GPG_7/Arbeitsblätter_GPG_7/Abb_Soja.png)
+![Abb_Soja](Abb_Soja.png)
 
 >Merke: Auf den abgeholzten Flächen wird Soja angebaut, das in Deutschland als Tierfutter verwendet wird, für Fleisch- und Milchprodukte. 
 

@@ -11,7 +11,7 @@
 
 # Der Verlauf der Revolution 1848/49
 
-die Ergebnisse dieser Stunde haben wir auf folgendem Arbeitsblatt festgehalten: [Der Verlauf der Revolution 184849 - Lösung](../Arbeitsblätter_GPG_7/Der%20Verlauf%20der%20Revolution%20184849%20-%20Lösung.pdf)
+die Ergebnisse dieser Stunde haben wir auf folgendem Arbeitsblatt festgehalten: [Der Verlauf der Revolution 184849 - Lösung](Der%20Verlauf%20der%20Revolution%20184849%20-%20Lösung.pdf)
 
 # Warum wollte Bismarck Krieg führen?
 
@@ -114,7 +114,7 @@ ___
 
 Arbeitsblatt zu dieser Stunde:
 
-[AB_Pulverfass_Europa](../Arbeitsblätter_GPG_7/1_Weltkrieg/AB_Pulverfass_Europa.pdf)
+[AB_Pulverfass_Europa](AB_Pulverfass_Europa.pdf)
 
 ---
 
@@ -131,7 +131,7 @@ ___
 3. Sie wollten als starke Männer gelten
 4. Sie glaubten an einen schnellen Sieg
 
-Arbeitsblätter aus dieser Stunde: [Bildanalyse_Kriegsbegeisterung](../Arbeitsblätter_GPG_7/1_Weltkrieg/Bildanalyse_Kriegsbegeisterung.pdf), [Kriegsbegeisterung](../Arbeitsblätter_GPG_7/1_Weltkrieg/Kriegsbegeisterung.pdf)
+Arbeitsblätter aus dieser Stunde: [Bildanalyse_Kriegsbegeisterung](Bildanalyse_Kriegsbegeisterung.pdf), [Kriegsbegeisterung](Kriegsbegeisterung.pdf)
 
 ___
 
@@ -143,7 +143,7 @@ Ziel: Deutschland möchte nicht an zwei Fronten gleichzeitig kämpfen.
 
 ![Abb_Schlieffen-Plan](Abb_Schlieffen-Plan.png)
 
-Arbeitsblatt aus dieser Stunde: [Der Schlieffen-Plan](../Arbeitsblätter_GPG_7/1_Weltkrieg/Der%20Schlieffen-Plan.pdf)
+Arbeitsblatt aus dieser Stunde: [Der Schlieffen-Plan](Der%20Schlieffen-Plan.pdf)
 
 ---
 
@@ -169,7 +169,7 @@ ___
 
 >Merke: Es gibt Unzufriedenheit und Angst auch in der Heimat
 
-Arbeitsblatt zu dieser Stunde: [Das Leben in der Heimat](../Arbeitsblätter_GPG_7/Das%20Leben%20in%20der%20Heimat.pdf)
+Arbeitsblatt zu dieser Stunde: [Das Leben in der Heimat](Das%20Leben%20in%20der%20Heimat.pdf)
 
 ___
 # Warum war der erste Weltkrieg ein WELTkrieg? 
@@ -184,7 +184,7 @@ zum Beispiel:
 
 > 💡Merke: der erste Weltkrieg fand auf der ganzen Welt statt, auch wegen des europäischen Kolonialismus!
 
-[Arbeitsblätter aus dieser Stunde](../Arbeitsblätter_GPG_7/Thema-der-erste-Weltkrieg_ein-globaler-Krieg)
+[Arbeitsblätter aus dieser Stunde](Thema-der-erste-Weltkrieg_ein-globaler-Krieg.md)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 → **Waffenstillstand, Deutschland verliert den Krieg**
 
-[Arbeitsblätter aus dieser Stunde](../Arbeitsblätter_GPG_7/Das_Ende_des_ersten_Weltkriegs)
+[Arbeitsblätter aus dieser Stunde](Das_Ende_des_ersten_Weltkriegs.md)
 
 ___
 
