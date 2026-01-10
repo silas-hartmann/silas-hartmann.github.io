@@ -17,9 +17,29 @@ Wir haben gelernt, wie schlecht es den Arbeitern während der Industrialisierung
 
 ---
 
+## Warum reichte das manchen nicht? – Die Idee von Marx und Engels
+
+**Wer waren Karl Marx und Friedrich Engels?**
+
+Karl Marx (1818–1883) war ein deutscher Philosoph und Journalist. Friedrich Engels (1820–1895) war der Sohn eines reichen Fabrikbesitzers. Obwohl Engels selbst zur Oberschicht gehörte, sah er in den Fabriken seines Vaters in England, wie schlecht es den Arbeitern ging. Die beiden lernten sich kennen und wurden Freunde. Gemeinsam entwickelten sie eine neue Theorie.
+
+**Was war das Problem aus ihrer Sicht?**
+
+Marx und Engels sagten: Das Problem liegt nicht an einzelnen bösen Fabrikbesitzern. Das Problem ist das **ganze System** – der **Kapitalismus**. 
+
+Im Kapitalismus besitzen wenige reiche Menschen (die **Fabrikbesitzer**) alle Fabriken und Maschinen. Die Arbeiter besitzen nichts außer ihrer Arbeitskraft. Sie müssen für die Fabrikbesitzer arbeiten, um Geld zum Leben zu verdienen. 
+
+Marx meinte: Egal wie viel die Kirche hilft oder wie nett einzelne Unternehmer sind – solange die Fabriken wenigen Reichen gehören, werden die Arbeiter immer arm bleiben. Die Fabrikbesitzer werden immer mehr Gewinn machen wollen und deshalb die Löhne niedrig halten.
+
+**Was war ihre Lösung?**
+
+Marx und Engels forderten: Die Arbeiter sollen sich zusammenschließen und eine **Revolution** machen. Danach sollen die Fabriken nicht mehr einzelnen Reichen gehören, sondern **allen gemeinsam**. Diese Idee nannten sie **Kommunismus** (von lateinisch „communis" = gemeinsam).
+
+---
+
 ## Quelle: Aus dem Kommunistischen Manifest (1848)
 
-Karl Marx und Friedrich Engels schrieben 1848 ein berühmtes Buch. Sie wollten erklären, warum die Arbeiter arm bleiben – obwohl die Fabriken immer reicher werden. Hier ein Auszug in vereinfachter Sprache:
+1848 schrieben Marx und Engels ihre Ideen in einem Buch auf: dem **Kommunistischen Manifest**. Es wurde eines der einflussreichsten Bücher der Geschichte. Hier ein Auszug in vereinfachter Sprache:
 
 > **Originalzitat (vereinfacht):**
 >
@@ -29,7 +49,9 @@ Karl Marx und Friedrich Engels schrieben 1848 ein berühmtes Buch. Sie wollten e
 >
 > Die Fabrikbesitzer haben die alte versteckte Ausbeutung ersetzt durch eine **offene, direkte Ausbeutung**. Sie verstecken nicht mehr, dass es nur um Geld geht."
 >
-> *(Aus: Das Kommunistische Manifest, 1848)*
+> *(Aus: Das Kommunistische Manifest, 1848) - [hier geht es zum Originaltext](https://ia802808.us.archive.org/9/items/manifest-der-kommunistischen-pa-karl-marx/Manifest%20der%20Kommunistischen%20Pa%20-%20Karl%20Marx.pdf)
+
+Das Manifest endet mit dem berühmten Aufruf: **„Proletarier aller Länder, vereinigt euch!"**
 
 ---
 
@@ -63,30 +85,35 @@ Was kritisiert Marx an der Arbeit in der Fabrik? (Mehrere Antworten möglich)
 
 ---
 
-## Die Lösung von Marx und Engels
+### Aufgabe 4 [SC]
+Warum reichten laut Marx die Hilfen von Kirchen und einzelnen Unternehmern nicht aus?
+- Weil es zu wenige Kirchen gab
+- Weil das ganze System (Kapitalismus) das Problem ist – nicht einzelne Personen (richtig)
+- Weil die Arbeiter die Hilfe nicht annehmen wollten
+- Weil die Unternehmer zu arm waren
 
-Marx und Engels glaubten: Das Problem liegt nicht an einzelnen bösen Chefs. Das Problem ist das **ganze System**. Deshalb forderten sie:
+---
+
+## Die Forderungen von Marx und Engels
 
 | Forderung | Bedeutung |
 |-----------|-----------|
 | Arbeiter sollen sich zusammenschließen | Gemeinsam sind sie stärker als allein |
 | Fabriken sollen allen gehören | Nicht einzelne Reiche sollen alles besitzen |
-| Es soll eine Revolution geben | Das alte System muss gestürzt werden |
-
-Diese Idee nannten sie **Kommunismus** (von lateinisch „communis" = gemeinsam).
+| Es soll eine Revolution geben | Das alte System (Kapitalismus) muss gestürzt werden |
 
 ---
 
-### Aufgabe 4 [LÜCKE]
+### Aufgabe 5 [LÜCKE]
 Vervollständige den Text über die Ideen von Marx und Engels:
 
-Marx und Engels glaubten, dass das Problem nicht an einzelnen Chefs liegt, sondern am ganzen [System]. Sie forderten, dass die [Arbeiter] sich zusammenschließen sollten. Die [Fabriken] sollten nicht einzelnen Reichen gehören, sondern [allen]. Um das zu erreichen, sollte es eine [Revolution] geben.
+Marx und Engels glaubten, dass das Problem nicht an einzelnen Chefs liegt, sondern am ganzen [System]. Dieses System nannten sie [Kapitalismus]. Sie forderten, dass die [Arbeiter] sich zusammenschließen sollten. Die [Fabriken] sollten nicht einzelnen Reichen gehören, sondern [allen]. Um das zu erreichen, sollte es eine [Revolution] geben.
 
-Lücken: System, Arbeiter, Fabriken, allen, Revolution
+Lücken: System, Kapitalismus, Arbeiter, Fabriken, allen, Revolution
 
 ---
 
-### Aufgabe 5 [SC]
+### Aufgabe 6 [SC]
 Warum heißt die Idee von Marx „Kommunismus"?
 - Weil Marx aus einer Kommune (Gemeinde) kam
 - Weil das Wort von „communis" (lateinisch: gemeinsam) kommt und alles der Gemeinschaft gehören sollte (richtig)
@@ -97,34 +124,36 @@ Warum heißt die Idee von Marx „Kommunismus"?
 
 ## Was kam danach? Die Folgen
 
-Das Kommunistische Manifest von 1848 veränderte die Geschichte. Hier sind die wichtigsten Ereignisse:
+Das Kommunistische Manifest hatte große Auswirkungen auf die Geschichte:
 
-| Jahr | Ereignis |
-|------|----------|
-| 1848 | Das Kommunistische Manifest erscheint |
-| 1863 | Ferdinand Lassalle gründet den ersten deutschen Arbeiterverein (Vorläufer der SPD) |
-| 1917 | In Russland gibt es eine kommunistische Revolution |
-| 1949 | Die DDR wird nach kommunistischem Vorbild gegründet |
+| Jahr | Ereignis | Erklärung |
+|------|----------|-----------|
+| 1848 | Das Kommunistische Manifest erscheint | Marx und Engels schreiben ihre Ideen auf |
+| 1863 | Gründung des ersten deutschen Arbeitervereins | Ferdinand Lassalle gründet eine Partei für Arbeiter (Vorläufer der SPD) |
+| 1917 | Kommunistische Revolution in Russland | Die Arbeiter stürzen den Zaren und gründen die Sowjetunion nach Marx' Ideen |
+| 1949 | Gründung der DDR | Nach dem 2. Weltkrieg wird Ostdeutschland ein kommunistischer Staat |
+| 1989/90 | Ende der DDR und der Sowjetunion | Die kommunistischen Staaten scheitern und lösen sich auf |
 
 ---
 
-### Aufgabe 6 [ORDER]
+### Aufgabe 7 [ORDER]
 Bringe die Ereignisse in die richtige zeitliche Reihenfolge:
 
 1. Das Kommunistische Manifest erscheint (1848)
 2. Ferdinand Lassalle gründet den ersten deutschen Arbeiterverein (1863)
 3. Kommunistische Revolution in Russland (1917)
 4. Gründung der DDR (1949)
+5. Ende der DDR und der Sowjetunion (1989/90)
 
 ---
 
-### Aufgabe 7 [MC]
+### Aufgabe 8 [MC]
 Welche Aussagen über die Folgen des Kommunistischen Manifests sind richtig?
 - Es führte zur Gründung von Arbeiterparteien in Deutschland (richtige Option)
 - Es hatte Einfluss auf die Revolution in Russland 1917 (richtige Option)
 - Es führte sofort 1848 zu einer erfolgreichen Revolution in Deutschland
 - Die Ideen beeinflussten die Gründung der DDR (richtige Option)
-- Es wurde von allen Regierungen sofort akzeptiert
+- Die kommunistischen Staaten bestehen bis heute erfolgreich
 
 ---
 
@@ -132,26 +161,28 @@ Welche Aussagen über die Folgen des Kommunistischen Manifests sind richtig?
 
 | Begriff | Bedeutung |
 |---------|-----------|
+| **Kapitalismus** | Wirtschaftssystem, in dem Fabriken und Maschinen einzelnen Personen (Privateigentum) gehören |
 | **Kommunismus** | Idee, dass alle Fabriken und Güter der Gemeinschaft gehören sollen, nicht einzelnen Reichen |
 | **Revolution** | Gewaltsamer Umsturz der Regierung / des Systems |
 | **Proletariat** | Alle Arbeiter zusammen (die nichts besitzen außer ihrer Arbeitskraft) |
 
 ---
 
-### Aufgabe 8 [LÜCKE]
+### Aufgabe 9 [LÜCKE]
 Vervollständige die Definitionen:
 
+Der [Kapitalismus] ist ein Wirtschaftssystem, in dem Fabriken einzelnen Personen gehören.
 Der [Kommunismus] ist die Idee, dass alle Fabriken und Güter der Gemeinschaft gehören sollen.
 Eine [Revolution] bedeutet einen gewaltsamen Umsturz des Systems.
 Das [Proletariat] bezeichnet alle Arbeiter, die nichts besitzen außer ihrer Arbeitskraft.
 
-Lücken: Kommunismus, Revolution, Proletariat
+Lücken: Kapitalismus, Kommunismus, Revolution, Proletariat
 
 ---
 
 ## Besinnung: Was denkst du?
 
-### Aufgabe 9 [OFFEN]
+### Aufgabe 10 [OFFEN]
 Marx sagte: „Wenn die Arbeiter sich nicht zusammenschließen und das System ändern, werden die Reichen immer reicher und die Armen immer ärmer."
 
 Hatte Marx recht? Begründe deine Meinung mit mindestens zwei Argumenten. Du kannst dabei auch überlegen:
@@ -165,7 +196,7 @@ Antwort: Diese Frage kann unterschiedlich beantwortet werden. Mögliche Argument
 
 ## Merksatz
 
-> **Einige Denker wie Karl Marx und Friedrich Engels glaubten, dass nur eine Revolution und die Abschaffung des Privateigentums die soziale Frage lösen könne. Diese Idee nannte man Kommunismus. Sie führte zur Gründung von Arbeiterparteien und beeinflusste die Geschichte des 20. Jahrhunderts stark (z.B. Russische Revolution 1917, DDR).**
+> **Einige Denker wie Karl Marx und Friedrich Engels glaubten, dass der Kapitalismus (Privateigentum an Fabriken) das eigentliche Problem sei. Nur eine Revolution und die Abschaffung des Privateigentums könne die soziale Frage lösen. Diese Idee nannte man Kommunismus. Sie führte zur Gründung von Arbeiterparteien und beeinflusste die Geschichte des 20. Jahrhunderts stark (z.B. Russische Revolution 1917, DDR). Die kommunistischen Staaten scheiterten jedoch später.**
 
 ---
 
