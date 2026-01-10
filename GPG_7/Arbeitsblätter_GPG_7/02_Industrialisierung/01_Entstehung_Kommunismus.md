@@ -40,7 +40,10 @@ Marx und Engels forderten: Die Arbeiter sollen sich zusammenschließen und eine 
 > _(Aus: Das Kommunistische Manifest, 1848. Hier geht's zur [Originalquelle](https://ia802808.us.archive.org/9/items/manifest-der-kommunistischen-pa-karl-marx/Manifest%20der%20Kommunistischen%20Pa%20-%20Karl%20Marx.pdf))_
 
 Das Manifest endet mit dem berühmten Aufruf: **„Proletarier aller Länder, vereinigt euch!"**
-Mit **Proletariern** meinen sie alle Arbeiter zusammen. 
+Mit **Proletariern** meinen sie alle Arbeiter zusammen. Dieses Zitat ist oft auf Plakaten kommunistischer Bewegungen zu finden. 
+
+![[13prold.jpg]]
+
 
 ### Wichtige Begriffe
 
@@ -49,9 +52,6 @@ Mit **Proletariern** meinen sie alle Arbeiter zusammen.
 | **Kapitalismus** | Wirtschaftssystem, in dem Fabriken und Maschinen einzelnen Personen (Privateigentum) gehören |
 | **Kommunismus**  | Idee, dass alle Fabriken und Güter der Gemeinschaft gehören sollen, nicht einzelnen Reichen  |
 | **Proletariat**  | Alle Arbeiter zusammen (die nichts besitzen außer ihrer Arbeitskraft)                        |
-### Was kam danach?
-
-Das Kommunistische Manifest hatte große Auswirkungen: Es führte zur Gründung von Arbeiterparteien in Deutschland (1863), zur Revolution in Russland (1917) und zur Gründung der DDR (1949). Die kommunistischen Staaten scheiterten jedoch später – die DDR und die Sowjetunion lösten sich 1989/90 auf.
 
 ---
 
@@ -101,3 +101,14 @@ Warum heißt die Idee von Marx „Kommunismus"?
 - Weil das Wort von „communis" (lateinisch: gemeinsam) kommt und alles der Gemeinschaft gehören sollte (richtig)
 - Weil die ersten Anhänger in einer Kommunikationsfirma arbeiteten
 - Weil Marx mit vielen Menschen kommunizierte
+
+
+### 🚀 #1 Was kam danach?
+
+Das Kommunistische Manifest hatte große Auswirkungen: Es führte zur Gründung von Arbeiterparteien in Deutschland (1863), zur Revolution in Russland (1917) und zur Gründung der DDR (1949). Die kommunistischen Staaten scheiterten jedoch später – die DDR und die Sowjetunion lösten sich 1989/90 auf.
+
+### 🚀 #2 Raketenaufgabe
+
+[hier](https://www.youtube.com/watch?v=JrBVwXKc5FU) findest du weitere Informationen zu dem Thema. 
+
+
