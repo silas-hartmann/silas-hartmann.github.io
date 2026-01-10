@@ -4,7 +4,7 @@ title: Warum wollten manche das ganze System verändern?
 ---
 # Warum wollten manche das ganze System verändern?
 
-![friedrich-engels-karl-marx-100_t-1520341791753_v-16to9](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/friedrich-engels-karl-marx-100_t-1520341791753_v-16to9.jpg)
+![friedrich-engels-karl-marx-100_t-1520341791753_v-16to9](http://blog.uwe-wittstock.de/wp-content/uploads/2018/04/friedrich-engels-karl-marx-100_t-1520341791753_v-16to9.jpg)
 
 ### Wer waren Karl Marx und Friedrich Engels?
 
@@ -25,7 +25,7 @@ Marx und Engels forderten: Die Arbeiter sollen sich zusammenschließen und eine 
 
 ### Aus dem Kommunistischen Manifest (1848)
 
-![undefined|300](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Communist-manifesto.png/960px-Communist-manifesto.png)
+![kommunistischesMAnifest_Titelbild](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Communist-manifesto.png/960px-Communist-manifesto.png)
 
 1848 schrieben Marx und Engels ihre Ideen in einem Buch auf: dem **Kommunistischen Manifest**. Es wurde eines der einflussreichsten Bücher der Geschichte. Hier ein Auszug in vereinfachter Sprache:
 
