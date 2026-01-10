@@ -4,7 +4,7 @@ title: Warum wollten manche das ganze System verändern?
 ---
 # Warum wollten manche das ganze System verändern?
 
-![[friedrich-engels-karl-marx-100_t-1520341791753_v-16to9.jpg]]
+![friedrich-engels-karl-marx-100_t-1520341791753_v-16to9](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/friedrich-engels-karl-marx-100_t-1520341791753_v-16to9.jpg)
 
 ### Wer waren Karl Marx und Friedrich Engels?
 
@@ -42,7 +42,7 @@ Marx und Engels forderten: Die Arbeiter sollen sich zusammenschließen und eine 
 Das Manifest endet mit dem berühmten Aufruf: **„Proletarier aller Länder, vereinigt euch!"**
 Mit **Proletariern** meinen sie alle Arbeiter zusammen. Dieses Zitat ist oft auf Plakaten kommunistischer Bewegungen zu finden. 
 
-![[13prold.jpg]]
+![13prold](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/13prold.jpg)
 
 
 ### Wichtige Begriffe
