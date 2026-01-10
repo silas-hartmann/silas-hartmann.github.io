@@ -154,7 +154,7 @@ Bewerte die folgenden Aussagen (wähle alle FALSCHEN Aussagen):
 Erinnerst du dich an den **Wasserkreislauf**? Normalerweise funktioniert er so: Die Sonne lässt Wasser aus Meeren und Flüssen verdunsten. Der Wasserdampf steigt auf, bildet Wolken und regnet wieder ab. Das Regenwasser versickert im Boden oder fließt langsam zurück in die Flüsse. So bleibt alles im Gleichgewicht.
 
 ![Grafik_Wasserkreislauf](https://www.wv-nord.de/images/grafiken/wasserkreislauf_wvnord.jpg?m=1572953862)
-*Du willst nochmal das Arbeitsblatt zum Wasserkreislauf üben? [➡️ Hier geht's lang...](Wasserkreislauf)
+*Du willst nochmal das Arbeitsblatt zum Wasserkreislauf üben? [➡️ Hier geht's lang...](GPG_6/Arbeitsblätter_GPG_6/Wasserkreislauf.md)
 
 
 **Aber im Ahrtal 2021 wurde dieser natürliche Kreislauf gestört:**

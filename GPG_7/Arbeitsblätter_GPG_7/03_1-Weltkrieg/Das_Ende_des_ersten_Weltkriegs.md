@@ -8,13 +8,13 @@
 
 Dafür gibt es mehrere Gründe: 
 
-- [Politische Revolutionen](Politische_Revolutionen.md)
-- [Militärische Niederlage](Militärische_Niederlage.md)
-- [wirtschaftliche und gesellschaftliche Erschöpfung](wirtschaftliche_und_gesellschaftliche_Erschöpfung.md)
-- [Kriegseintritt der USA](Kriegseintritt_der%20USA.md)
+- [Politische Revolutionen](Politische_Revolutionen.md.md)
+- [Militärische Niederlage](Militärische_Niederlage.md.md)
+- [wirtschaftliche und gesellschaftliche Erschöpfung](wirtschaftliche_und_gesellschaftliche_Erschöpfung.md.md)
+- [Kriegseintritt der USA](Kriegseintritt_der%20USA.md.md)
 
 
 ---
 
-🏠 zurück zur [Startseite](index)
+🏠 zurück zur [Startseite](index.md)
 

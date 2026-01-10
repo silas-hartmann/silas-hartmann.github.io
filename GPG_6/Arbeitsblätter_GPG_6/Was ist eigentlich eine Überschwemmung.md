@@ -5,8 +5,8 @@
 
 ## 📝 Zu den Arbeitsblättern:
 
-1. [Was ist überhaupt eine Überschwemmung?](Arbeitsblätter_GPG_6/ueberschwemmung-ahrtal) - am Mittwoch angefangen
-2. [Was passierte bei der Überschwemmung im Ahrtal?](Arbeitsblätter_GPG_6/Flutkatastrophe_Ahrtal) - NEU
+1. [Was ist überhaupt eine Überschwemmung?](GPG_6/Arbeitsblätter_GPG_6/ueberschwemmung-ahrtal.md) - am Mittwoch angefangen
+2. [Was passierte bei der Überschwemmung im Ahrtal?](GPG_6/Arbeitsblätter_GPG_6/Flutkatastrophe_Ahrtal.md) - NEU
 
 
 ---

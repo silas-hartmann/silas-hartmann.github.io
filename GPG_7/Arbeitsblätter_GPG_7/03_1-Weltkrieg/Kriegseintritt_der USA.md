@@ -52,4 +52,4 @@ Gegen diese neue Übermacht konnte Deutschland langfristig nicht bestehen. Die a
 <span style="color:rgb(255, 148, 148)">Wie hat das, was du gerade kennengelernt hast, zum Ende des Krieges geführt?</span>
 Schreibe dir einen Satz in eigenen Worten auf einen Notizzettel!
 
-Danach kannst du deine Ergebnisse unten kontrollieren und 🏠 zurück zur [Übersicht](Das_Ende_des_ersten_Weltkriegs.md)
+Danach kannst du deine Ergebnisse unten kontrollieren und 🏠 zurück zur [Übersicht](Das_Ende_des_ersten_Weltkriegs.md.md)
