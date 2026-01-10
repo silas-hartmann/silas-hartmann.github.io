@@ -1,0 +1,39 @@
+# Jekyll-Konfiguration für Schulmaterial
+# Theme: Cayman (offiziell von GitHub Pages unterstützt)
+
+# Theme-Einstellung
+theme: jekyll-theme-cayman
+
+# Basis-Informationen
+title: Unterrichtsmaterial
+description: Interaktive Arbeitsblätter und Materialien für den Unterricht
+author: Silas Hartmann
+
+# URL-Einstellungen (für GitHub Pages)
+# baseurl: "" # wenn im Root
+# url: "https://silas-hartmann.github.io"
+
+# Markdown-Einstellungen
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# Plugins (automatisch von GitHub Pages geladen)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Build-Einstellungen
+exclude:
+  - .obsidian/
+  - README.md
+  - .env
+  - Gemfile
+  - Gemfile.lock
+
+# Theme-spezifische Einstellungen
+show_downloads: false
+
+# Custom Head wird automatisch eingebunden über _includes/head-custom.html
