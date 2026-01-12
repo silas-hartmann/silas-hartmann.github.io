@@ -4,7 +4,21 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
-[01_Entstehung_Kommunismus](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/01_Entstehung_Kommunismus.md)
-[fluter_Grafik_Reichtum_Deutschland](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/fluter_Grafik_Reichtum_Deutschland.pdf)
+
+## GPG 7: Kommunismus
+
+- [01_Entstehung_Kommunismus](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/01_Entstehung_Kommunismus.md)
+- [02_Grafik_Reichtum](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/fluter_Grafik_Reichtum_Deutschland.pdf)
+- [PPT_Kommunismus](https://www.canva.com/design/DAG-BI7PymI/7c_K8DD6IDR09gFmZL1Qiw/view?utm_content=DAG-BI7PymI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h30bb11adb8)
+
+## GPG 7: Revolution 1848/49
+
+- [[02_Revolution_1848_49_AB]]
+- [[03_Ende_der_Revolution_48_49]]
+- [PPT_Revolution_48_49](https://www.canva.com/design/DAG-BwW_oBU/i6P7fuAtWXJIyV89Bg7VQQ/view?utm_content=DAG-BwW_oBU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3b10a5c334)
+
+
+
+
 
 
