@@ -1,10 +1,10 @@
 # Die Revolution von 1848/49 in Deutschland
 
 Inhalt: 
-- [[#1. Die Situation vor der Revolution (Vormärz 1815-1848)]]
-- [[#2. Die soziale Not (Pauperismus 1846-1847)]]
-- [[#3. Das französische Vorbild (Februar 1848)]]
-- [[#4. Die Märzforderungen]]
+- [#1. Die Situation vor der Revolution (Vormärz 1815-1848)](#1.%20Die%20Situation%20vor%20der%20Revolution%20(Vormärz%201815-1848))
+- [#2. Die soziale Not (Pauperismus 1846-1847)](#2.%20Die%20soziale%20Not%20(Pauperismus%201846-1847))
+- [#3. Das französische Vorbild (Februar 1848)](#3.%20Das%20französische%20Vorbild%20(Februar%201848))
+- [#4. Die Märzforderungen](#4.%20Die%20Märzforderungen)
 
 ### 1. Die Situation vor der Revolution (Vormärz 1815-1848)
 

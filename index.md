@@ -13,8 +13,8 @@ title: Unterrichtsmaterial von Herrn Hartmann
 
 ## GPG 7: Revolution 1848/49
 
-- [[02_Revolution_1848_49_AB]]
-- [[03_Ende_der_Revolution_48_49]]
+- [02_Revolution_1848_49_AB](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/02_Revolution_1848_49_AB.md)
+- [03_Ende_der_Revolution_48_49](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/03_Ende_der_Revolution_48_49.md)
 - [PPT_Revolution_48_49](https://www.canva.com/design/DAG-BwW_oBU/i6P7fuAtWXJIyV89Bg7VQQ/view?utm_content=DAG-BwW_oBU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3b10a5c334)
 
 
