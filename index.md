@@ -18,6 +18,10 @@ title: Unterrichtsmaterial von Herrn Hartmann
 - [PPT_Revolution_48_49](https://www.canva.com/design/DAG-BwW_oBU/i6P7fuAtWXJIyV89Bg7VQQ/view?utm_content=DAG-BwW_oBU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3b10a5c334)
 
 
+### Hefteinträge
+
+- [TB_Lösungsansätze_Kirche_und_Unternehmer](GPG_7/Hefteinträge_GPG7/TB_Lösungsansätze_Kirche_und_Unternehmer.png)
+
 
 
 
