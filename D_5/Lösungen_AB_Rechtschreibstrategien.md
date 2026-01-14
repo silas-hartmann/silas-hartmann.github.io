@@ -69,7 +69,7 @@
 |er kleb_|kle-ben|**b** → klebt|
 |sie lob_|lo-ben|**b** → lobt|
 |er fin_et|fin-den|**d** → findet|
-|sie frag_|fra-gen|**g** → fragt|
+|sie fragt|_(bereits vollständig)_|_(kein Lückenwort)_|
 |er leg_|le-gen|**g** → legt|
 
 ---
@@ -145,7 +145,7 @@
 
 |Wortstamm|ver-|be-|ent-|er-|
 |---|---|---|---|---|
-|fahren|verfahren|befahren|—|erfahren|
+|fahren|verfahren|befahren|entfahren|erfahren|
 |suchen|versuchen|besuchen|—|ersuchen|
 |kommen|verkommen|bekommen|entkommen|—|
 |schließen|verschließen|beschließen|entschließen|erschließen|
@@ -162,7 +162,7 @@ _(— bedeutet: Dieses Wort gibt es nicht)_
 |das Glück|+ lich|glücklich|
 |lösen|+ bar|lösbar|
 |der Hunger|+ ig|hungrig|
-|die Freude|+ ig|freud**ig** _(nicht -lich!)_|
+|die Freude|+ lich|_(existiert nicht – korrekt wäre: freudig)_|
 |essen|+ bar|essbar|
 
 ---
