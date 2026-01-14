@@ -17,6 +17,9 @@ title: Unterrichtsmaterial von Herrn Hartmann
 - [03_Ende_der_Revolution_48_49](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/03_Ende_der_Revolution_48_49.md)
 - [PPT_Revolution_48_49](https://www.canva.com/design/DAG-BwW_oBU/i6P7fuAtWXJIyV89Bg7VQQ/view?utm_content=DAG-BwW_oBU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3b10a5c334)
 
+### D 5: Rechtschreibstrategien
+
+- [Lösungen_AB_Rechtschreibstrategien](D_5/Lösungen_AB_Rechtschreibstrategien.md)
 
 ### Hefteinträge
 
