@@ -1289,6 +1289,7 @@ function checkAllAnswers() {
         <h3>📚 Weiter üben!</h3>
         <p>Du hast ${percentageCorrect}% richtig. Schau dir die Lösungen an und versuche es nochmal!</p>
         <p><em>Für das Codewort benötigst du mindestens 80% richtige Antworten.</em></p>
+        <p style="margin-top: 15px;"><strong>🔄 Klicke auf den Neu-Laden-Button unten rechts, um das Quiz zurückzusetzen und es erneut zu versuchen.</strong></p>
       `;
       resultDiv.appendChild(encouragementDiv);
     }
