@@ -479,10 +479,10 @@ img {
 
 .md-button {
   display: inline-block;
-  background-color: #A9E2EA;
+  background-color: #94D3C6;
   color: #2d2d2d;
-  padding: 0.6em 1.4em;
-  border-radius: 8px;
+  padding: 0.4em 1em;
+  border-radius: 6px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -492,7 +492,7 @@ img {
 }
 
 .md-button:hover {
-  background-color: #8fd4de;
+  background-color: #7ac4b7;
   color: #2d2d2d;
   text-decoration: none;
   transform: translateY(-1px);
