@@ -231,8 +231,10 @@
     }
     await mermaid.run();
     
-    // Nach dem Rendering: Textfarben anpassen
-    document.querySelectorAll('.mermaid').forEach(adjustTextColors);
+    // Nach dem Rendering: Textfarben anpassen (mit kurzem Delay für vollständiges Rendering)
+    setTimeout(() => {
+      document.querySelectorAll('.mermaid').forEach(adjustTextColors);
+    }, 100);
   });
 </script>
 <style>
