@@ -254,108 +254,211 @@ img {
 
 /* ===== ANPASSUNGEN FÜR BESTEHENDE KOMPONENTEN ===== */
 
-/* Quiz-Komponenten anpassen (nur Hintergrund-Kontrast) */
+/* Quiz-Komponenten anpassen für Dark Mode */
 .interactive-quiz-question {
-  background-color: var(--bg-secondary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.formatted-question {
-  background-color: #353535;
-}
-
-.option-label:hover {
-  background-color: #404040;
-}
-
-.quiz-total-result {
-  background-color: rgba(128, 173, 199, 0.15);
-  color: var(--accent-1);
-  border-left-color: var(--accent-1);
-}
-
-.check-all-answers-btn {
-  background-color: var(--accent-1);
-  color: var(--bg-primary);
-}
-
-.check-all-answers-btn:hover {
-  background-color: var(--accent-2);
-}
-
-/* Lückentext und Drag&Drop */
-.gap-words-container {
-  background-color: rgba(128, 173, 199, 0.1);
-  border-color: var(--accent-1);
-}
-
-.gap-word {
-  background-color: rgba(128, 173, 199, 0.2);
-  border-color: var(--accent-1);
+  background-color: #363636 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   color: var(--text-normal);
 }
 
-.gap-word:hover {
-  background-color: rgba(128, 173, 199, 0.3);
+.formatted-question {
+  background-color: #3a3a3a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.question-prompt {
+  color: var(--text-normal);
+}
+
+/* Multiple Choice */
+.option-label {
+  color: var(--text-normal);
+}
+
+.option-label:hover {
+  background-color: #454545 !important;
+}
+
+.option-label.correct-option {
+  background-color: rgba(40, 167, 69, 0.2) !important;
+}
+
+/* Reihenfolge-Aufgaben */
+.order-number {
+  color: var(--text-muted);
 }
 
 .order-item {
-  background-color: #353535;
-  border-color: #4a4a4a;
+  background-color: #3a3a3a !important;
+  border-color: #505050 !important;
   color: var(--text-normal);
 }
 
 .order-item:hover {
-  background-color: #404040;
+  background-color: #454545 !important;
 }
 
 .order-item.selected {
-  background-color: rgba(128, 173, 199, 0.2);
-  border-color: var(--accent-1);
+  background-color: rgba(128, 173, 199, 0.25) !important;
+  border-color: var(--accent-1) !important;
 }
 
-/* Textfelder */
-.text-answer,
-.gap-input {
-  background-color: #353535;
-  border-color: #4a4a4a;
+.order-item.dragging {
+  background-color: #404040 !important;
+}
+
+.order-item-handle {
+  color: var(--text-muted);
+}
+
+.order-control-button {
+  background-color: #3a3a3a !important;
+  border-color: #505050 !important;
   color: var(--text-normal);
 }
 
-.text-answer:focus,
+.order-control-button:hover {
+  background-color: #454545 !important;
+}
+
+.correct-order {
+  background-color: rgba(128, 173, 199, 0.1) !important;
+  border-left-color: var(--accent-1) !important;
+  color: var(--text-normal);
+}
+
+/* Lückentext */
+.gap-text-container {
+  color: var(--text-normal);
+}
+
+.gap-input {
+  background-color: #3a3a3a !important;
+  border-color: #606060 !important;
+  color: var(--text-normal);
+}
+
 .gap-input:focus {
-  border-color: var(--accent-1);
+  border-color: var(--accent-1) !important;
   box-shadow: 0 0 0 2px rgba(128, 173, 199, 0.25);
 }
 
-/* Lösung Container */
-.solution-container,
-.correct-order {
-  background-color: rgba(128, 173, 199, 0.1);
-  border-left-color: var(--accent-1);
+.gap-dropzone {
+  border-color: #606060 !important;
+  color: var(--text-muted);
+  background-color: #3a3a3a;
+}
+
+.gap-dropzone.dragover {
+  border-color: var(--accent-1) !important;
+  background-color: rgba(128, 173, 199, 0.15) !important;
+}
+
+.gap-dropzone.filled {
+  background-color: #404040 !important;
+  border-color: #81c784 !important;
+  color: var(--text-normal);
+}
+
+.gap-words-container {
+  background-color: rgba(128, 173, 199, 0.1) !important;
+  border-color: var(--accent-1) !important;
+  color: var(--text-normal);
+}
+
+.gap-word {
+  background-color: rgba(128, 173, 199, 0.2) !important;
+  border-color: var(--accent-1) !important;
+  color: var(--text-normal);
+}
+
+.gap-word:hover {
+  background-color: rgba(128, 173, 199, 0.35) !important;
+}
+
+.gap-word.dragging {
+  background-color: rgba(128, 173, 199, 0.4) !important;
+}
+
+/* Offene Fragen */
+.text-answer {
+  background-color: #3a3a3a !important;
+  border-color: #505050 !important;
+  color: var(--text-normal);
+}
+
+.text-answer:focus {
+  border-color: var(--accent-1) !important;
+}
+
+.solution-container {
+  background-color: rgba(128, 173, 199, 0.1) !important;
+  border-left-color: var(--accent-1) !important;
 }
 
 .solution-container h4 {
-  color: var(--accent-1);
+  color: var(--accent-1) !important;
 }
 
-/* Feedback-Farben beibehalten, aber anpassen */
+.solution-text {
+  background-color: #3a3a3a !important;
+  color: var(--text-normal);
+}
+
+/* Selbstbewertung */
+.assessment-button {
+  background-color: #3a3a3a !important;
+  border-color: #505050 !important;
+  color: var(--text-normal);
+}
+
+.assessment-button:hover {
+  background-color: #454545 !important;
+}
+
+.assessment-button.selected {
+  background-color: var(--accent-1) !important;
+  color: #1a1a1a !important;
+  border-color: var(--accent-1) !important;
+}
+
+/* Ergebnis und Buttons */
+.quiz-total-result {
+  background-color: rgba(128, 173, 199, 0.15) !important;
+  color: var(--accent-1) !important;
+  border-left-color: var(--accent-1) !important;
+}
+
+.check-all-answers-btn {
+  background-color: var(--accent-1) !important;
+  color: #1a1a1a !important;
+}
+
+.check-all-answers-btn:hover {
+  background-color: var(--accent-2) !important;
+}
+
+/* Feedback */
+.feedback {
+  color: var(--text-normal);
+}
+
 .feedback.correct {
-  background-color: rgba(76, 175, 80, 0.2);
-  color: #81c784;
+  background-color: rgba(76, 175, 80, 0.2) !important;
+  color: #81c784 !important;
 }
 
 .feedback.incorrect {
-  background-color: rgba(244, 67, 54, 0.2);
-  color: #e57373;
+  background-color: rgba(244, 67, 54, 0.2) !important;
+  color: #e57373 !important;
 }
 
 .feedback.no-answer {
-  background-color: rgba(255, 193, 7, 0.2);
-  color: #ffd54f;
+  background-color: rgba(255, 193, 7, 0.2) !important;
+  color: #ffd54f !important;
 }
 
 .feedback.info {
-  background-color: rgba(128, 173, 199, 0.15);
-  color: var(--accent-1);
+  background-color: rgba(128, 173, 199, 0.15) !important;
+  color: var(--accent-1) !important;
 }
