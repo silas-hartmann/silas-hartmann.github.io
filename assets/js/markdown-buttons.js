@@ -2,6 +2,7 @@
  * Markdown Button Parser
  * Erkennt {button: (Beschriftung)(link)} und wandelt es in Buttons um
  * Syntax: {button: (Button Text)(pfad/zur/datei.md)}
+ * Mehrere Buttons: {button: (A)(a.md), button: (B)(b.md)} werden horizontal gruppiert
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -34,14 +35,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const fragment = document.createDocumentFragment();
     let lastIndex = 0;
     let match;
+    let buttonGroup = null;
+    let lastMatchEnd = -1;
 
     buttonRegex.lastIndex = 0;
     const text = node.textContent;
 
     while ((match = buttonRegex.exec(text)) !== null) {
       // Text vor dem Match
-      if (match.index > lastIndex) {
-        fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+      const textBefore = text.slice(lastIndex, match.index);
+      
+      // Prüfen, ob Text zwischen Buttons nur Whitespace/Kommas enthält
+      const isConsecutive = lastMatchEnd >= 0 && /^[\s,]*$/.test(textBefore);
+      
+      if (!isConsecutive) {
+        // Vorherige Button-Gruppe abschließen
+        if (buttonGroup && buttonGroup.childElementCount > 0) {
+          fragment.appendChild(buttonGroup);
+          buttonGroup = null;
+        }
+        
+        // Text vor dem Button hinzufügen (wenn nicht nur Whitespace/Kommas)
+        if (textBefore.trim() && !/^[\s,]*$/.test(textBefore)) {
+          fragment.appendChild(document.createTextNode(textBefore));
+        }
+      }
+
+      // Neue Button-Gruppe erstellen falls nötig
+      if (!buttonGroup) {
+        buttonGroup = document.createElement('div');
+        buttonGroup.className = 'md-button-group';
       }
 
       // Button erstellen
@@ -56,13 +79,22 @@ document.addEventListener('DOMContentLoaded', function() {
         button.rel = 'noopener noreferrer';
       }
 
-      fragment.appendChild(button);
+      buttonGroup.appendChild(button);
       lastIndex = buttonRegex.lastIndex;
+      lastMatchEnd = lastIndex;
+    }
+
+    // Letzte Button-Gruppe hinzufügen
+    if (buttonGroup && buttonGroup.childElementCount > 0) {
+      fragment.appendChild(buttonGroup);
     }
 
     // Rest-Text nach letztem Match
     if (lastIndex < text.length) {
-      fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+      const restText = text.slice(lastIndex);
+      if (restText.trim()) {
+        fragment.appendChild(document.createTextNode(restText));
+      }
     }
 
     node.parentNode.replaceChild(fragment, node);

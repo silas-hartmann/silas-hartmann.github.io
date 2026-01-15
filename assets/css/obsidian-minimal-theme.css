@@ -477,6 +477,13 @@ img {
 
 /* ===== MARKDOWN BUTTONS ===== */
 
+.md-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0.5em 0;
+}
+
 .md-button {
   display: inline-block;
   background-color: #94D3C6;
@@ -488,7 +495,7 @@ img {
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  margin: 0.3em 0.2em;
+  margin: 0;
 }
 
 .md-button:hover {
