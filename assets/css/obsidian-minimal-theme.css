@@ -189,6 +189,7 @@ table,
   border-collapse: collapse;
   width: 100%;
   margin: 1em 0;
+  font-size: 1em;
 }
 
 th, td,
@@ -199,6 +200,7 @@ th, td,
   border: 1px solid #454545 !important;
   padding: 0.5em 1em;
   text-align: left;
+  font-size: 1em !important;
 }
 
 th,
