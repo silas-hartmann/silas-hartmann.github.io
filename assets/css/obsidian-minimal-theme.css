@@ -15,8 +15,8 @@
   --accent-3: #E1A2ED;
   
   /* Heading-Farben (Dark Mode) */
-  --h1-color: #ddf3ee;
-  --h2-color: #ddf2f3;
+  --h1-color: #90E0A4;
+  --h2-color: #A9E2EA;
   --h3-color: #e4b9eb;
   --h4-color: var(--text-normal);
   
@@ -473,4 +473,33 @@ img {
 .feedback.info {
   background-color: rgba(128, 173, 199, 0.15) !important;
   color: var(--accent-1) !important;
+}
+
+/* ===== MARKDOWN BUTTONS ===== */
+
+.md-button {
+  display: inline-block;
+  background-color: #A9E2EA;
+  color: #2d2d2d;
+  padding: 0.6em 1.4em;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin: 0.3em 0.2em;
+}
+
+.md-button:hover {
+  background-color: #8fd4de;
+  color: #2d2d2d;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.md-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
