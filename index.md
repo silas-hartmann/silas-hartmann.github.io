@@ -30,7 +30,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 
 ## Seminar
 
-Für Informationen zur Vorbereitung auf das Kolloqium zu den Themen Aufmerksamkeit und ADHS, hier entlang: [[Start_Aufmerksamkeit_ADHS]]
+Für Informationen zur Vorbereitung auf das Kolloqium zu den Themen Aufmerksamkeit und ADHS, hier entlang: [Start_Aufmerksamkeit_ADHS](Aufmerksamkeit_ADHS/Start_Aufmerksamkeit_ADHS.md)
 
 
 
