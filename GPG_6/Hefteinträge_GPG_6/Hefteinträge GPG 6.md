@@ -1,4 +1,4 @@
-[🏠 Zurück zur Übersicht](../../index)
+[🏠 Zurück zur Übersicht](index.md)
 
 ### Wichtiger Hinweis zu den Hefteinträgen:
 Es kann sein, dass die genauen Wörter in deinem Heft ein bisschen anders sind. Das ist grundsätzlich nicht schlimm. Trotzdem sollten deine Hefteinträge alle vollständig sein. Es ist weiterhin deine Aufgabe, die Hefteinträge selbstständig mitzuschreiben und wenn du krank bist, dir bei einem Mitschüler oder einer Mitschülerin zu besorgen!
@@ -13,9 +13,9 @@ Es kann sein, dass die genauen Wörter in deinem Heft ein bisschen anders sind. 
 
 ![Pasted image 20250626224027](../../Pasted%20image%2020250626224027.png)
 
-![Tafelbild_Starkregen_und_Klimawandel](Tafelbild_Starkregen_und_Klimawandel.excalidraw)
+![Tafelbild_Starkregen_und_Klimawandel](GPG_6/Hefteinträge_GPG_6/Tafelbild_Starkregen_und_Klimawandel.excalidraw)
 
-[Tafelbild_Zusammenfassung_Ahrtal](Tafelbild_Zusammenfassung_Ahrtal.excalidraw)
+[Tafelbild_Zusammenfassung_Ahrtal](GPG_6/Hefteinträge_GPG_6/Tafelbild_Zusammenfassung_Ahrtal.excalidraw)
 
 
 # Hefteinträge zum Thema Südamerika
@@ -57,7 +57,7 @@ Die drei G:
 
 ## Wie ist der Regenwald aufgebaut?
 
-![Grafik_Stockwerkbau-Regenwald](Grafik_Stockwerkbau-Regenwald.png)
+![Grafik_Stockwerkbau-Regenwald](GPG_6/Hefteinträge_GPG_6/Grafik_Stockwerkbau-Regenwald.png)
 
 **der Regenwald ist in Stockwerken aufgebaut, dadurch:**
 - kann das Sonnenlicht optimal genutzt werden
@@ -71,7 +71,7 @@ Die drei G:
 
 ## Woher bekommen Pflanzen im Regenwald ihre Nährstoffe?
 
-![Abb_Nährstoffkreislauf](Abb_Nährstoffkreislauf.png)
+![Abb_Nährstoffkreislauf](GPG_6/Hefteinträge_GPG_6/Abb_Nährstoffkreislauf.png)
 
 >Merke dir: 
 >Nährstoffe sind nur in den Pflanzen, aber nicht im Boden gespeichert!
@@ -92,7 +92,7 @@ Die drei G:
 
 ## Warum ist der Amazonas-Regenwald so wichtig für das Klima?
 
-![Abb_Co2-Aufnahme](Abb_Co2-Aufnahme.png)
+![Abb_Co2-Aufnahme](GPG_6/Hefteinträge_GPG_6/Abb_Co2-Aufnahme.png)
 
 >Merke dir:
 >CO2 sorgt dafür, dass es auf der Erde wärmer wird. 
@@ -101,7 +101,7 @@ Die drei G:
 ---
 ## Wieso wird der Regenwald für Soja abgeholzt?
 
-![Abb_Soja](../../GPG_7/Arbeitsblätter_GPG_7/Abb_Soja.png)
+![Abb_Soja](GPG_7/Arbeitsblätter_GPG_7/03_1-Weltkrieg/Abb_Soja.png)
 
 >Merke: Auf den abgeholzten Flächen wird Soja angebaut, das in Deutschland als Tierfutter verwendet wird, für Fleisch- und Milchprodukte. 
 
@@ -139,7 +139,7 @@ Die drei G:
 
 ---
 
-![Abb_Dreieckshandel](Abb_Dreieckshandel.png)
+![Abb_Dreieckshandel](GPG_6/Hefteinträge_GPG_6/Abb_Dreieckshandel.png)
 
 
 ---

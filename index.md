@@ -2,30 +2,33 @@
 layout: default
 title: Unterrichtsmaterial von Herrn Hartmann
 ---
-![freddie-marriage-vSchPA-YA_A-unsplash](freddie-marriage-vSchPA-YA_A-unsplash.jpg)
-
 # Aktuelles Unterrichtsmaterial
 
-Bitte wähle die richtige Jahrgangsstufe:
 
-- Klasse 6: 
-	- ➡️ [Schutzmaßnahmen_Überschwemmungen](GPG_6/Arbeitsblätter_GPG_6/Schutzmassnahmen/Schutzmaßnahmen_Überschwemmungen)
-	- [Vulkane](GPG_6/Arbeitsblätter_GPG_6/Vulkane) - [Vulkane_Lösung](GPG_6/Arbeitsblätter_GPG_6/Vulkane_Lösung)
+## GPG 7: Kommunismus
 
-- Klasse 7: ➡️ 
-	- GPG: [Fallanalyse_Niklas_und_Leni](GPG_7/Arbeitsblätter_GPG_7/Fallanalyse_Niklas_und_Leni)
-	- Kunst: [Vanitas-Stilleben](Kunst_7/Vanitas-Stilleben)
+- [01_Entstehung_Kommunismus](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/01_Entstehung_Kommunismus.md)
+- [02_Grafik_Reichtum](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/fluter_Grafik_Reichtum_Deutschland.pdf)
+- [PPT_Kommunismus](https://www.canva.com/design/DAG-BI7PymI/7c_K8DD6IDR09gFmZL1Qiw/view?utm_content=DAG-BI7PymI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h30bb11adb8)
 
- [GG_Art2](GPG_6/Arbeitsblätter_GPG_6/GG_Art2)
- 
----
-## Archiv: Unterrichtsmaterial
+## GPG 7: Revolution 1848/49
 
-hier findest du Arbeitsblätter, weiterführende Informationen und teilweise Hefteinträge zu den letzten Stunden. Bitte **wähle deine Klasse**, um zu dem Material zu kommen.
+- [02_Revolution_1848_49_AB](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/02_Revolution_1848_49_AB.md)
+- [03_Ende_der_Revolution_48_49](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/03_Ende_der_Revolution_48_49.md)
+- [PPT_Revolution_48_49](https://www.canva.com/design/DAG-BwW_oBU/i6P7fuAtWXJIyV89Bg7VQQ/view?utm_content=DAG-BwW_oBU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3b10a5c334)
 
-- [Klasse_6_GPG_Kunst](Klasse_6_GPG_Kunst)
-- [Klasse_7_GPG_Kunst](Klasse_7_GPG_Kunst)
+### D 5: Rechtschreibstrategien
 
----
+- [Lösungen_AB_Rechtschreibstrategien](D_5/Lösungen_AB_Rechtschreibstrategien.md)
 
-für Benny: [Benny_Mindmap](Benny_Mindmap)
+### Hefteinträge
+
+- [TB_Lösungsansätze_Kirche_und_Unternehmer](GPG_7/Hefteinträge_GPG7/TB_Lösungsansätze_Kirche_und_Unternehmer.png)
+- [TB_Kommunismus](GPG_7/Hefteinträge_GPG7/TB_Kommunismus.png)
+- [TB_Revolution_48_49](GPG_7/Hefteinträge_GPG7/TB_Revolution_48_49.png)
+
+
+
+
+
+

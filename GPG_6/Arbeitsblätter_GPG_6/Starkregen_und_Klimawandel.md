@@ -182,4 +182,4 @@ Was können wir aus den wissenschaftlichen Erkenntnissen lernen?
 
 ---
 
-[Zurück zur Übersicht 🏠](../../index)
+[Zurück zur Übersicht 🏠](index.md)

@@ -1,4 +1,4 @@
-[Zurück zur Übersicht über die verschiedenen Schutzmaßnahmen 🏠](Schutzmaßnahmen_Überschwemmungen)
+[Zurück zur Übersicht über die verschiedenen Schutzmaßnahmen 🏠](GPG_6/Arbeitsblätter_GPG_6/Schutzmassnahmen/Schutzmaßnahmen_Überschwemmungen.md)
 
 # Frühwarnsysteme - Rechtzeitig vor Hochwasser warnen
 
@@ -33,5 +33,5 @@ Frühwarnsysteme sind für das Ahrtal sehr wichtig, aber sie hätten die Katastr
 
 Im Ahrtal sollte es viel mehr Messstationen geben, auch an kleinen Bächen. Bisher werden nur die großen Flüsse überwacht, aber das Unheil begann in den kleinen Seitentälern. Alle Menschen in der Region sollten Warn-Apps auf dem Handy haben und regelmäßig üben, was bei einer Warnung zu tun ist. Besonders wichtig wäre es, wenn die Sirenen wieder funktionieren würden, denn bei einem Stromausfall nützen Handy-Apps nichts. Frühwarnsysteme können im Ahrtal zwar nicht das nächste große Hochwasser verhindern, aber sie können dafür sorgen, dass nicht wieder so viele Menschen sterben müssen.
 
-Schon fertig? [Hier]( https://www.youtube.com/watch?v=YmwO5q3_SJQ) erfährst du, wie die Warnsysteme in Salzburg (Österreich) funktionieren.
+Schon fertig? [Hier](%20https://www.youtube.com/watch?v=YmwO5q3_SJQ) erfährst du, wie die Warnsysteme in Salzburg (Österreich) funktionieren.
 

@@ -1,6 +1,6 @@
 # Das Leben als Sklave in Amerika
 
-➡️ Direkt zum [Arbeitsblatt](sklaverei-arbeitsblatt)
+➡️ Direkt zum [Arbeitsblatt](GPG_6/Arbeitsblätter_GPG_6/01_Auswirkungen_des-Kolonialismus_heute/sklaverei-arbeitsblatt.md)
 
 ![Sklavenschiff - Planet wissen](https://www.planet-wissen.de/geschichte/menschenrechte/sklaverei/portraetsklavereifoltergjpg100~_v-gseapremiumxl.jpg)
 

@@ -120,5 +120,5 @@ Wie schwer kann eine Wolke ungefähr werden?
 
 ---
 
-[Zurück zur Übersicht 🏠](../../index)
+[Zurück zur Übersicht 🏠](index.md)
 
