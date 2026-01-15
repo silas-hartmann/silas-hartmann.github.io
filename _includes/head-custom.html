@@ -136,8 +136,8 @@
   function parseColor(color) {
     if (!color) return null;
     
-    // Hex-Farbe
-    const hexMatch = color.match(/^#([0-9a-f]{3,6})$/i);
+    // Hex-Farbe (3 oder 6 Zeichen)
+    const hexMatch = color.match(/#([0-9a-f]{3,6})/i);
     if (hexMatch) {
       let hex = hexMatch[1];
       if (hex.length === 3) {
@@ -163,67 +163,59 @@
     return null;
   }
   
+  // Findet die Füllfarbe eines Elements (style oder Attribut)
+  function getFillColor(element) {
+    // Erst im style-Attribut suchen
+    const style = element.getAttribute('style');
+    if (style) {
+      const fillMatch = style.match(/fill:\s*([^;]+)/i);
+      if (fillMatch) {
+        return fillMatch[1].trim();
+      }
+    }
+    // Dann im fill-Attribut
+    const fillAttr = element.getAttribute('fill');
+    if (fillAttr) {
+      return fillAttr;
+    }
+    return null;
+  }
+  
   // Passt die Textfarbe basierend auf der Hintergrundfarbe an
   function adjustTextColors(container) {
-    const LUMINANCE_THRESHOLD = 0.5; // Schwellenwert für helle Farben
+    const LUMINANCE_THRESHOLD = 0.45;
     const DARK_TEXT_COLOR = '#2d2d2d';
     
-    // Alle Knoten mit Style-Attribut finden
-    const nodes = container.querySelectorAll('[style*="fill"]');
+    // Alle Node-Gruppen finden
+    const nodeGroups = container.querySelectorAll('g.node');
     
-    nodes.forEach(node => {
-      const style = node.getAttribute('style');
-      const fillMatch = style.match(/fill:\s*([^;]+)/i);
+    nodeGroups.forEach(nodeGroup => {
+      // Finde die Hintergrundform (rect, polygon, circle, path)
+      const shape = nodeGroup.querySelector('rect, polygon, circle, ellipse, path');
+      if (!shape) return;
       
-      if (fillMatch) {
-        const color = parseColor(fillMatch[1].trim());
-        if (color) {
-          const luminance = getLuminance(color.r, color.g, color.b);
-          
-          if (luminance > LUMINANCE_THRESHOLD) {
-            // Helle Hintergrundfarbe -> dunkle Schrift
-            const textElements = node.querySelectorAll('text, tspan, .nodeLabel, foreignObject span, foreignObject div');
-            textElements.forEach(text => {
-              text.style.fill = DARK_TEXT_COLOR;
-              text.style.color = DARK_TEXT_COLOR;
-            });
-            
-            // Auch direkte Text-Kinder des Knotens
-            if (node.tagName === 'g') {
-              const directTexts = node.querySelectorAll(':scope > text, :scope > foreignObject span, :scope > foreignObject div');
-              directTexts.forEach(text => {
-                text.style.fill = DARK_TEXT_COLOR;
-                text.style.color = DARK_TEXT_COLOR;
-              });
-            }
-          }
-        }
-      }
-    });
-    
-    // Auch rect/polygon mit fill-Attribut prüfen und zugehörigen Text anpassen
-    const shapes = container.querySelectorAll('rect[style*="fill"], polygon[style*="fill"], path[style*="fill"]');
-    shapes.forEach(shape => {
-      const style = shape.getAttribute('style');
-      const fillMatch = style.match(/fill:\s*([^;]+)/i);
+      const fillColor = getFillColor(shape);
+      if (!fillColor) return;
       
-      if (fillMatch) {
-        const color = parseColor(fillMatch[1].trim());
-        if (color) {
-          const luminance = getLuminance(color.r, color.g, color.b);
-          
-          if (luminance > LUMINANCE_THRESHOLD) {
-            // Finde das übergeordnete g-Element und dessen Text
-            const parentG = shape.closest('g.node, g.cluster');
-            if (parentG) {
-              const textElements = parentG.querySelectorAll('text, tspan, .nodeLabel, foreignObject span, foreignObject div');
-              textElements.forEach(text => {
-                text.style.fill = DARK_TEXT_COLOR;
-                text.style.color = DARK_TEXT_COLOR;
-              });
-            }
-          }
-        }
+      const color = parseColor(fillColor);
+      if (!color) return;
+      
+      const luminance = getLuminance(color.r, color.g, color.b);
+      
+      if (luminance > LUMINANCE_THRESHOLD) {
+        // Helle Hintergrundfarbe -> dunkle Schrift
+        // Finde alle Text-Elemente im Node
+        const textElements = nodeGroup.querySelectorAll('text, tspan, span, div, p, .nodeLabel');
+        textElements.forEach(text => {
+          text.style.setProperty('fill', DARK_TEXT_COLOR, 'important');
+          text.style.setProperty('color', DARK_TEXT_COLOR, 'important');
+        });
+        
+        // Auch foreignObject-Inhalte
+        const foreignObjects = nodeGroup.querySelectorAll('foreignObject *');
+        foreignObjects.forEach(el => {
+          el.style.setProperty('color', DARK_TEXT_COLOR, 'important');
+        });
       }
     });
   }

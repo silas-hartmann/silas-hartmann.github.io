@@ -193,21 +193,25 @@ table,
 
 th, td,
 .main-content th,
-.main-content td {
-  border: 1px solid #454545;
+.main-content td,
+.main-content table th,
+.main-content table td {
+  border: 1px solid #454545 !important;
   padding: 0.5em 1em;
   text-align: left;
 }
 
 th,
-.main-content th {
+.main-content th,
+.main-content table th {
   background-color: var(--bg-secondary);
   color: var(--text-normal);
   font-weight: 500;
 }
 
 tr:hover,
-.main-content tr:hover {
+.main-content tr:hover,
+.main-content table tr:hover {
   background-color: var(--table-hover);
 }
 
@@ -233,9 +237,11 @@ li::marker,
 
 hr,
 .main-content hr {
-  border: none;
-  border-top: 1px solid #454545;
+  border: none !important;
+  border-top: 1px solid #454545 !important;
   margin: 2em 0;
+  background: transparent !important;
+  height: 0 !important;
 }
 
 /* ===== BILDER ===== */
