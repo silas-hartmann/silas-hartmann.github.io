@@ -123,6 +123,111 @@
     }
   });
   
+  // Berechnet die relative Luminanz einer Farbe (0-1)
+  function getLuminance(r, g, b) {
+    const [rs, gs, bs] = [r, g, b].map(c => {
+      c = c / 255;
+      return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+  }
+  
+  // Parst eine Farbe (hex oder rgb) und gibt RGB-Werte zurück
+  function parseColor(color) {
+    if (!color) return null;
+    
+    // Hex-Farbe
+    const hexMatch = color.match(/^#([0-9a-f]{3,6})$/i);
+    if (hexMatch) {
+      let hex = hexMatch[1];
+      if (hex.length === 3) {
+        hex = hex.split('').map(c => c + c).join('');
+      }
+      return {
+        r: parseInt(hex.substr(0, 2), 16),
+        g: parseInt(hex.substr(2, 2), 16),
+        b: parseInt(hex.substr(4, 2), 16)
+      };
+    }
+    
+    // RGB-Farbe
+    const rgbMatch = color.match(/rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/i);
+    if (rgbMatch) {
+      return {
+        r: parseInt(rgbMatch[1]),
+        g: parseInt(rgbMatch[2]),
+        b: parseInt(rgbMatch[3])
+      };
+    }
+    
+    return null;
+  }
+  
+  // Passt die Textfarbe basierend auf der Hintergrundfarbe an
+  function adjustTextColors(container) {
+    const LUMINANCE_THRESHOLD = 0.5; // Schwellenwert für helle Farben
+    const DARK_TEXT_COLOR = '#2d2d2d';
+    
+    // Alle Knoten mit Style-Attribut finden
+    const nodes = container.querySelectorAll('[style*="fill"]');
+    
+    nodes.forEach(node => {
+      const style = node.getAttribute('style');
+      const fillMatch = style.match(/fill:\s*([^;]+)/i);
+      
+      if (fillMatch) {
+        const color = parseColor(fillMatch[1].trim());
+        if (color) {
+          const luminance = getLuminance(color.r, color.g, color.b);
+          
+          if (luminance > LUMINANCE_THRESHOLD) {
+            // Helle Hintergrundfarbe -> dunkle Schrift
+            const textElements = node.querySelectorAll('text, tspan, .nodeLabel, foreignObject span, foreignObject div');
+            textElements.forEach(text => {
+              text.style.fill = DARK_TEXT_COLOR;
+              text.style.color = DARK_TEXT_COLOR;
+            });
+            
+            // Auch direkte Text-Kinder des Knotens
+            if (node.tagName === 'g') {
+              const directTexts = node.querySelectorAll(':scope > text, :scope > foreignObject span, :scope > foreignObject div');
+              directTexts.forEach(text => {
+                text.style.fill = DARK_TEXT_COLOR;
+                text.style.color = DARK_TEXT_COLOR;
+              });
+            }
+          }
+        }
+      }
+    });
+    
+    // Auch rect/polygon mit fill-Attribut prüfen und zugehörigen Text anpassen
+    const shapes = container.querySelectorAll('rect[style*="fill"], polygon[style*="fill"], path[style*="fill"]');
+    shapes.forEach(shape => {
+      const style = shape.getAttribute('style');
+      const fillMatch = style.match(/fill:\s*([^;]+)/i);
+      
+      if (fillMatch) {
+        const color = parseColor(fillMatch[1].trim());
+        if (color) {
+          const luminance = getLuminance(color.r, color.g, color.b);
+          
+          if (luminance > LUMINANCE_THRESHOLD) {
+            // Finde das übergeordnete g-Element und dessen Text
+            const parentG = shape.closest('g.node, g.cluster');
+            if (parentG) {
+              const textElements = parentG.querySelectorAll('text, tspan, .nodeLabel, foreignObject span, foreignObject div');
+              textElements.forEach(text => {
+                text.style.fill = DARK_TEXT_COLOR;
+                text.style.color = DARK_TEXT_COLOR;
+              });
+            }
+          }
+        }
+      }
+    });
+  }
+  
   document.addEventListener('DOMContentLoaded', async () => {
     const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
     for (const codeBlock of codeBlocks) {
@@ -133,6 +238,9 @@
       pre.parentNode.replaceChild(container, pre);
     }
     await mermaid.run();
+    
+    // Nach dem Rendering: Textfarben anpassen
+    document.querySelectorAll('.mermaid').forEach(adjustTextColors);
   });
 </script>
 <style>
