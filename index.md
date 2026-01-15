@@ -28,6 +28,12 @@ title: Unterrichtsmaterial von Herrn Hartmann
 - [TB_Revolution_48_49](GPG_7/Hefteinträge_GPG7/TB_Revolution_48_49.png)
 
 
+## Seminar
+
+Für Informationen zur Vorbereitung auf das Kolloqium zu den Themen Aufmerksamkeit und ADHS, hier entlang: [[Start_Aufmerksamkeit_ADHS]]
+
+
+
 
 
 
