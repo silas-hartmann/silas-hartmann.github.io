@@ -139,7 +139,8 @@ a:hover {
 
 /* ===== BLOCKQUOTES ===== */
 
-blockquote {
+blockquote,
+.main-content blockquote {
   border-left: 4px solid #e4b9eb;
   color: var(--text-normal);
   font-style: italic;
@@ -148,13 +149,15 @@ blockquote {
   background-color: transparent;
 }
 
-blockquote p {
+blockquote p,
+.main-content blockquote p {
   margin: 0;
 }
 
 /* ===== CODE ===== */
 
-code {
+code,
+.main-content code {
   font-family: var(--font-monospace);
   background-color: var(--bg-secondary);
   color: var(--accent-3);
@@ -163,7 +166,8 @@ code {
   font-size: 0.9em;
 }
 
-pre {
+pre,
+.main-content pre {
   background-color: var(--bg-secondary);
   border: 1px solid #454545;
   border-radius: 5px;
@@ -171,7 +175,8 @@ pre {
   overflow-x: auto;
 }
 
-pre code {
+pre code,
+.main-content pre code {
   background-color: transparent;
   padding: 0;
   color: var(--text-normal);
@@ -179,45 +184,55 @@ pre code {
 
 /* ===== TABELLEN ===== */
 
-table {
+table,
+.main-content table {
   border-collapse: collapse;
   width: 100%;
   margin: 1em 0;
 }
 
-th, td {
+th, td,
+.main-content th,
+.main-content td {
   border: 1px solid #454545;
   padding: 0.5em 1em;
   text-align: left;
 }
 
-th {
+th,
+.main-content th {
   background-color: var(--bg-secondary);
   color: var(--text-normal);
   font-weight: 500;
 }
 
-tr:hover {
+tr:hover,
+.main-content tr:hover {
   background-color: var(--table-hover);
 }
 
 /* ===== LISTEN ===== */
 
-ul, ol {
+ul, ol,
+.main-content ul,
+.main-content ol {
   padding-left: 1.5em;
 }
 
-li {
+li,
+.main-content li {
   margin: 0.3em 0;
 }
 
-li::marker {
+li::marker,
+.main-content li::marker {
   color: var(--text-muted);
 }
 
 /* ===== HORIZONTALE LINIE ===== */
 
-hr {
+hr,
+.main-content hr {
   border: none;
   border-top: 1px solid #454545;
   margin: 2em 0;

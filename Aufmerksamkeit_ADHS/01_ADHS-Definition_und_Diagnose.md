@@ -191,10 +191,6 @@ flowchart TB
     BG <--> CB
     PFC <-.->|"Default Mode<br>Network"| CB
     
-    style PFC fill:#ffcccc
-    style NA fill:#ffffcc
-    style BG fill:#ccffcc
-    style CB fill:#ccccff
 ```
 
 **Befunde bei ADHS-Betroffenen:**
