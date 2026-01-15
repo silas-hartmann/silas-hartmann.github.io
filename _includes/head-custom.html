@@ -30,3 +30,43 @@
 </script>
 <!-- Excalidraw Integration Script -->
 <script src="/assets/js/excalidraw-integration.js" defer></script>
+
+<!-- Mermaid Diagramme -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ 
+    startOnLoad: false,
+    theme: 'default',
+    securityLevel: 'loose',
+    flowchart: { 
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis'
+    }
+  });
+  
+  document.addEventListener('DOMContentLoaded', async () => {
+    const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
+    for (const codeBlock of codeBlocks) {
+      const pre = codeBlock.parentElement;
+      const container = document.createElement('div');
+      container.className = 'mermaid';
+      container.textContent = codeBlock.textContent;
+      pre.parentNode.replaceChild(container, pre);
+    }
+    await mermaid.run();
+  });
+</script>
+<style>
+  .mermaid {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
