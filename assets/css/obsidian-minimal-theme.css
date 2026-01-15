@@ -67,46 +67,58 @@ body {
 
 /* ===== ÜBERSCHRIFTEN ===== */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
   font-family: var(--font-heading);
   font-weight: 500;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
-h1 {
+h1,
+.main-content h1 {
   color: var(--h1-color);
   font-size: 2em;
   font-weight: 500;
   border-bottom: none;
 }
 
-h2 {
+h2,
+.main-content h2 {
   color: var(--h2-color);
   font-size: 1.4em;
   font-weight: 500;
   border-bottom: none;
 }
 
-h3 {
+h3,
+.main-content h3 {
   color: var(--h3-color);
   font-size: 1.3em;
   font-weight: 500;
 }
 
-h4 {
+h4,
+.main-content h4 {
   color: var(--h4-color);
   font-size: 1.2em;
   font-weight: 400;
 }
 
-h5 {
+h5,
+.main-content h5 {
   color: var(--text-normal);
   font-size: 1.1em;
   font-weight: 400;
 }
 
-h6 {
+h6,
+.main-content h6 {
   color: var(--text-normal);
   font-size: 1em;
   font-weight: 400;
