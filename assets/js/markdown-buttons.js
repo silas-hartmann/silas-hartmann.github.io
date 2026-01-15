@@ -1,14 +1,15 @@
 /**
  * Markdown Button Parser
- * Erkennt {button: [Beschriftung](link)} und wandelt es in Buttons um
+ * Erkennt {button: (Beschriftung)(link)} und wandelt es in Buttons um
+ * Syntax: {button: (Button Text)(pfad/zur/datei.md)}
  */
 
 document.addEventListener('DOMContentLoaded', function() {
   const content = document.querySelector('.main-content');
   if (!content) return;
 
-  // Regex für {button: [Beschriftung](link)}
-  const buttonRegex = /\{button:\s*\[([^\]]+)\]\(([^)]+)\)\}/g;
+  // Regex für {button: (Beschriftung)(link)}
+  const buttonRegex = /\{button:\s*\(([^)]+)\)\(([^)]+)\)\}/g;
 
   // Alle Textknoten durchsuchen
   const walker = document.createTreeWalker(
