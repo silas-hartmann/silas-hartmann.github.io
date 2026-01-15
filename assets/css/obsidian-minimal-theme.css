@@ -15,10 +15,10 @@
   --accent-3: #E1A2ED;
   
   /* Heading-Farben (Dark Mode) */
-  --h1-color: #94D3C6;
-  --h2-color: #A7CCD8;
-  --h3-color: #B991CF;
-  --h4-color: #CDA8C9;
+  --h1-color: #ddf3ee;
+  --h2-color: #ddf2f3;
+  --h3-color: #e4b9eb;
+  --h4-color: var(--text-normal);
   
   /* Blockquote */
   --blockquote-border: #476054;
@@ -101,13 +101,13 @@ h4 {
 }
 
 h5 {
-  color: var(--text-muted);
+  color: var(--text-normal);
   font-size: 1.1em;
   font-weight: 400;
 }
 
 h6 {
-  color: var(--text-faint);
+  color: var(--text-normal);
   font-size: 1em;
   font-weight: 400;
 }
