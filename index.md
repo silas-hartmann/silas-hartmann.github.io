@@ -18,7 +18,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 - [02_Grafik_Reichtum](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/fluter_Grafik_Reichtum_Deutschland.pdf)
 - [PPT_Kommunismus](https://www.canva.com/design/DAG-BI7PymI/7c_K8DD6IDR09gFmZL1Qiw/view?utm_content=DAG-BI7PymI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h30bb11adb8)
 
-### D 5: Rechtschreibstrategien
+## D 5: Rechtschreibstrategien
 
 - [Lösungen_AB_Rechtschreibstrategien](D_5/Lösungen_AB_Rechtschreibstrategien.md)
 
