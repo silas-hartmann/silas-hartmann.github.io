@@ -1,6 +1,6 @@
-### Übersicht / Plan
+# Übersicht / Plan
 
-#### Aufmerksamkeit
+## Aufmerksamkeit
 
 1. Aufmerksamkeit - Konzept
 	1. Definition
@@ -14,7 +14,7 @@
 	1. Förderung der Aufmerksamkeit in der Schule
 	2. Umgang mit Aufmerksamkeitsproblemen (Überleitung zu ADHS, hier ADHS noch nicht thematisieren)
 
-#### ADHS
+## ADHS
 
 1. Was ist ADHS → [01_ADHS-Definition_und_Diagnose](01_ADHS-Definition_und_Diagnose.md) ✅
 	1. Diagnosemanual Definition
