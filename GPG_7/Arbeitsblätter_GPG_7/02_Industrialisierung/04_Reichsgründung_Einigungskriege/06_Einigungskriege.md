@@ -8,7 +8,7 @@ Betrachte das Video. Notiere in deinem Notizheft 📝 Informationen zu den Frage
 
 💡 Tipp: Du kannst das Video anhalten, um deine Antwort zu notieren und vor- und zurück spulen.
 
-{% include youtube.html id="Rwe-LzZmHR0" start="5:00" end="10:00" strict="true" %}
+{% include youtube.html id="Rwe-LzZmHR0" start="3:21" end="12:35" strict="true" %}
 
 ---
 
