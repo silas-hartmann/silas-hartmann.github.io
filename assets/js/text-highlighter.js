@@ -36,6 +36,13 @@ function createHighlighterUI() {
   const container = document.createElement('div');
   container.className = 'highlighter-container';
   
+  // Menu-Toggle-Button (drei Punkte)
+  const menuButton = document.createElement('button');
+  menuButton.className = 'menu-toggle';
+  menuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>';
+  menuButton.title = 'Werkzeuge anzeigen';
+  container.appendChild(menuButton);
+  
   // Button-Container für Highlighter und Radiergummi
   const buttonContainer = document.createElement('div');
   buttonContainer.className = 'highlighter-buttons';
@@ -66,6 +73,17 @@ function createHighlighterUI() {
     location.reload();
   });
   buttonContainer.appendChild(reloadButton);
+  
+  // Home-Button (zur Hauptseite)
+  const homeButton = document.createElement('button');
+  homeButton.className = 'home-toggle';
+  // Lucide Home-Icon
+  homeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>';
+  homeButton.title = 'Zur Hauptseite';
+  homeButton.addEventListener('click', function() {
+    window.location.href = 'https://silas-hartmann.github.io';
+  });
+  buttonContainer.appendChild(homeButton);
   
   // Button-Container dem Hauptcontainer hinzufügen
   container.appendChild(buttonContainer);
@@ -128,11 +146,18 @@ function createHighlighterUI() {
     // Radiergummi-Modus umschalten
     toggleEraserMode(eraserButton);
   });
+  
+  // Menu-Button Klick-Handler
+  menuButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    container.classList.toggle('menu-visible');
+  });
 
-  // Außerhalb klicken schließt Farbauswahl
+  // Außerhalb klicken schließt Farbauswahl und Menu
   document.addEventListener('click', (event) => {
     if (!container.contains(event.target)) {
       container.classList.remove('colors-visible');
+      container.classList.remove('menu-visible');
     }
   });
 }

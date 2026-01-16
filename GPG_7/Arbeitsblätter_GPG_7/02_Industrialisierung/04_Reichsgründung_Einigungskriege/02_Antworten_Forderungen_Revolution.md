@@ -6,3 +6,5 @@
 Forderungen_Revolution
 ```
 
+{button: (weiter)(03_Karikatur_Friedrich)}
+
