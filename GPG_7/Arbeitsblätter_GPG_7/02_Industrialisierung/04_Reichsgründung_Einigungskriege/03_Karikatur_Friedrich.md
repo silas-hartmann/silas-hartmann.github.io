@@ -10,4 +10,4 @@ _Im Jahr 1849 veröffentlichte der deutsche Zeichner Isidor Popper in Hamburg ei
 Karikatur_FriedrichIV
 ```
 
-
+{button: (weiter)(04_Vermutungen)}

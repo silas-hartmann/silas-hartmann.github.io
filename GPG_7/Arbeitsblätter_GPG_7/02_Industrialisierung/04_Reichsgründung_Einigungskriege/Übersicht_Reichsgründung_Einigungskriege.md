@@ -1,10 +1,14 @@
-![Pasted image 20260116154426](../../../../Pasted%20image%2020260116154426.png)
+![Pasted image 20260116154426](Reichsgründung.png)
 
 # Wie kam es zur Gründung des deutschen Reichs
 
 {button: (Starte hier)(01_Wdh_Rev48)}
 
+---
 
+### Ergänzendes Material
+
+![Karte_deutsches-Reich](https://www.bpb.de/cache/images/1/276741_original.jpg?28D6D)
 
 
 
