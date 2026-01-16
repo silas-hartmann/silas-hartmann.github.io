@@ -30,6 +30,8 @@ title: Unterrichtsmaterial von Herrn Hartmann
 - [TB_Lösungsansätze_Kirche_und_Unternehmer](GPG_7/Hefteinträge_GPG7/TB_Lösungsansätze_Kirche_und_Unternehmer.png)
 - [TB_Kommunismus](GPG_7/Hefteinträge_GPG7/TB_Kommunismus.png)
 - [TB_Revolution_48_49](GPG_7/Hefteinträge_GPG7/TB_Revolution_48_49.png)
+- [TB_Reichsgründung](GPG_7/Hefteinträge_GPG7/TB_Reichsgründung.png)
+
 
 
 ## Seminar

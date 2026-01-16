@@ -26,3 +26,4 @@ Lest das Zitat aufmerksam durch.
 bismarck-zitat
 ```
 
+{button: (weiter)(06_Einigungskriege)}

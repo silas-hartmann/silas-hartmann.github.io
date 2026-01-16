@@ -8,4 +8,4 @@
 Vermutungen_Reichsgründung
 ```
 
-{button: ()()}
+{button: (weiter)(05_Zitat_Bismarck)}
