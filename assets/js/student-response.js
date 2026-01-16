@@ -266,56 +266,38 @@
   // Diese Funktion ersetzt diese Code-Blöcke durch die entsprechenden Formulare
 
   function convertCodeBlocks() {
-    // Eingabe-Formulare: language-student-response oder Inhalt beginnt mit "student-response"
-    const formBlocks = document.querySelectorAll('pre > code.language-student-response, pre > code[class*="language-student-response"]');
-    
-    formBlocks.forEach(codeBlock => {
-      const pre = codeBlock.parentElement;
-      const taskId = codeBlock.textContent.trim() || 'aufgabe';
-      
-      const formDiv = document.createElement('div');
-      formDiv.className = 'student-response-form';
-      formDiv.dataset.taskId = taskId;
-      formDiv.innerHTML = `
-        <label>Dein Name:</label>
-        <input type="text" class="sr-name-input" placeholder="Name eingeben...">
-        <label>Deine Antwort:</label>
-        <textarea class="sr-text-input" placeholder="Schreibe deine Antwort hier..."></textarea>
-        <button class="sr-submit-btn">Antwort absenden</button>
-        <div class="sr-status"></div>
-      `;
-      
-      pre.parentNode.replaceChild(formDiv, pre);
-    });
-
-    // Anzeige-Bereich: language-student-responses-display
-    const displayBlocks = document.querySelectorAll('pre > code.language-student-responses-display, pre > code[class*="language-student-responses-display"]');
-    
-    displayBlocks.forEach(codeBlock => {
-      const pre = codeBlock.parentElement;
-      
-      const displayDiv = document.createElement('div');
-      displayDiv.className = 'student-responses-display';
-      displayDiv.innerHTML = `
-        <div class="sr-controls">
-          <input type="text" class="sr-filter-input" placeholder="Filtern nach Name, Aufgabe...">
-          <button class="sr-refresh-btn">Aktualisieren</button>
-          <span class="sr-count"></span>
-        </div>
-        <div class="sr-response-list"></div>
-      `;
-      
-      pre.parentNode.replaceChild(displayDiv, pre);
-    });
-
-    // Fallback: Suche nach Code-Blöcken ohne spezifische Klasse, deren Inhalt mit student-response beginnt
+    // Alle Code-Blöcke durchgehen
     const allCodeBlocks = document.querySelectorAll('pre > code');
+    
     allCodeBlocks.forEach(codeBlock => {
-      const content = codeBlock.textContent.trim();
       const pre = codeBlock.parentElement;
+      const className = codeBlock.className || '';
+      const content = codeBlock.textContent.trim();
       
-      // Eingabe-Formular
-      if (content.startsWith('student-response:') || content === 'student-response') {
+      // WICHTIG: Zuerst auf "display" prüfen (längerer Match zuerst)
+      const isDisplay = className.includes('language-student-responses-display') || 
+                        content === 'student-responses-display';
+      
+      const isForm = !isDisplay && (
+        className === 'language-student-response' ||
+        (className.includes('language-student-response') && !className.includes('display')) ||
+        content.startsWith('student-response:') || 
+        content === 'student-response'
+      );
+      
+      if (isDisplay) {
+        const displayDiv = document.createElement('div');
+        displayDiv.className = 'student-responses-display';
+        displayDiv.innerHTML = `
+          <div class="sr-controls">
+            <input type="text" class="sr-filter-input" placeholder="Filtern nach Name, Aufgabe...">
+            <button class="sr-refresh-btn">Aktualisieren</button>
+            <span class="sr-count"></span>
+          </div>
+          <div class="sr-response-list"></div>
+        `;
+        pre.parentNode.replaceChild(displayDiv, pre);
+      } else if (isForm) {
         const taskId = content.replace('student-response:', '').trim() || 'aufgabe';
         
         const formDiv = document.createElement('div');
@@ -329,24 +311,7 @@
           <button class="sr-submit-btn">Antwort absenden</button>
           <div class="sr-status"></div>
         `;
-        
         pre.parentNode.replaceChild(formDiv, pre);
-      }
-      
-      // Anzeige-Bereich
-      if (content === 'student-responses-display') {
-        const displayDiv = document.createElement('div');
-        displayDiv.className = 'student-responses-display';
-        displayDiv.innerHTML = `
-          <div class="sr-controls">
-            <input type="text" class="sr-filter-input" placeholder="Filtern nach Name, Aufgabe...">
-            <button class="sr-refresh-btn">Aktualisieren</button>
-            <span class="sr-count"></span>
-          </div>
-          <div class="sr-response-list"></div>
-        `;
-        
-        pre.parentNode.replaceChild(displayDiv, pre);
       }
     });
   }
