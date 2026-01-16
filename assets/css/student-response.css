@@ -1,0 +1,221 @@
+/* Student Response System - Styles */
+/* Passt zum Obsidian Minimal Theme */
+
+/* ===== EINGABE-FORMULAR ===== */
+
+.student-response-form {
+  background-color: var(--bg-secondary, #262626);
+  border: 1px solid var(--accent-2, #80C7B2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.student-response-form label {
+  display: block;
+  color: var(--h2-color, #A9E2EA);
+  font-family: var(--font-heading, serif);
+  font-size: 1.1em;
+  margin-bottom: 0.5rem;
+}
+
+.student-response-form .sr-name-input,
+.student-response-form .sr-text-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--text-faint, #666);
+  border-radius: 4px;
+  background-color: var(--bg-primary, #2d2d2d);
+  color: var(--text-normal, #dcddde);
+  font-family: var(--font-text, sans-serif);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.student-response-form .sr-name-input {
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.student-response-form .sr-text-input {
+  min-height: 120px;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.student-response-form .sr-name-input:focus,
+.student-response-form .sr-text-input:focus {
+  outline: none;
+  border-color: var(--accent-2, #80C7B2);
+  box-shadow: 0 0 0 2px rgba(128, 199, 178, 0.2);
+}
+
+.student-response-form .sr-submit-btn {
+  background-color: var(--accent-2, #80C7B2);
+  color: var(--bg-primary, #2d2d2d);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.student-response-form .sr-submit-btn:hover {
+  background-color: var(--h1-color, #94D3C6);
+}
+
+.student-response-form .sr-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.student-response-form .sr-submit-btn:disabled {
+  background-color: var(--text-faint, #666);
+  cursor: not-allowed;
+}
+
+/* Status-Meldungen */
+.student-response-form .sr-status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  display: none;
+}
+
+.student-response-form .sr-status.success {
+  display: block;
+  background-color: rgba(128, 199, 178, 0.2);
+  border: 1px solid var(--accent-2, #80C7B2);
+  color: var(--accent-2, #80C7B2);
+}
+
+.student-response-form .sr-status.error {
+  display: block;
+  background-color: rgba(225, 162, 237, 0.2);
+  border: 1px solid var(--accent-3, #E1A2ED);
+  color: var(--accent-3, #E1A2ED);
+}
+
+.student-response-form .sr-status.loading {
+  display: block;
+  background-color: rgba(128, 173, 199, 0.2);
+  border: 1px solid var(--accent-1, #80ADC7);
+  color: var(--accent-1, #80ADC7);
+}
+
+/* ===== ANZEIGE-BEREICH ===== */
+
+.student-responses-display {
+  margin: 1.5rem 0;
+}
+
+.student-responses-display .sr-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.student-responses-display .sr-filter-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--text-faint, #666);
+  border-radius: 4px;
+  background-color: var(--bg-primary, #2d2d2d);
+  color: var(--text-normal, #dcddde);
+  font-size: 0.9rem;
+  min-width: 200px;
+}
+
+.student-responses-display .sr-refresh-btn {
+  background-color: var(--accent-1, #80ADC7);
+  color: var(--bg-primary, #2d2d2d);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.student-responses-display .sr-refresh-btn:hover {
+  background-color: var(--h2-color, #A9E2EA);
+}
+
+.student-responses-display .sr-count {
+  color: var(--text-muted, #999);
+  font-size: 0.9rem;
+}
+
+/* Antwort-Karten */
+.student-responses-display .sr-response-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student-responses-display .sr-response-card {
+  background-color: var(--bg-secondary, #262626);
+  border: 1px solid var(--text-faint, #666);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.student-responses-display .sr-response-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--text-faint, #666);
+}
+
+.student-responses-display .sr-response-name {
+  color: var(--h2-color, #A9E2EA);
+  font-weight: 600;
+}
+
+.student-responses-display .sr-response-time {
+  color: var(--text-muted, #999);
+  font-size: 0.85rem;
+}
+
+.student-responses-display .sr-response-task {
+  color: var(--accent-3, #E1A2ED);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.student-responses-display .sr-response-text {
+  color: var(--text-normal, #dcddde);
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+/* Leerer Zustand */
+.student-responses-display .sr-empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted, #999);
+  background-color: var(--bg-secondary, #262626);
+  border-radius: 8px;
+}
+
+/* Lade-Animation */
+.student-responses-display .sr-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--accent-1, #80ADC7);
+}
+
+.student-responses-display .sr-loading::after {
+  content: '';
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
