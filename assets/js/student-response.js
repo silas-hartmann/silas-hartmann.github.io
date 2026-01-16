@@ -111,6 +111,7 @@
       const refreshBtn = display.querySelector('.sr-refresh-btn');
       const countSpan = display.querySelector('.sr-count');
       const listDiv = display.querySelector('.sr-response-list');
+      const presetTask = display.dataset.presetTask || '';
       
       let allResponses = [];
 
@@ -219,8 +220,8 @@
         const tasks = [...new Set(responses.map(r => r.taskId).filter(t => t))];
         tasks.sort();
         
-        // Aktuellen Wert merken
-        const currentValue = filterSelect.value;
+        // Aktuellen Wert merken (oder Preset verwenden beim ersten Laden)
+        const currentValue = filterSelect.value || presetTask;
         
         // Options aktualisieren
         filterSelect.innerHTML = '<option value="">Alle Aufgaben</option>';
@@ -231,7 +232,7 @@
           filterSelect.appendChild(option);
         });
         
-        // Alten Wert wiederherstellen falls noch vorhanden
+        // Wert setzen falls vorhanden
         if (currentValue && tasks.includes(currentValue)) {
           filterSelect.value = currentValue;
         }
@@ -321,7 +322,8 @@
       
       // WICHTIG: Zuerst auf "display" prüfen (längerer Match zuerst)
       const isDisplay = className.includes('language-student-responses-display') || 
-                        content === 'student-responses-display';
+                        content === 'student-responses-display' ||
+                        content.startsWith('student-responses-display\n');
       
       const isForm = !isDisplay && (
         className === 'language-student-response' ||
@@ -331,8 +333,21 @@
       );
       
       if (isDisplay) {
+        // Aufgaben-ID extrahieren
+        let presetTask = '';
+        if (className.includes('language-student-responses-display')) {
+          // Syntax: ```student-responses-display\naufgaben-id```
+          presetTask = content.trim();
+        } else {
+          // Fallback-Syntax ohne Sprach-Klasse
+          presetTask = content.replace('student-responses-display', '').trim();
+        }
+        
         const displayDiv = document.createElement('div');
         displayDiv.className = 'student-responses-display';
+        if (presetTask) {
+          displayDiv.dataset.presetTask = presetTask;
+        }
         displayDiv.innerHTML = `
           <div class="sr-controls">
             <select class="sr-filter-select">
