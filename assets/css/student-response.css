@@ -118,6 +118,27 @@
   align-items: center;
 }
 
+.student-responses-display .sr-filter-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--text-faint, #666);
+  border-radius: 4px;
+  background-color: var(--bg-primary, #2d2d2d);
+  color: var(--text-normal, #dcddde);
+  font-size: 0.9rem;
+  min-width: 180px;
+  cursor: pointer;
+}
+
+.student-responses-display .sr-filter-select:focus {
+  outline: none;
+  border-color: var(--accent-2, #80C7B2);
+}
+
+.student-responses-display .sr-filter-select option {
+  background-color: var(--bg-primary, #2d2d2d);
+  color: var(--text-normal, #dcddde);
+}
+
 .student-responses-display .sr-filter-input {
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--text-faint, #666);

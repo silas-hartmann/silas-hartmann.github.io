@@ -106,6 +106,7 @@
     const displays = document.querySelectorAll('.student-responses-display');
     
     displays.forEach(display => {
+      const filterSelect = display.querySelector('.sr-filter-select');
       const filterInput = display.querySelector('.sr-filter-input');
       const refreshBtn = display.querySelector('.sr-refresh-btn');
       const countSpan = display.querySelector('.sr-count');
@@ -121,11 +122,20 @@
         refreshBtn.addEventListener('click', loadResponses);
       }
 
-      // Filter
+      // Filter - Select
+      if (filterSelect) {
+        filterSelect.addEventListener('change', applyFilters);
+      }
+
+      // Filter - Textfeld
       if (filterInput) {
-        filterInput.addEventListener('input', () => {
-          renderResponses(filterResponses(allResponses, filterInput.value));
-        });
+        filterInput.addEventListener('input', applyFilters);
+      }
+
+      function applyFilters() {
+        const taskFilter = filterSelect ? filterSelect.value : '';
+        const textFilter = filterInput ? filterInput.value : '';
+        renderResponses(filterResponses(allResponses, taskFilter, textFilter));
       }
 
       async function loadResponses() {
@@ -150,9 +160,13 @@
 
           allResponses = parseSheetData(data);
           
-          // Filter anwenden falls vorhanden
-          const filtered = filterInput ? filterResponses(allResponses, filterInput.value) : allResponses;
-          renderResponses(filtered);
+          // Aufgaben-Dropdown befüllen
+          if (filterSelect) {
+            updateTaskSelect(allResponses);
+          }
+          
+          // Filter anwenden
+          applyFilters();
 
         } catch (error) {
           console.error('Fehler beim Laden:', error);
@@ -200,14 +214,45 @@
         return responses;
       }
 
-      function filterResponses(responses, filterText) {
-        if (!filterText) return responses;
-        const lower = filterText.toLowerCase();
-        return responses.filter(r => 
-          r.name.toLowerCase().includes(lower) ||
-          r.taskId.toLowerCase().includes(lower) ||
-          r.text.toLowerCase().includes(lower)
-        );
+      function updateTaskSelect(responses) {
+        // Eindeutige Aufgaben-IDs sammeln
+        const tasks = [...new Set(responses.map(r => r.taskId).filter(t => t))];
+        tasks.sort();
+        
+        // Aktuellen Wert merken
+        const currentValue = filterSelect.value;
+        
+        // Options aktualisieren
+        filterSelect.innerHTML = '<option value="">Alle Aufgaben</option>';
+        tasks.forEach(task => {
+          const option = document.createElement('option');
+          option.value = task;
+          option.textContent = task;
+          filterSelect.appendChild(option);
+        });
+        
+        // Alten Wert wiederherstellen falls noch vorhanden
+        if (currentValue && tasks.includes(currentValue)) {
+          filterSelect.value = currentValue;
+        }
+      }
+
+      function filterResponses(responses, taskFilter, textFilter) {
+        return responses.filter(r => {
+          // Aufgaben-Filter
+          if (taskFilter && r.taskId !== taskFilter) return false;
+          
+          // Text-Filter (Name oder Antworttext)
+          if (textFilter) {
+            const lower = textFilter.toLowerCase();
+            if (!r.name.toLowerCase().includes(lower) && 
+                !r.text.toLowerCase().includes(lower)) {
+              return false;
+            }
+          }
+          
+          return true;
+        });
       }
 
       function renderResponses(responses) {
@@ -290,7 +335,10 @@
         displayDiv.className = 'student-responses-display';
         displayDiv.innerHTML = `
           <div class="sr-controls">
-            <input type="text" class="sr-filter-input" placeholder="Filtern nach Name, Aufgabe...">
+            <select class="sr-filter-select">
+              <option value="">Alle Aufgaben</option>
+            </select>
+            <input type="text" class="sr-filter-input" placeholder="Zusätzlich nach Name filtern...">
             <button class="sr-refresh-btn">Aktualisieren</button>
             <span class="sr-count"></span>
           </div>

@@ -6,6 +6,9 @@ title: Unterrichtsmaterial von Herrn Hartmann
 
 {button: (➡️ AB Ende der Revolution 1849 - Montag)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/03_Ende_der_Revolution_48_49)}
 
+## GPG 7: Reichsgründung
+- [Übersicht_Reichsgründung_Einigungskriege](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/Übersicht_Reichsgründung_Einigungskriege.md)
+
 ## GPG 7: Revolution 1848/49
 
 - [02_Revolution_1848_49_AB](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/02_Revolution_1848_49_AB.md)
