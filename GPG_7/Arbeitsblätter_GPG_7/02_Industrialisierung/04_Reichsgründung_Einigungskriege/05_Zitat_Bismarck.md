@@ -1,6 +1,6 @@
 ## Arbeitsblatt: Otto von Bismarck und die Einigung Deutschlands
 
-![Bismarck](https://upload.wikimedia.org/wikipedia/commons/6/62/Bundesarchiv_Bild_183-R68588%2C_Otto_von_Bismarck.jpg)
+![Bismarck](https://www.politicaexterior.com/wp-content/uploads/Otto-Von-Bismarck-little.jpg)
 
 ### Wer war Otto von Bismarck?
 
@@ -16,9 +16,9 @@ Otto von Bismarck (1815–1898) war der Ministerpräsident von Preußen, dem dam
 Ein Majoritätsbeschluss ist eine Entscheidung, die durch Abstimmung getroffen wird. Die Mehrheit (= Majorität) entscheidet.
 
 ---
-## Aufgabe
+## Aufgabe: Partnerarbeit 👥
 
-Lies das Zitat aufmerksam.
+Lest das Zitat aufmerksam durch.
 
 ### Was lehnt Bismarck ab und wie möchte er stattdessen Deutschland einen?
 

@@ -1,0 +1,69 @@
+/* YouTube Embed Styles */
+.youtube-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem 0;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.youtube-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.youtube-container .youtube-player,
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Loading-Indikator */
+.youtube-container.loading .youtube-player::after {
+  content: "Video wird geladen...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #888;
+  font-size: 14px;
+}
+
+/* Zeitbereich-Anzeige */
+.youtube-time-info {
+  background-color: #2d2d2d;
+  color: #dcddde;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-top: 1px solid #4a4a4a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.youtube-time-info .time-range {
+  color: #94D3C6;
+}
+
+.youtube-time-info .time-current {
+  color: #A9E2EA;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .youtube-container {
+    max-width: 100%;
+  }
+  
+  .youtube-time-info {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

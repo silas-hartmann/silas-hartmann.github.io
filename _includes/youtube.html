@@ -1,0 +1,19 @@
+{% comment %}
+YouTube Video Embed mit Start- und Endzeit-Beschränkung
+Verwendung: {% include youtube.html id="VIDEO_ID" start="5:00" end="10:00" %}
+Parameter:
+  - id: YouTube Video ID (Pflicht)
+  - start: Startzeit in "M:SS" oder "MM:SS" oder Sekunden (optional)
+  - end: Endzeit in "M:SS" oder "MM:SS" oder Sekunden (optional)
+  - strict: "true" für strikte Kontrolle (verhindert Vorspulen außerhalb des Bereichs)
+{% endcomment %}
+
+{% assign video_id = include.id %}
+{% assign start_time = include.start | default: "0" %}
+{% assign end_time = include.end | default: "" %}
+{% assign strict_mode = include.strict | default: "false" %}
+{% assign unique_id = video_id | append: "-" | append: site.time | date: "%s%N" %}
+
+<div class="youtube-container" data-video-id="{{ video_id }}" data-start="{{ start_time }}" data-end="{{ end_time }}" data-strict="{{ strict_mode }}" id="yt-{{ unique_id }}">
+  <div class="youtube-player"></div>
+</div>
