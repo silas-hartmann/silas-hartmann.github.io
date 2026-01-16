@@ -261,51 +261,94 @@
     });
   }
 
-  // ===== MARKDOWN-KONVERTER =====
-  // Wandelt Markdown-Syntax in HTML um
+  // ===== CODE-BLOCK KONVERTER =====
+  // Jekyll rendert ```student-response:id``` als <pre><code class="language-student-response">id</code></pre>
+  // Diese Funktion ersetzt diese Code-Blöcke durch die entsprechenden Formulare
 
-  function convertMarkdownForms() {
-    // Suche nach speziellen Markdown-Blöcken
-    const content = document.querySelector('.main-content') || document.body;
+  function convertCodeBlocks() {
+    // Eingabe-Formulare: language-student-response oder Inhalt beginnt mit "student-response"
+    const formBlocks = document.querySelectorAll('pre > code.language-student-response, pre > code[class*="language-student-response"]');
     
-    // Pattern für Eingabe-Formular: ```student-response:AUFGABEN_ID```
-    const formPattern = /```student-response(?::([^`\n]+))?```/g;
+    formBlocks.forEach(codeBlock => {
+      const pre = codeBlock.parentElement;
+      const taskId = codeBlock.textContent.trim() || 'aufgabe';
+      
+      const formDiv = document.createElement('div');
+      formDiv.className = 'student-response-form';
+      formDiv.dataset.taskId = taskId;
+      formDiv.innerHTML = `
+        <label>Dein Name:</label>
+        <input type="text" class="sr-name-input" placeholder="Name eingeben...">
+        <label>Deine Antwort:</label>
+        <textarea class="sr-text-input" placeholder="Schreibe deine Antwort hier..."></textarea>
+        <button class="sr-submit-btn">Antwort absenden</button>
+        <div class="sr-status"></div>
+      `;
+      
+      pre.parentNode.replaceChild(formDiv, pre);
+    });
+
+    // Anzeige-Bereich: language-student-responses-display
+    const displayBlocks = document.querySelectorAll('pre > code.language-student-responses-display, pre > code[class*="language-student-responses-display"]');
     
-    // Pattern für Anzeige: ```student-responses-display```
-    const displayPattern = /```student-responses-display```/g;
+    displayBlocks.forEach(codeBlock => {
+      const pre = codeBlock.parentElement;
+      
+      const displayDiv = document.createElement('div');
+      displayDiv.className = 'student-responses-display';
+      displayDiv.innerHTML = `
+        <div class="sr-controls">
+          <input type="text" class="sr-filter-input" placeholder="Filtern nach Name, Aufgabe...">
+          <button class="sr-refresh-btn">Aktualisieren</button>
+          <span class="sr-count"></span>
+        </div>
+        <div class="sr-response-list"></div>
+      `;
+      
+      pre.parentNode.replaceChild(displayDiv, pre);
+    });
 
-    let html = content.innerHTML;
-
-    // Eingabe-Formulare ersetzen
-    html = html.replace(formPattern, (match, taskId) => {
-      const id = taskId || 'aufgabe';
-      return `
-        <div class="student-response-form" data-task-id="${escapeAttr(id)}">
+    // Fallback: Suche nach Code-Blöcken ohne spezifische Klasse, deren Inhalt mit student-response beginnt
+    const allCodeBlocks = document.querySelectorAll('pre > code');
+    allCodeBlocks.forEach(codeBlock => {
+      const content = codeBlock.textContent.trim();
+      const pre = codeBlock.parentElement;
+      
+      // Eingabe-Formular
+      if (content.startsWith('student-response:') || content === 'student-response') {
+        const taskId = content.replace('student-response:', '').trim() || 'aufgabe';
+        
+        const formDiv = document.createElement('div');
+        formDiv.className = 'student-response-form';
+        formDiv.dataset.taskId = taskId;
+        formDiv.innerHTML = `
           <label>Dein Name:</label>
           <input type="text" class="sr-name-input" placeholder="Name eingeben...">
           <label>Deine Antwort:</label>
           <textarea class="sr-text-input" placeholder="Schreibe deine Antwort hier..."></textarea>
           <button class="sr-submit-btn">Antwort absenden</button>
           <div class="sr-status"></div>
-        </div>
-      `;
-    });
-
-    // Anzeige-Bereich ersetzen
-    html = html.replace(displayPattern, () => {
-      return `
-        <div class="student-responses-display">
+        `;
+        
+        pre.parentNode.replaceChild(formDiv, pre);
+      }
+      
+      // Anzeige-Bereich
+      if (content === 'student-responses-display') {
+        const displayDiv = document.createElement('div');
+        displayDiv.className = 'student-responses-display';
+        displayDiv.innerHTML = `
           <div class="sr-controls">
             <input type="text" class="sr-filter-input" placeholder="Filtern nach Name, Aufgabe...">
             <button class="sr-refresh-btn">Aktualisieren</button>
             <span class="sr-count"></span>
           </div>
           <div class="sr-response-list"></div>
-        </div>
-      `;
+        `;
+        
+        pre.parentNode.replaceChild(displayDiv, pre);
+      }
     });
-
-    content.innerHTML = html;
   }
 
   function escapeAttr(text) {
@@ -315,8 +358,8 @@
   // ===== INITIALISIERUNG =====
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Erst Markdown-Blöcke konvertieren
-    convertMarkdownForms();
+    // Erst Code-Blöcke konvertieren
+    convertCodeBlocks();
     // Dann Funktionalität initialisieren
     initResponseForms();
     initResponseDisplays();

@@ -14,7 +14,9 @@ Lies den folgenden Text und beantworte die Frage:
 
 **Frage:** Warum ist der Regenwald wichtig?
 
-```student-response:demo-aufgabe-1```
+```student-response
+demo-aufgabe-1
+```
 
 ---
 
@@ -22,4 +24,6 @@ Lies den folgenden Text und beantworte die Frage:
 
 **Frage:** Was hast du heute gelernt?
 
-```student-response:demo-aufgabe-2```
+```student-response
+demo-aufgabe-2
+```
