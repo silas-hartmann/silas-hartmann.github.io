@@ -8,13 +8,13 @@
 
 ### Alle Inhalte
 
-- [01_Wdh_Rev48](01_Wdh_Rev48.md)
-- [02_Antworten_Forderungen_Revolution](02_Antworten_Forderungen_Revolution.md)
-- [03_Karikatur_Friedrich](03_Karikatur_Friedrich.md)
-- [035_Kartenvergleich](035_Kartenvergleich.md)
-- [04_Vermutungen](04_Vermutungen.md)
-- [05_Zitat_Bismarck](05_Zitat_Bismarck.md)
-- [06_Einigungskriege](06_Einigungskriege.md)
+- [❌ 01_Wdh_Rev48](01_Wdh_Rev48.md)
+- [❌ 02_Antworten_Forderungen_Revolution](02_Antworten_Forderungen_Revolution.md)
+- [❌ 03_Karikatur_Friedrich](03_Karikatur_Friedrich.md)
+- [✅ 035_Kartenvergleich](035_Kartenvergleich.md)
+- [✅04_Vermutungen](04_Vermutungen.md)
+- [✅ 05_Zitat_Bismarck](05_Zitat_Bismarck.md)
+- [✅ 06_Einigungskriege](06_Einigungskriege.md)
 
 ### Ergänzendes Material
 
