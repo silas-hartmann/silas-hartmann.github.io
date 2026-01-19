@@ -12,6 +12,6 @@ Betrachte das Video. Notiere in deinem Notizheft 📝 Informationen zu den Frage
 
 ---
 
-{button: (Zurück zur Themenübersicht)(Übersicht_Reichsgründung_Einigungskriege)}
+{button: (Zurück zur Themenübersicht)(Thema_Reichsgründung_Einigungskriege)}
 
 
