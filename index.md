@@ -4,9 +4,8 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
-{button: (1️⃣ AB Ende der Revolution 1849 - Montag)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/03_Ende_der_Revolution_48_49)}
 
-{button: (2️⃣ Thema: Reichsgründung)(Übersicht_Reichsgründung_Einigungskriege)}
+{button: (Thema: Reichsgründung)(Übersicht_Reichsgründung_Einigungskriege)}
 
 
 
