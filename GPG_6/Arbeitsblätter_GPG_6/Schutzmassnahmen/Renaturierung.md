@@ -1,5 +1,5 @@
 
-[Zurück zur Übersicht über die verschiedenen Schutzmaßnahmen 🏠](GPG_6/Arbeitsblätter_GPG_6/Schutzmassnahmen/Schutzmaßnahmen_Überschwemmungen.md)
+[Zurück zur Übersicht über die verschiedenen Schutzmaßnahmen 🏠](Schutzmaßnahmen_Überschwemmungen.md)
 # Renaturierung - Flüssen wieder Platz geben
 
 Stell dir vor, ein Fluss ist wie ein Mensch in einem zu engen Anzug. Er kann sich nicht richtig bewegen und fühlt sich unwohl. Genau so geht es vielen Flüssen in Deutschland: Sie wurden über die Jahre "eingezwängt". So hatte der Fluss keinen Platz mehr, sich aus zu breiten und die Gefahr von Überschwemmungen stieg. 

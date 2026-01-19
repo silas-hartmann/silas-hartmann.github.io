@@ -42,7 +42,7 @@ Marx und Engels forderten: Die Arbeiter sollen sich zusammenschließen und eine 
 Das Manifest endet mit dem berühmten Aufruf: **„Proletarier aller Länder, vereinigt euch!"**
 Mit **Proletariern** meinen sie alle Arbeiter zusammen. Dieses Zitat ist oft auf Plakaten kommunistischer Bewegungen zu finden. 
 
-![13prold](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/13prold.jpg)
+![13prold](13prold.jpg)
 
 
 ### Wichtige Begriffe

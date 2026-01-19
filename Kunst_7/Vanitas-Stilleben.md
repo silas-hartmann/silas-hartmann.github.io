@@ -271,6 +271,6 @@ Zeichne ein Stillleben, das zeigt, was in DEINER Welt vergänglich ist. Was besc
 
 ---
 
-[Zurück zur Übersicht 🏠](index.md)
+[Zurück zur Übersicht 🏠](../index.md)
 [Link zum Video vom Beginn der Stunde 🎬](https://www.youtube.com/watch?v=R1v0en1Maf8)
 

@@ -16,5 +16,5 @@ Dafür gibt es mehrere Gründe:
 
 ---
 
-🏠 zurück zur [Startseite](index.md)
+🏠 zurück zur [Startseite](../../../index.md)
 

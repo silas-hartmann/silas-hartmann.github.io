@@ -107,5 +107,5 @@ Die `aufgaben-id` wird mit gespeichert und ermöglicht Filterung.
 
 ## Fertig!
 
-- Demo-Formular: [/antworten-demo](/antworten-demo)
-- Antworten anzeigen: [/antworten-anzeige](/antworten-anzeige)
+- Demo-Formular: [/antworten-demo](antworten-demo.md)
+- Antworten anzeigen: [/antworten-anzeige](antworten-anzeige.md)

@@ -1,4 +1,4 @@
-[Zurück zur Übersicht über die verschiedenen Schutzmaßnahmen 🏠](GPG_6/Arbeitsblätter_GPG_6/Schutzmassnahmen/Schutzmaßnahmen_Überschwemmungen.md)
+[Zurück zur Übersicht über die verschiedenen Schutzmaßnahmen 🏠](Schutzmaßnahmen_Überschwemmungen.md)
 
 # Frühwarnsysteme - Rechtzeitig vor Hochwasser warnen
 
