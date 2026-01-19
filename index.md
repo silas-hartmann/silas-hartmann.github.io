@@ -5,12 +5,12 @@ title: Unterrichtsmaterial von Herrn Hartmann
 # Aktuelles Unterrichtsmaterial
 
 
-{button: (Thema: Reichsgründung)(Übersicht_Reichsgründung_Einigungskriege)}
+{button: (Thema: Reichsgründung)(Thema_Reichsgründung_Einigungskriege)}
 
 
 
 ## GPG 7: Reichsgründung
-- [Übersicht_Reichsgründung_Einigungskriege](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/Übersicht_Reichsgründung_Einigungskriege.md)
+- [Thema_Reichsgründung_Einigungskriege](Thema_Reichsgründung_Einigungskriege.md)
 
 ## GPG 7: Revolution 1848/49
 
