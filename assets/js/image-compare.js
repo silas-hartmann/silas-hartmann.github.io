@@ -163,10 +163,24 @@ function initializeSliders() {
   containers.forEach(container => {
     const wrapper = container.querySelector('.image-compare-wrapper');
     const beforeDiv = container.querySelector('.image-compare-before');
+    const beforeImg = beforeDiv.querySelector('img');
     const slider = container.querySelector('.image-compare-slider');
     const hitarea = container.querySelector('.image-compare-slider-hitarea');
 
     let isDragging = false;
+
+    // Bildbreite auf Wrapper-Breite synchronisieren
+    function syncImageWidth() {
+      const wrapperWidth = wrapper.offsetWidth;
+      if (wrapperWidth > 0) {
+        beforeImg.style.width = wrapperWidth + 'px';
+      }
+    }
+
+    // Initial und bei Bildladung setzen
+    syncImageWidth();
+    beforeImg.addEventListener('load', syncImageWidth);
+    window.addEventListener('resize', syncImageWidth);
 
     function updatePosition(clientX) {
       const rect = wrapper.getBoundingClientRect();
