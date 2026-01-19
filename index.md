@@ -5,7 +5,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 # Aktuelles Unterrichtsmaterial
 
 
-{button: (Thema: Reichsgründung)(Thema_Reichsgründung_Einigungskriege)}
+{button: (Thema: Reichsgründung)(Thema_Reichsgründung_Einigungskriege.md)}
 
 
 
