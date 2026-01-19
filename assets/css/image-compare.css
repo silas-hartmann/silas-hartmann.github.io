@@ -1,0 +1,177 @@
+/**
+ * Image Compare Slider Styles
+ * Vorher/Nachher-Bildvergleich mit Schieberegler
+ */
+
+.image-compare-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #4a4a4a;
+  background: #2d2d2d;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.image-compare-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.image-compare-wrapper {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+/* Unteres Bild (rechts/nachher) - volle Breite */
+.image-compare-after {
+  position: relative;
+  width: 100%;
+}
+
+/* Oberes Bild (links/vorher) - wird geclippt */
+.image-compare-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-compare-before img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slider-Linie und Griff */
+.image-compare-slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #94D3C6;
+  cursor: ew-resize;
+  z-index: 10;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.image-compare-slider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: #94D3C6;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.image-compare-slider::after {
+  content: '◀ ▶';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2d2d2d;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Labels */
+.image-compare-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #363636;
+  border-top: 1px solid #4a4a4a;
+}
+
+.image-compare-label {
+  font-size: 0.85rem;
+  color: #dcddde;
+  font-weight: 500;
+}
+
+.image-compare-label-left {
+  text-align: left;
+}
+
+.image-compare-label-right {
+  text-align: right;
+}
+
+/* Hover-Effekt */
+.image-compare-container:hover .image-compare-slider::before {
+  background: #A9E2EA;
+  transform: translate(-50%, -50%) scale(1.1);
+  transition: all 0.15s ease;
+}
+
+/* Touch-freundlicher Bereich */
+.image-compare-slider-hitarea {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 44px;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  z-index: 11;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .image-compare-container {
+    border-radius: 4px;
+    margin: 1rem auto;
+  }
+  
+  .image-compare-slider::before {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .image-compare-slider::after {
+    font-size: 10px;
+  }
+  
+  .image-compare-labels {
+    padding: 0.4rem 0.75rem;
+  }
+  
+  .image-compare-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Print-Modus: Zeige beide Bilder nebeneinander */
+@media print {
+  .image-compare-container {
+    break-inside: avoid;
+  }
+  
+  .image-compare-slider,
+  .image-compare-slider-hitarea {
+    display: none;
+  }
+  
+  .image-compare-before {
+    width: 50% !important;
+  }
+}
