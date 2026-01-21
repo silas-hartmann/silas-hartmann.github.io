@@ -16,9 +16,9 @@ Otto von Bismarck (1815–1898) war der Ministerpräsident von Preußen, dem dam
 Ein Majoritätsbeschluss ist eine Entscheidung, die durch Abstimmung getroffen wird. Die Mehrheit (= Majorität) entscheidet.
 
 ---
-## Aufgabe: Partnerarbeit 👥
+## Aufgabe
 
-Lest das Zitat aufmerksam durch.
+Lies dir das Zitat aufmerksam durch.
 
 ### Was lehnt Bismarck ab und wie möchte er stattdessen Deutschland einen?
 
