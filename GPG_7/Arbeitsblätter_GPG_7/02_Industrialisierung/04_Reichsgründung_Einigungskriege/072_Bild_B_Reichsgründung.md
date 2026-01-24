@@ -15,7 +15,7 @@
 
 ☝️ Das Bild wurde vom Kaiser selbst in Auftrag gegeben. (Das heißt, er hat dem Künstler gesagt, dass er ihm so ein Bild malen soll.)
 
-![[Kaiserproklamation_Bild_B.png]]
+![Kaiserproklamation_Bild_B](bilder/Kaiserproklamation_Bild_B.png)
 
 {button: (zurück zur Übersicht zum Bildvergleich)(07_Bildvergleich)}
 
