@@ -5,7 +5,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 # Aktuelles Unterrichtsmaterial
 
 
-{button: (Thema: Reichsgründung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/Thema_Reichsgründung_Einigungskriege.md)}
+{button: (Thema: Reichsgründung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/Thema_Reichsgründung_Einigungskriege)}
 
 
 
