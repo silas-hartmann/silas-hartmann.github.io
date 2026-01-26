@@ -23,7 +23,7 @@ Dein Freund zeigt anderen ohne deine Erlaubnis ein privates Foto von dir, das du
 4. Was wünsche ich mir?
 
 ---
-### Situation 8: Das Geheimnis
+### Situation 2: Das Geheimnis
 
 Du hast einer Freundin ein Geheimnis anvertraut. Am nächsten Tag wissen es plötzlich alle in der Klasse.
 
