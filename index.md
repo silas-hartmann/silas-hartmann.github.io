@@ -4,8 +4,16 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
+hier finden sie das Unterrichtsmaterial für den digitalen Unterricht am 26.01.2025
 
-{button: (Thema: Reichsgründung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/Thema_Reichsgründung_Einigungskriege)}
+{button: (Klasse 5)()}
+{button: (Klasse 7)()}
+
+
+
+
+
+## Archiv
 
 
 
