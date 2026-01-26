@@ -12,6 +12,7 @@ Betrachte das Video. Notiere in deinem Notizheft 📝 Informationen zu den Frage
 
 ---
 
+{button: (weiter)(07_Bildvergleich)}
 {button: (Zurück zur Themenübersicht)(Thema_Reichsgründung_Einigungskriege)}
 
 
