@@ -4,7 +4,7 @@ title: Klimazonen – Arbeitsblatt zum Video
 
 # Klimazonen und Klimawandel
 
-Zurück zu: [Digitaler Unterricht am 26-01-2025](D_5/Digitaler%20Unterricht%20am%2026-01-2025.md)
+Zurück zu: [Digitaler Unterricht am 26-01-2025](../D_5/Digitaler%20Unterricht%20am%2026-01-2025.md)
 
 **Bearbeite die folgenden Aufgaben zum Video „Der Klima-Check".** ⬇️
 
@@ -54,4 +54,4 @@ Antwort: Am Äquator treffen die Sonnenstrahlen sehr steil auf die Erde. Je stei
 
 ---
 
-Zurück zur Übersicht: [Digitaler Unterricht am 26-01-2025](D_5/Digitaler%20Unterricht%20am%2026-01-2025.md)
+Zurück zur Übersicht: [Digitaler Unterricht am 26-01-2025](../D_5/Digitaler%20Unterricht%20am%2026-01-2025.md)
