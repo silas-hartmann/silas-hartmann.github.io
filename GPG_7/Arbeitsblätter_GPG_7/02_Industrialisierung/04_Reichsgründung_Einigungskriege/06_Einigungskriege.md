@@ -17,10 +17,9 @@ Betrachte das Video. Notiere in deinem Notizheft oder auf einem Zettel 📝 Info
 
 ## Aufgabe 2
 
-Betrachte auch das zweite Video. Auf Grundlage von beiden Informationen: 
+>Betrachte auch das zweite Video. Mit dem was du jetzt gelernt hast: 
 >🤔 Findest du, Bismarck war ein "Held"? Begründe deine Meinung mit drei Gründen. 
-
-(*schreibe mindestens drei Sätze*)
+>schreibe mindestens 3 Sätze, die du am Mittwoch mitbringst. 
 
 {% include youtube.html id="mb59CQQvxd4"%}
 
