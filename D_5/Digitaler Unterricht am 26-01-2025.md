@@ -2,7 +2,7 @@
 
 ## ⚠️ Neu: Englisch
 
-ich habe von Frau Horbelt, die Information bekommen, dass die Schülerinnen und Schüler auch in Englisch Aufgaben in der [Anton-App](https://anton.app/de/) (Numbers + Days, Months...) erledigen sollen.
+ich habe von Frau Horbelt, die Information bekommen, dass die Schülerinnen und Schüler auch in Englisch Aufgaben in der [Anton-App](https://anton.app/de/) erledigen sollen.
 
 ## Deutsch, Aufgabe 1: Verben
 
