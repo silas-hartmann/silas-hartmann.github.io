@@ -1,8 +1,8 @@
 # Digitaler Unterricht am 26-01-2025
 
-## ⚠️ Neu: Englisch
+## ⚠️ Neu: Englisch und Mathe
 
-ich habe von Frau Horbelt die Information bekommen, dass die Schülerinnen und Schüler auch in Englisch Aufgaben in der [Anton-App](https://anton.app/de/) erledigen sollen.
+ich habe von Frau Horbelt die Information bekommen, dass die Schülerinnen und Schüler auch in Englisch und in Mathe Aufgaben in der [Anton-App](https://anton.app/de/) erledigen sollen.
 
 ## Deutsch, Aufgabe 1: Verben
 
