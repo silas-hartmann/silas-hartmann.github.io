@@ -46,7 +46,7 @@ Du hast einer Freundin ein Geheimnis anvertraut. Am nächsten Tag wissen es plö
 
 ### GPG 5 
 
-{button: (zum GPG Arbeitsauftrag)(GPG_5/Klimazonen_CheckerTobi)}
+hier klicken: [Arbeitsauftrag GPGi](GPG_5/Klimazonen_CheckerTobi.md)
 
 ---
 
