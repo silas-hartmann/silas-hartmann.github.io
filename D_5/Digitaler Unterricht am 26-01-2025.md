@@ -1,5 +1,9 @@
 # Digitaler Unterricht am 26-01-2025
 
+## ⚠️ Neu: Englisch
+
+ich habe von Frau Horbelt, die Information bekommen, dass die Schülerinnen und Schüler auch in Englisch Aufgaben in der [Anton-App](https://anton.app/de/) (Numbers + Days, Months...) erledigen sollen.
+
 ## Deutsch, Aufgabe 1: Verben
 
 In der [Anton-App](https://anton.app/de/): Unregelmäßige Verben I 
