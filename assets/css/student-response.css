@@ -19,7 +19,53 @@
   margin-bottom: 0.5rem;
 }
 
-.student-response-form .sr-name-input,
+.student-response-form .sr-name-select {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  border: 1px solid var(--text-faint, #666);
+  border-radius: 4px;
+  background-color: var(--bg-primary, #2d2d2d);
+  color: var(--text-normal, #dcddde);
+  font-family: var(--font-text, sans-serif);
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.student-response-form .sr-name-select:focus {
+  outline: none;
+  border-color: var(--accent-2, #80C7B2);
+  box-shadow: 0 0 0 2px rgba(128, 199, 178, 0.2);
+}
+
+.student-response-form .sr-name-select option {
+  background-color: var(--bg-primary, #2d2d2d);
+  color: var(--text-normal, #dcddde);
+}
+
+.student-response-form .sr-code-input {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.75rem;
+  border: 1px solid var(--text-faint, #666);
+  border-radius: 4px;
+  background-color: var(--bg-primary, #2d2d2d);
+  color: var(--text-normal, #dcddde);
+  font-family: var(--font-text, sans-serif);
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.student-response-form .sr-code-input:focus {
+  outline: none;
+  border-color: var(--accent-2, #80C7B2);
+  box-shadow: 0 0 0 2px rgba(128, 199, 178, 0.2);
+}
+
 .student-response-form .sr-text-input {
   width: 100%;
   padding: 0.75rem;
@@ -30,20 +76,11 @@
   font-family: var(--font-text, sans-serif);
   font-size: 1rem;
   box-sizing: border-box;
-}
-
-.student-response-form .sr-name-input {
-  max-width: 300px;
-  margin-bottom: 1rem;
-}
-
-.student-response-form .sr-text-input {
   min-height: 120px;
   resize: vertical;
   margin-bottom: 1rem;
 }
 
-.student-response-form .sr-name-input:focus,
 .student-response-form .sr-text-input:focus {
   outline: none;
   border-color: var(--accent-2, #80C7B2);

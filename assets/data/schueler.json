@@ -1,0 +1,27 @@
+{
+  "klassen": {
+    "7": [
+      { "name": "Gergely", "code": "g7k2m" },
+      { "name": "Leo", "code": "l3p8x" },
+      { "name": "Lena", "code": "n5w2q" },
+      { "name": "Nico", "code": "c9h4t" },
+      { "name": "Alexis", "code": "a2v6j" },
+      { "name": "Tim", "code": "t8r3f" },
+      { "name": "Taeeba", "code": "b4m7y" },
+      { "name": "Mia H.", "code": "m6k9p" },
+      { "name": "Marvin", "code": "v2x5c" },
+      { "name": "Maxim", "code": "x7n3h" },
+      { "name": "Adelin", "code": "d5q8w" },
+      { "name": "Eduard", "code": "e3j6r" },
+      { "name": "Tara", "code": "r9f2k" },
+      { "name": "Emely", "code": "y4t7m" },
+      { "name": "Luca", "code": "u8c3v" },
+      { "name": "Allison", "code": "s6h9b" },
+      { "name": "Samuel", "code": "p2w5n" },
+      { "name": "Mia S.", "code": "i7g4x" },
+      { "name": "Joel", "code": "o3k8q" },
+      { "name": "Ben", "code": "f9m2j" }
+    ]
+  },
+  "standardKlasse": "7"
+}
