@@ -8,8 +8,7 @@ Zurück zu: [Digitaler Unterricht am 26-01-2025](D_5/Digitaler%20Unterricht%20am
 
 **Bearbeite die folgenden Aufgaben zum Video „Der Klima-Check".** ⬇️
 
-![Klima-Check](https://www.youtube.com/watch?v=4i7-h-ySBNI)
-
+{% include youtube.html id="4i7-h-ySBNI" %}
 
 ---
 
