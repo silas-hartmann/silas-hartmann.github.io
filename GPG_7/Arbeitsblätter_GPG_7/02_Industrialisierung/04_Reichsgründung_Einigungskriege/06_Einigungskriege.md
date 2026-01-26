@@ -22,7 +22,8 @@ Betrachte auch das zweite Video. Auf Grundlage von beiden Informationen:
 
 (*schreibe mindestens drei Sätze*)
 
-![Bismarck_Held](https://www.youtube.com/watch?v=mb59CQQvxd4)
+{% include youtube.html id="mb59CQQvxd4"%}
+
 
 👨‍🏫 **Viel Erfolg und viel Spaß im Schnee :)**
 
