@@ -7,7 +7,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 hier finden sie das Unterrichtsmaterial für den digitalen Unterricht am 26.01.2025
 
 {button: (Klasse 5)()}
-{button: (Klasse 7)()}
+{button: (Klasse 7)(06_Einigungskriege)}
 
 
 
