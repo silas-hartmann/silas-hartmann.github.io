@@ -46,8 +46,10 @@ Du hast einer Freundin ein Geheimnis anvertraut. Am nächsten Tag wissen es plö
 
 ### GPG 5 
 
-{button: (zum GPG Arbeitsauftrag)(Klimazonen_CheckerTobi)}
+{button: (zum GPG Arbeitsauftrag)(GPG_5/Klimazonen_CheckerTobi)}
 
 ---
 
 **Viel Erfolg und viel Spaß im Schnee! ☃️**
+
+
