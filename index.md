@@ -4,7 +4,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
-[[TB_Reichsgründung.png]]
+[TB_Reichsgründung](GPG_7/Hefteinträge_GPG7/TB_Reichsgründung.png)
 
 {button: (Klasse 5)(D_5/Digitaler%20Unterricht%20am%2026-01-2025)}
 {button: (Klasse 7)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/97_Bildvergleich)}
