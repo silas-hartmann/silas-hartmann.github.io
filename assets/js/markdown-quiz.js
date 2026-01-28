@@ -1071,19 +1071,21 @@ function addCodewordStyles() {
   style.id = 'codewort-styles';
   style.textContent = `
     .codewort-success {
-      background: linear-gradient(135deg, #4CAF50, #45a049);
-      color: white;
+      background: linear-gradient(135deg, var(--accent-2, #80C7B2), #5ba894);
+      color: var(--bg-primary, #2d2d2d);
       padding: 20px;
-      border-radius: 15px;
+      border-radius: 12px;
       margin: 20px 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       text-align: center;
     }
     
     .success-header h3 {
+      font-family: var(--font-heading, serif);
       margin: 0 0 15px 0;
       font-size: 1.4em;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      font-weight: 500;
+      color: var(--bg-primary, #2d2d2d);
     }
     
     .codewort-container {
@@ -1091,23 +1093,23 @@ function addCodewordStyles() {
     }
     
     .codewort-box {
-      background: rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.15);
       padding: 15px;
       border-radius: 10px;
       margin: 10px 0;
-      border: 2px solid rgba(255,255,255,0.3);
+      border: 2px solid rgba(0,0,0,0.2);
     }
     
     .codewort-text {
+      font-family: var(--font-heading, serif);
       font-size: 1.6em;
-      font-weight: bold;
-      color: #FFEB3B;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      font-weight: 600;
+      color: var(--bg-primary, #2d2d2d);
       letter-spacing: 1px;
       display: inline-block;
       margin: 10px 0;
-      padding: 5px 10px;
-      background: rgba(0,0,0,0.2);
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.3);
       border-radius: 8px;
     }
     
@@ -1115,150 +1117,58 @@ function addCodewordStyles() {
       margin-top: 15px;
       font-size: 1.1em;
       font-style: italic;
+      color: var(--bg-secondary, #262626);
     }
     
     .good-result {
-      background: linear-gradient(135deg, #2196F3, #1976D2);
-      color: white;
+      background: linear-gradient(135deg, var(--accent-1, #80ADC7), #5a8fa8);
+      color: var(--bg-primary, #2d2d2d);
       padding: 20px;
-      border-radius: 15px;
+      border-radius: 12px;
       margin: 20px 0;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     
     .good-result h3 {
+      font-family: var(--font-heading, serif);
       margin: 0 0 10px 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-    
-    .encouragement-result {
-      background: linear-gradient(135deg, #FF9800, #F57C00);
-      color: white;
-      padding: 20px;
-      border-radius: 15px;
-      margin: 20px 0;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .encouragement-result h3 {
-      margin: 0 0 10px 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-    
-    .quiz-base-result {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    
-    /* Quiz Auth Modal Styles */
-    .quiz-auth-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-    }
-    
-    .quiz-auth-content {
-      background: var(--bg-secondary, #262626);
-      border: 1px solid var(--accent-2, #80C7B2);
-      border-radius: 12px;
-      padding: 2rem;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    }
-    
-    .quiz-auth-content h3 {
-      color: var(--h2-color, #A9E2EA);
-      margin: 0 0 1rem 0;
-      text-align: center;
-    }
-    
-    .quiz-auth-content p {
-      color: var(--text-muted, #999);
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    
-    .quiz-auth-content label {
-      display: block;
-      color: var(--text-normal, #dcddde);
-      margin-bottom: 0.5rem;
       font-weight: 500;
-    }
-    
-    .quiz-auth-select,
-    .quiz-auth-input {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid var(--text-faint, #666);
-      border-radius: 6px;
-      background: var(--bg-primary, #2d2d2d);
-      color: var(--text-normal, #dcddde);
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      box-sizing: border-box;
-    }
-    
-    .quiz-auth-select:focus,
-    .quiz-auth-input:focus {
-      outline: none;
-      border-color: var(--accent-2, #80C7B2);
-    }
-    
-    .quiz-auth-error {
-      background: rgba(225, 162, 237, 0.2);
-      border: 1px solid var(--accent-3, #E1A2ED);
-      color: var(--accent-3, #E1A2ED);
-      padding: 0.75rem;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    
-    .quiz-auth-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .quiz-auth-btn {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    
-    .quiz-auth-btn.cancel {
-      background: var(--text-faint, #666);
-      color: var(--text-normal, #dcddde);
-    }
-    
-    .quiz-auth-btn.cancel:hover {
-      background: var(--text-muted, #999);
-    }
-    
-    .quiz-auth-btn.submit {
-      background: var(--accent-2, #80C7B2);
       color: var(--bg-primary, #2d2d2d);
     }
     
-    .quiz-auth-btn.submit:hover {
-      background: var(--h1-color, #94D3C6);
+    .good-result p {
+      color: var(--bg-secondary, #262626);
+    }
+    
+    .encouragement-result {
+      background: linear-gradient(135deg, var(--accent-3, #E1A2ED), #c77dd6);
+      color: var(--bg-primary, #2d2d2d);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .encouragement-result h3 {
+      font-family: var(--font-heading, serif);
+      margin: 0 0 10px 0;
+      font-weight: 500;
+      color: var(--bg-primary, #2d2d2d);
+    }
+    
+    .encouragement-result p {
+      color: var(--bg-secondary, #262626);
+    }
+    
+    .quiz-base-result {
+      font-family: var(--font-heading, serif);
+      font-size: 1.2em;
+      font-weight: 500;
+      margin-bottom: 10px;
+      text-align: center;
+      color: var(--text-normal, #dcddde);
     }
   `;
   
