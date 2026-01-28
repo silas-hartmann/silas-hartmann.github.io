@@ -44,6 +44,14 @@
     return schueler.code === code.trim();
   }
 
+  // ===== HILFSFUNKTIONEN =====
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
   // ===== FORMULAR-FUNKTIONALITÄT =====
 
   function initResponseForms() {
@@ -342,12 +350,6 @@
           }
         } catch (e) {}
         return ts;
-      }
-
-      function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
       }
     });
   }
