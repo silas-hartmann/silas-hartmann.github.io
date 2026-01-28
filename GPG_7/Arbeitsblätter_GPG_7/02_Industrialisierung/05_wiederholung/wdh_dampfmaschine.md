@@ -162,4 +162,4 @@ Womit fuhr die Dampflokomotive?
 
 ---
 
-{button: (Zurück zur Wiederholung zur Industrialisierung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wiederholung-home.md)}
+{button: (Zurück zur Wiederholung zur Industrialisierung)(wiederholung-home)}
