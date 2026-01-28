@@ -1,5 +1,7 @@
 # Wiederholung: Erfindungen der Industrialisierung
 
+![TB_Erfidnungen](bilder/TB_Erfidnungen.png)
+
 ## Das Wichtigste in Kürze
 
 Nach der Erfindung der Dampfmaschine folgten viele weitere **wichtige Erfindungen**. Diese veränderten das Leben der Menschen in allen Bereichen.
@@ -12,24 +14,11 @@ Nach der Erfindung der Dampfmaschine folgten viele weitere **wichtige Erfindunge
 
 **Die Pockenimpfung (1796)**: Edward Jenner entwickelte die erste Impfung gegen die Pocken. Die Pocken waren eine gefährliche Krankheit, an der viele Menschen starben, besonders Kinder. Jenner stellte fest, dass Menschen, die an Kuhpocken erkrankt waren, nicht an den gefährlichen Pocken erkrankten. Mit der Impfung konnten sich Menschen **schützen** und **weniger Menschen starben**.
 
-**Fazit:** Die neuen Erfindungen veränderten das Leben in allen Bereichen! Sie machten vieles schneller, einfacher und sicherer – aber nicht für alle Menschen waren die Veränderungen positiv.
+>**Fazit:** Die neuen Erfindungen veränderten das Leben in allen Bereichen! Sie machten vieles schneller, einfacher und sicherer – aber nicht für alle Menschen waren die Veränderungen positiv.
 
 ---
 
-## Quiz: Teste dein Wissen!
-
-### Aufgabe 1 [SC]
-
-Wer erfand den mechanischen Webstuhl?
-
-- George Stephenson
-- Edmund Cartwright (richtig)
-- Robert Fulton
-- Edward Jenner
-
----
-
-### Aufgabe 2 [MC]
+### Aufgabe 1 [MC]
 
 Was änderte sich durch den mechanischen Webstuhl? (Mehrere Antworten sind richtig!)
 
@@ -40,7 +29,7 @@ Was änderte sich durch den mechanischen Webstuhl? (Mehrere Antworten sind richt
 
 ---
 
-### Aufgabe 3 [LÜCKE]
+### Aufgabe 2 [LÜCKE]
 
 Vervollständige den Text:
 
@@ -50,7 +39,7 @@ Lücken: George Stephenson, Schienen, Dampfmaschine, schneller
 
 ---
 
-### Aufgabe 4 [SC]
+### Aufgabe 3 [SC]
 
 In welchem Jahr wurde die erste Eisenbahn gebaut?
 
@@ -61,7 +50,7 @@ In welchem Jahr wurde die erste Eisenbahn gebaut?
 
 ---
 
-### Aufgabe 5 [MC]
+### Aufgabe 4 [MC]
 
 Was waren Vorteile der Eisenbahn? (Mehrere Antworten sind richtig!)
 
@@ -72,7 +61,7 @@ Was waren Vorteile der Eisenbahn? (Mehrere Antworten sind richtig!)
 
 ---
 
-### Aufgabe 6 [SC]
+### Aufgabe 5 [SC]
 
 Wovon waren Segelschiffe abhängig?
 
@@ -83,7 +72,7 @@ Wovon waren Segelschiffe abhängig?
 
 ---
 
-### Aufgabe 7 [ORDER]
+### Aufgabe 6 [ORDER]
 
 Bringe die Erfindungen in die richtige zeitliche Reihenfolge:
 
@@ -94,7 +83,7 @@ Bringe die Erfindungen in die richtige zeitliche Reihenfolge:
 
 ---
 
-### Aufgabe 8 [LÜCKE]
+### Aufgabe 7 [LÜCKE]
 
 Vervollständige den Text über die Pockenimpfung:
 
@@ -104,7 +93,7 @@ Lücken: Kuhpocken, Pocken, Impfung, weniger
 
 ---
 
-### Aufgabe 9 [MC]
+### Aufgabe 8 [MC]
 
 Welche Erfindungen basierten auf der Dampfmaschine? (Mehrere Antworten sind richtig!)
 
@@ -115,7 +104,7 @@ Welche Erfindungen basierten auf der Dampfmaschine? (Mehrere Antworten sind rich
 
 ---
 
-### Aufgabe 10 [SC]
+### Aufgabe 9 [SC]
 
 Welche Aussage über die Erfindungen der Industrialisierung ist richtig?
 

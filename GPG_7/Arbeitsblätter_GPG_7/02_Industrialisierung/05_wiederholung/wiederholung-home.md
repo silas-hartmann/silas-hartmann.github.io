@@ -13,4 +13,7 @@ Viel Erfolg!
 ---
 
 1. [Dampfmaschine](wdh_dampfmaschine.md)
-2.
+2. [Erfindungen](wdh_Erfindungen.md)
+3. [Warum zieht Johann in die Stadt?](wdh_Landflucht.md)
+
+

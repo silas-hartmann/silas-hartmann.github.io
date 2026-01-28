@@ -2,6 +2,7 @@
 
 ![Animation_Dampfmaschine](https://upload.wikimedia.org/wikipedia/commons/6/62/Steam_engine_in_action_%28two-thirds_speed%29.gif)
 
+![TB_Dampfmaschine](bilder/TB_Dampfmaschine.png)
 ## Das Wichtigste in Kürze
 
 **Vor der Dampfmaschine** mussten die Menschen alle Arbeiten mit ihren eigenen Händen erledigen. Sie nutzten ihre **Muskelkraft** oder die **Kraft von Tieren** wie Ochsen und Pferden. Das war sehr anstrengend und langsam. Außerdem waren die Menschen **abhängig von der Natur**: Bei schlechtem Wetter oder wenn die Tiere müde waren, konnte nicht gearbeitet werden.
@@ -161,3 +162,4 @@ Womit fuhr die Dampflokomotive?
 
 ---
 
+{button: (Zurück zur Wiederholung zur Industrialisierung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wiederholung-home.md)}
