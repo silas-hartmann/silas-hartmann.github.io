@@ -1,7 +1,10 @@
 // markdown-quiz.js - Wandelt Quiz-Listen in interaktive Elemente um
 
-// Globale Variable für das Codewort
+// Globale Variablen
 let extractedCodeword = null;
+let extractedSolutionPassword = null;
+let quizChecked = false;
+let quizHadErrors = false;
 
 // Globale Schülerdaten für Quiz-Authentifizierung
 let quizSchuelerDaten = null;
@@ -11,8 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Lade Schülerdaten für Authentifizierung
   loadQuizSchuelerDaten();
   
-  // Extrahiere das Codewort beim Laden der Seite
+  // Extrahiere das Codewort und Lösungspasswort beim Laden der Seite
   extractCodewordFromMarkdown();
+  extractSolutionPasswordFromMarkdown();
   
   console.log('Quiz-System wird geladen...');
   
@@ -62,18 +66,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Wenn Quizfragen gefunden wurden, füge einen "Antworten überprüfen" Button am Ende der Seite hinzu
+  // Wenn Quizfragen gefunden wurden, füge Buttons am Ende der Seite hinzu
   if (questionCount > 0) {
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'quiz-button-container';
+    
+    // "Antworten überprüfen" Button
     const checkButton = document.createElement('button');
     checkButton.textContent = 'Alle Antworten überprüfen';
     checkButton.className = 'check-all-answers-btn';
     checkButton.addEventListener('click', function() {
       showQuizAuthModal();
     });
+    buttonContainer.appendChild(checkButton);
     
-    // Füge den Button am Ende der Seite ein
+    // "Lösung anzeigen" Button (anfangs versteckt, braucht Passwort)
+    if (extractedSolutionPassword) {
+      const showSolutionBtn = document.createElement('button');
+      showSolutionBtn.textContent = 'Lösung anzeigen';
+      showSolutionBtn.className = 'show-solution-btn';
+      showSolutionBtn.addEventListener('click', function() {
+        showSolutionPasswordModal();
+      });
+      buttonContainer.appendChild(showSolutionBtn);
+    }
+    
+    // Füge den Button-Container am Ende der Seite ein
     const mainContent = document.querySelector('main') || document.body;
-    mainContent.appendChild(checkButton);
+    mainContent.appendChild(buttonContainer);
     
     // Füge auch einen Container für das Gesamtergebnis hinzu
     const resultContainer = document.createElement('div');
@@ -82,10 +102,239 @@ document.addEventListener('DOMContentLoaded', function() {
     resultContainer.style.display = 'none';
     mainContent.appendChild(resultContainer);
     
-    // Erstelle das Authentifizierungs-Modal
+    // Erstelle die Modals
     createQuizAuthModal();
+    createSolutionPasswordModal();
+    createReloadButton();
   }
 });
+
+// ===== RELOAD BUTTON =====
+
+function createReloadButton() {
+  const reloadBtn = document.createElement('button');
+  reloadBtn.id = 'quiz-reload-btn';
+  reloadBtn.className = 'quiz-reload-btn';
+  reloadBtn.innerHTML = '🔄 Neu starten';
+  reloadBtn.style.display = 'none';
+  reloadBtn.addEventListener('click', function() {
+    window.location.reload();
+  });
+  document.body.appendChild(reloadBtn);
+}
+
+function showReloadButton() {
+  const reloadBtn = document.getElementById('quiz-reload-btn');
+  if (reloadBtn) {
+    reloadBtn.style.display = 'flex';
+    // Animation für Aufmerksamkeit
+    reloadBtn.classList.add('quiz-reload-highlight');
+  }
+}
+
+// ===== LÖSUNGSPASSWORT =====
+
+function extractSolutionPasswordFromMarkdown() {
+  const bodyText = document.body.textContent || document.body.innerText || '';
+  const passwordRegex = /\[Lösungspasswort:\s*([^\]]+)\]/i;
+  const match = bodyText.match(passwordRegex);
+  
+  if (match) {
+    extractedSolutionPassword = match[1].trim();
+    console.log('Lösungspasswort gefunden');
+    
+    // Verstecke das Passwort im DOM
+    hideSolutionPasswordInDOM();
+  } else {
+    console.log('Kein Lösungspasswort im Markdown gefunden');
+  }
+}
+
+function hideSolutionPasswordInDOM() {
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT,
+    null,
+    false
+  );
+  
+  let node;
+  while (node = walker.nextNode()) {
+    const passwordRegex = /\[Lösungspasswort:\s*([^\]]+)\]/i;
+    if (passwordRegex.test(node.textContent)) {
+      node.textContent = node.textContent.replace(passwordRegex, '').trim();
+    }
+  }
+}
+
+function createSolutionPasswordModal() {
+  if (document.getElementById('solution-password-modal')) return;
+  
+  const modal = document.createElement('div');
+  modal.id = 'solution-password-modal';
+  modal.className = 'quiz-auth-modal';
+  modal.style.display = 'none';
+  
+  modal.innerHTML = `
+    <div class="quiz-auth-content">
+      <h3>Lösung anzeigen</h3>
+      <p>Bitte gib das Lösungspasswort ein, um die Lösungen zu sehen.</p>
+      
+      <label for="solution-password-input">Passwort:</label>
+      <input type="password" id="solution-password-input" class="quiz-auth-input" placeholder="Passwort eingeben...">
+      
+      <div id="solution-password-error" class="quiz-auth-error" style="display: none;"></div>
+      
+      <div class="quiz-auth-buttons">
+        <button id="solution-password-cancel" class="quiz-auth-btn cancel">Abbrechen</button>
+        <button id="solution-password-submit" class="quiz-auth-btn submit">Anzeigen</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  document.getElementById('solution-password-cancel').addEventListener('click', hideSolutionPasswordModal);
+  document.getElementById('solution-password-submit').addEventListener('click', handleSolutionPasswordSubmit);
+  
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      hideSolutionPasswordModal();
+    }
+  });
+  
+  document.getElementById('solution-password-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      handleSolutionPasswordSubmit();
+    }
+  });
+}
+
+function showSolutionPasswordModal() {
+  const modal = document.getElementById('solution-password-modal');
+  const errorDiv = document.getElementById('solution-password-error');
+  const input = document.getElementById('solution-password-input');
+  
+  if (input) input.value = '';
+  if (errorDiv) errorDiv.style.display = 'none';
+  
+  modal.style.display = 'flex';
+}
+
+function hideSolutionPasswordModal() {
+  const modal = document.getElementById('solution-password-modal');
+  modal.style.display = 'none';
+}
+
+function handleSolutionPasswordSubmit() {
+  const input = document.getElementById('solution-password-input');
+  const errorDiv = document.getElementById('solution-password-error');
+  
+  const password = input.value.trim();
+  
+  if (!password) {
+    errorDiv.textContent = 'Bitte gib ein Passwort ein.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
+  if (password !== extractedSolutionPassword) {
+    errorDiv.textContent = 'Falsches Passwort.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
+  // Passwort korrekt - Lösungen anzeigen
+  hideSolutionPasswordModal();
+  showAllSolutions();
+}
+
+function showAllSolutions() {
+  const questions = document.querySelectorAll('.formatted-question');
+  
+  questions.forEach(question => {
+    const type = question.getAttribute('data-type');
+    const correctAnswer = question.getAttribute('data-correct');
+    
+    // Multiple Choice - richtige Antworten markieren
+    if (type === 'multiple-choice') {
+      try {
+        const correctIndices = JSON.parse(correctAnswer);
+        const options = question.querySelectorAll('.option-label');
+        
+        options.forEach((option, index) => {
+          if (correctIndices.includes(index)) {
+            option.classList.add('correct-option');
+            if (!option.querySelector('.correct-indicator')) {
+              const indicator = document.createElement('span');
+              indicator.className = 'correct-indicator';
+              indicator.textContent = ' ✓';
+              option.appendChild(indicator);
+            }
+          }
+        });
+      } catch (e) {}
+    }
+    
+    // Lückentext - richtige Antworten zeigen
+    else if (type === 'gap-text') {
+      try {
+        const correctAnswers = JSON.parse(correctAnswer);
+        const gapDropzones = question.querySelectorAll('.gap-dropzone');
+        
+        gapDropzones.forEach((dropzone, index) => {
+          if (correctAnswers[index]) {
+            const correctOption = correctAnswers[index].split('|')[0];
+            if (!dropzone.querySelector('.gap-correct-answer')) {
+              const tip = document.createElement('div');
+              tip.className = 'gap-correct-answer';
+              tip.textContent = "Lösung: " + correctOption;
+              dropzone.appendChild(tip);
+            }
+          }
+        });
+      } catch (e) {}
+    }
+    
+    // Reihenfolge - richtige Reihenfolge zeigen
+    else if (type === 'order') {
+      const feedbackDiv = question.querySelector('.feedback');
+      if (feedbackDiv && !feedbackDiv.querySelector('.correct-order')) {
+        try {
+          const sortableList = question.querySelector('.sortable-list');
+          const currentItems = Array.from(sortableList.querySelectorAll('.order-item'));
+          
+          const correctOrderDiv = document.createElement('div');
+          correctOrderDiv.className = 'correct-order';
+          correctOrderDiv.innerHTML = '<strong>Richtige Reihenfolge:</strong>';
+          
+          const correctItemsList = document.createElement('ol');
+          correctItemsList.className = 'correct-order-list';
+          
+          const itemsWithCorrectOrder = currentItems
+            .map(item => ({ text: item.textContent.replace('⋮⋮', '').trim(), pos: parseInt(item.dataset.originalPosition) }))
+            .sort((a, b) => a.pos - b.pos);
+          
+          itemsWithCorrectOrder.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = item.text;
+            correctItemsList.appendChild(listItem);
+          });
+          
+          correctOrderDiv.appendChild(correctItemsList);
+          feedbackDiv.appendChild(correctOrderDiv);
+          feedbackDiv.style.display = 'block';
+        } catch (e) {}
+      }
+    }
+    
+    // Text-Aufgaben - Musterlösung zeigen
+    else if (type === 'text') {
+      const solutionContainer = question.querySelector('.solution-container');
+      if (solutionContainer) solutionContainer.style.display = 'block';
+    }
+  });
+}
 
 // ===== SCHÜLERDATEN LADEN FÜR QUIZ =====
 
@@ -167,6 +416,12 @@ function createQuizAuthModal() {
 }
 
 function showQuizAuthModal() {
+  // Prüfe ob Quiz bereits überprüft wurde
+  if (quizChecked) {
+    alert('Du hast das Quiz bereits überprüft. Lade die Seite neu, um es erneut zu versuchen.');
+    return;
+  }
+  
   const modal = document.getElementById('quiz-auth-modal');
   const nameSelect = document.getElementById('quiz-auth-name');
   const codeInput = document.getElementById('quiz-auth-code');
@@ -657,6 +912,10 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
       
       // Drag & Drop-Eventlistener
       wordElement.addEventListener('dragstart', function(e) {
+        if (quizChecked) {
+          e.preventDefault();
+          return;
+        }
         e.dataTransfer.setData('text/plain', word);
         e.dataTransfer.setData('application/word-index', wordIndex);
         e.dataTransfer.setData('application/word-element-id', this.id);
@@ -707,6 +966,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
       
       // Drop-Events
       dropzone.addEventListener('dragover', function(e) {
+        if (quizChecked) return;
         e.preventDefault();
         this.classList.add('dragover');
       });
@@ -716,6 +976,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
       });
       
       dropzone.addEventListener('drop', function(e) {
+        if (quizChecked) return;
         e.preventDefault();
         this.classList.remove('dragover');
         
@@ -751,6 +1012,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
         
         // Definiere den Click-Handler als Eigenschaft des Elements, damit wir ihn später entfernen können
         this.clickHandler = function() {
+          if (quizChecked) return;
           // Nur reagieren, wenn die Lücke gefüllt ist
           if (this.classList.contains('filled')) {
             // Mache das Wort in der Wortliste wieder sichtbar
@@ -827,6 +1089,10 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
       
       // Drag & Drop Event-Listener
       itemElement.addEventListener('dragstart', function(e) {
+        if (quizChecked) {
+          e.preventDefault();
+          return;
+        }
         e.dataTransfer.setData('text/plain', index);
         this.classList.add('dragging');
         
@@ -851,6 +1117,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
     
     // Event-Listener für die Drop-Zone
     sortableList.addEventListener('dragover', function(e) {
+      if (quizChecked) return;
       e.preventDefault();
       const draggedIndex = parseInt(this.dataset.draggedItem);
       const targetContainer = findDropTarget(e.clientY, this);
@@ -872,6 +1139,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
     });
     
     sortableList.addEventListener('drop', function(e) {
+      if (quizChecked) return;
       e.preventDefault();
       const draggedIndex = parseInt(this.dataset.draggedItem);
       const draggedItem = this.children[draggedIndex];
@@ -930,6 +1198,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
     moveUpButton.className = 'order-control-button';
     moveUpButton.textContent = '↑ Nach oben';
     moveUpButton.addEventListener('click', function() {
+      if (quizChecked) return;
       moveSelectedItem(sortableList, -1);
     });
     
@@ -937,6 +1206,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
     moveDownButton.className = 'order-control-button';
     moveDownButton.textContent = '↓ Nach unten';
     moveDownButton.addEventListener('click', function() {
+      if (quizChecked) return;
       moveSelectedItem(sortableList, 1);
     });
     
@@ -971,6 +1241,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
     
     // Klick-Ereignis für die Auswahl von Elementen
     sortableList.addEventListener('click', function(e) {
+      if (quizChecked) return;
       const item = e.target.closest('.order-item');
       if (item) {
         // Entferne die Auswahl von allen anderen Elementen
@@ -1059,7 +1330,7 @@ function hideCodewordInDOM() {
 }
 
 /**
- * Fügt CSS-Styles für das Codewort hinzu
+ * Fügt CSS-Styles für das Quiz hinzu
  */
 function addCodewordStyles() {
   // Prüfe, ob die Styles bereits hinzugefügt wurden
@@ -1170,6 +1441,107 @@ function addCodewordStyles() {
       text-align: center;
       color: var(--text-normal, #dcddde);
     }
+    
+    /* Quiz Button Container */
+    .quiz-button-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px auto;
+      flex-wrap: wrap;
+    }
+    
+    /* Show Solution Button */
+    .show-solution-btn {
+      background-color: transparent;
+      border: 1px solid var(--text-faint, #666);
+      color: var(--text-normal, #dcddde);
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--font-text, sans-serif);
+      font-size: 1em;
+      transition: all 0.2s ease;
+    }
+    
+    .show-solution-btn:hover {
+      background-color: rgba(128, 173, 199, 0.15);
+      border-color: var(--accent-1, #80ADC7);
+      color: var(--accent-1, #80ADC7);
+    }
+    
+    /* Reload Button */
+    .quiz-reload-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--h1-color, #94D3C6);
+      color: var(--bg-primary, #2d2d2d);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: var(--font-text, sans-serif);
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    
+    .quiz-reload-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    
+    .quiz-reload-highlight {
+      animation: pulse-reload 1.5s ease-in-out 3;
+    }
+    
+    @keyframes pulse-reload {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(148, 211, 198, 0.5); }
+    }
+    
+    /* Disabled state for quiz elements */
+    .quiz-disabled .option-label {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    
+    .quiz-disabled .text-answer {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    
+    .quiz-disabled .gap-word {
+      pointer-events: none;
+      cursor: default;
+    }
+    
+    .quiz-disabled .gap-dropzone {
+      pointer-events: none;
+      cursor: default;
+    }
+    
+    .quiz-disabled .order-item {
+      pointer-events: none;
+      cursor: default;
+    }
+    
+    .quiz-disabled .order-control-button {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    
+    /* Wrong answer highlighting */
+    .option-label.wrong-answer {
+      background-color: rgba(225, 162, 237, 0.2) !important;
+      border: 1px solid var(--accent-3, #E1A2ED) !important;
+    }
   `;
   
   document.head.appendChild(style);
@@ -1231,16 +1603,48 @@ async function sendQuizResult(name, percentage, correctCount, totalCount) {
 }
 
 /**
- * Erweiterte checkAllAnswers Funktion mit Authentifizierung und Ergebnis-Übertragung
+ * Deaktiviert alle Quiz-Eingaben nach der Überprüfung
+ */
+function disableAllQuizInputs() {
+  // Alle Checkboxen deaktivieren
+  document.querySelectorAll('.formatted-question input[type="checkbox"]').forEach(cb => {
+    cb.disabled = true;
+  });
+  
+  // Alle Textfelder deaktivieren
+  document.querySelectorAll('.formatted-question .text-answer').forEach(ta => {
+    ta.disabled = true;
+  });
+  
+  // CSS-Klasse für visuelles Feedback
+  document.querySelectorAll('.formatted-question').forEach(q => {
+    q.classList.add('quiz-disabled');
+  });
+  
+  // "Alle Antworten überprüfen" Button deaktivieren
+  const checkBtn = document.querySelector('.check-all-answers-btn');
+  if (checkBtn) {
+    checkBtn.disabled = true;
+    checkBtn.style.opacity = '0.5';
+    checkBtn.style.cursor = 'not-allowed';
+  }
+}
+
+/**
+ * Erweiterte checkAllAnswers Funktion - OHNE Lösungsanzeige
  */
 function checkAllAnswersWithAuth(studentName) {
+  // Markiere Quiz als überprüft
+  quizChecked = true;
+  
   const questions = document.querySelectorAll('.formatted-question');
   let correctCount = 0;
   let totalCount = 0;
+  let hasErrors = false;
   
   questions.forEach(question => {
     const type = question.getAttribute('data-type');
-    if (!type) return; // Wenn kein Typ gesetzt ist, überspringen
+    if (!type) return;
     
     totalCount++;
     const correctAnswer = question.getAttribute('data-correct');
@@ -1255,24 +1659,20 @@ function checkAllAnswersWithAuth(studentName) {
       try {
         correctIndices = JSON.parse(correctAnswer);
       } catch (e) {
-        // Fallback für alte Datenformate
         if (correctAnswer && !isNaN(parseInt(correctAnswer))) {
           correctIndices = [parseInt(correctAnswer)];
         }
       }
       
-      // Wenn keine Option ausgewählt wurde
       if (checkedOptions.length === 0) {
         feedbackDiv.textContent = 'Keine Antwort ausgewählt.';
         feedbackDiv.className = 'feedback no-answer';
-        showCorrectMCAnswers(question, correctIndices);
+        hasErrors = true;
         return;
       }
       
-      // Überprüfe, ob alle ausgewählten Optionen korrekt sind
       let selectedIndices = Array.from(checkedOptions).map(option => parseInt(option.dataset.index));
       
-      // Prüfe auf vollständige Übereinstimmung
       let allCorrect = selectedIndices.length === correctIndices.length &&
                        selectedIndices.every(index => correctIndices.includes(index)) &&
                        correctIndices.every(index => selectedIndices.includes(index));
@@ -1284,33 +1684,35 @@ function checkAllAnswersWithAuth(studentName) {
       } else {
         feedbackDiv.textContent = 'Falsche Antwort.';
         feedbackDiv.className = 'feedback incorrect';
-        showCorrectMCAnswers(question, correctIndices);
+        hasErrors = true;
+        
+        // NUR falsche Antworten markieren (nicht die richtigen!)
+        const options = question.querySelectorAll('.option-label');
+        selectedIndices.forEach(idx => {
+          if (!correctIndices.includes(idx)) {
+            options[idx].classList.add('wrong-answer');
+          }
+        });
       }
     } 
     // Text-Aufgaben (OFFEN)
     else if (type === 'text') {
       const answerField = question.querySelector('.text-answer');
-      if (!answerField) {
-        console.error('Textantwortfeld nicht gefunden');
-        return;
-      }
+      if (!answerField) return;
       
       const userAnswer = answerField.value.trim();
       
-      // Bei offenen Aufgaben zeigen wir die Musterlösung und Selbsteinschätzung
-      const solutionContainer = question.querySelector('.solution-container');
+      // Selbsteinschätzung zeigen (aber NICHT die Lösung!)
       const selfAssessment = question.querySelector('.self-assessment');
-      
-      if (solutionContainer) solutionContainer.style.display = 'block';
       if (selfAssessment) selfAssessment.style.display = 'block';
       
-      // Für Selbsteinschätzungsaufgaben zählen wir sie als richtig, wenn eine Bewertung abgegeben wurde
       const selectedAssessment = selfAssessment ? selfAssessment.querySelector('.assessment-button.selected') : null;
       
       if (selectedAssessment) {
-        // Zähle als richtig, wenn "Korrekt" oder "Teilweise korrekt" gewählt wurde
         if (selectedAssessment.textContent === 'Korrekt' || selectedAssessment.textContent === 'Teilweise korrekt') {
           correctCount++;
+        } else {
+          hasErrors = true;
         }
         feedbackDiv.textContent = 'Selbsteinschätzung abgegeben.';
         feedbackDiv.className = 'feedback info';
@@ -1334,7 +1736,6 @@ function checkAllAnswersWithAuth(studentName) {
       try {
         const correctAnswers = JSON.parse(correctAnswer);
         
-        // Prüfe jede Lücke
         gapDropzones.forEach((dropzone, index) => {
           const userAnswer = dropzone.dataset.filledWith || '';
           
@@ -1345,14 +1746,11 @@ function checkAllAnswersWithAuth(studentName) {
           
           dropzone.classList.remove('gap-empty');
           
-          // Hole die korrekten Antworten für diese Lücke
           const correctOptions = correctAnswers[index] ? correctAnswers[index].split('|').map(a => a.trim()) : [];
           const userAnswerLower = userAnswer.toLowerCase();
           
-          // Überprüfe, ob die Antwort korrekt ist
           const isCorrect = correctOptions.some(option => {
-            const optionLower = option.toLowerCase();
-            return userAnswerLower === optionLower;
+            return userAnswerLower === option.toLowerCase();
           });
           
           if (isCorrect) {
@@ -1362,22 +1760,15 @@ function checkAllAnswersWithAuth(studentName) {
           } else {
             dropzone.classList.add('gap-incorrect');
             dropzone.classList.remove('gap-correct');
-            
-            // Zeige die richtige Antwort an
-            const correctTip = document.createElement('div');
-            correctTip.className = 'gap-correct-answer';
-            correctTip.textContent = "Richtig wäre: " + correctOptions[0];
-            dropzone.appendChild(correctTip);
+            // KEINE Lösung anzeigen!
           }
           
-          // Deaktiviere den Click-Handler nach der Überprüfung
           if (dropzone.clickHandler) {
             dropzone.removeEventListener('click', dropzone.clickHandler);
             dropzone.style.cursor = 'default';
           }
         });
         
-        // Bewerte das Ergebnis
         if (totalGaps === correctGaps) {
           feedbackDiv.textContent = 'Alle Lücken richtig ausgefüllt!';
           feedbackDiv.className = 'feedback correct';
@@ -1385,6 +1776,7 @@ function checkAllAnswersWithAuth(studentName) {
         } else {
           feedbackDiv.textContent = `${correctGaps} von ${totalGaps} Lücken richtig ausgefüllt.`;
           feedbackDiv.className = 'feedback incorrect';
+          hasErrors = true;
         }
       } catch (error) {
         console.error('Fehler beim Parsen der korrekten Antworten:', error);
@@ -1403,14 +1795,10 @@ function checkAllAnswersWithAuth(studentName) {
       }
       
       try {
-        // Hole die korrekten Positionen aus dem Attribut
         const correctPositions = JSON.parse(correctAnswer);
-        
-        // Sammle die aktuellen Positionen
         const currentItems = Array.from(sortableList.querySelectorAll('.order-item'));
         const currentPositions = currentItems.map(item => parseInt(item.dataset.originalPosition));
         
-        // Prüfe, ob die aktuelle Reihenfolge korrekt ist
         let isCorrect = true;
         for (let i = 0; i < correctPositions.length; i++) {
           if (correctPositions[i] !== currentPositions[i]) {
@@ -1426,28 +1814,8 @@ function checkAllAnswersWithAuth(studentName) {
         } else {
           feedbackDiv.textContent = 'Die Reihenfolge ist nicht korrekt.';
           feedbackDiv.className = 'feedback incorrect';
-          
-          // Zeige die korrekte Reihenfolge an
-          const correctOrderDiv = document.createElement('div');
-          correctOrderDiv.className = 'correct-order';
-          correctOrderDiv.innerHTML = '<strong>Richtige Reihenfolge:</strong>';
-          
-          const correctItemsList = document.createElement('ol');
-          correctItemsList.className = 'correct-order-list';
-          
-          // Sortiere die Items nach den korrekten Positionen
-          const itemsWithCorrectOrder = currentItems
-            .map((item, i) => ({ item: item.textContent, originalPosition: parseInt(item.dataset.originalPosition) }))
-            .sort((a, b) => a.originalPosition - b.originalPosition);
-          
-          itemsWithCorrectOrder.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.textContent = item.item;
-            correctItemsList.appendChild(listItem);
-          });
-          
-          correctOrderDiv.appendChild(correctItemsList);
-          feedbackDiv.appendChild(correctOrderDiv);
+          hasErrors = true;
+          // KEINE Lösung anzeigen!
         }
       } catch (error) {
         console.error('Fehler bei der Überprüfung der Reihenfolge:', error);
@@ -1455,12 +1823,17 @@ function checkAllAnswersWithAuth(studentName) {
         feedbackDiv.className = 'feedback no-answer';
       }
     }
-    // Unbekannte Aufgabentypen
     else {
       feedbackDiv.textContent = 'Dieser Aufgabentyp kann nicht automatisch überprüft werden.';
       feedbackDiv.className = 'feedback no-answer';
     }
   });
+  
+  // Alle Eingaben deaktivieren
+  disableAllQuizInputs();
+  
+  // Speichere ob Fehler vorhanden waren
+  quizHadErrors = hasErrors;
   
   // Berechne Erfolgsquote
   const successRate = totalCount > 0 ? (correctCount / totalCount) : 0;
@@ -1469,25 +1842,21 @@ function checkAllAnswersWithAuth(studentName) {
   // Sende Ergebnis an Google Sheets
   sendQuizResult(studentName, percentageCorrect, correctCount, totalCount);
   
-  // Zeige Gesamtergebnis mit Codewort-Funktionalität
+  // Zeige Gesamtergebnis
   const resultDiv = document.getElementById('quiz-total-result');
   if (resultDiv) {
-    // Lösche vorherigen Inhalt
     resultDiv.innerHTML = '';
     
-    // Zeige angemeldeten Schüler
     const studentInfoDiv = document.createElement('div');
     studentInfoDiv.className = 'quiz-student-info';
     studentInfoDiv.innerHTML = `<strong>Ergebnis für:</strong> ${studentName}`;
     resultDiv.appendChild(studentInfoDiv);
     
-    // Basis-Ergebnis
     const baseResultDiv = document.createElement('div');
     baseResultDiv.className = 'quiz-base-result';
     baseResultDiv.textContent = `Gesamtergebnis: ${correctCount} von ${totalCount} Fragen richtig beantwortet! (${percentageCorrect}%)`;
     resultDiv.appendChild(baseResultDiv);
     
-    // Codewort anzeigen, wenn mindestens 80% richtig und Codewort vorhanden
     if (successRate >= 0.8 && extractedCodeword) {
       const codewordDiv = document.createElement('div');
       codewordDiv.className = 'codewort-success';
@@ -1503,10 +1872,8 @@ function checkAllAnswersWithAuth(studentName) {
           <p class="codewort-instruction"><em>🗣️ Teile dieses Codewort mündlich mit deiner Lehrkraft!</em></p>
         </div>
       `;
-      
       resultDiv.appendChild(codewordDiv);
     } else if (successRate >= 0.8) {
-      // Gute Leistung, aber kein Codewort verfügbar
       const goodResultDiv = document.createElement('div');
       goodResultDiv.className = 'good-result';
       goodResultDiv.innerHTML = `
@@ -1515,22 +1882,20 @@ function checkAllAnswersWithAuth(studentName) {
       `;
       resultDiv.appendChild(goodResultDiv);
     } else {
-      // Ergebnis unter 80%
       const encouragementDiv = document.createElement('div');
       encouragementDiv.className = 'encouragement-result';
-      const missingQuestions = totalCount - correctCount;
       encouragementDiv.innerHTML = `
         <h3>📚 Weiter üben!</h3>
-        <p>Du hast ${percentageCorrect}% richtig. Schau dir die Lösungen an und versuche es nochmal!</p>
+        <p>Du hast ${percentageCorrect}% richtig. Versuche es nochmal!</p>
         <p><em>Für das Codewort benötigst du mindestens 80% richtige Antworten.</em></p>
-        <p style="margin-top: 15px;"><strong>🔄 Klicke auf den Neu-Laden-Button unten rechts, um das Quiz zurückzusetzen und es erneut zu versuchen.</strong></p>
       `;
       resultDiv.appendChild(encouragementDiv);
+      
+      // Reload-Button anzeigen wenn Fehler vorhanden
+      showReloadButton();
     }
     
     resultDiv.style.display = 'block';
-    
-    // Scroll zum Ergebnis
     resultDiv.scrollIntoView({ behavior: 'smooth' });
   }
 }
@@ -1538,28 +1903,6 @@ function checkAllAnswersWithAuth(studentName) {
 // Alte Funktion für Rückwärtskompatibilität (ohne Auth)
 function checkAllAnswers() {
   showQuizAuthModal();
-}
-
-// Hilfsfunktion zum Anzeigen der richtigen MC-Antworten
-function showCorrectMCAnswers(question, correctIndices) {
-  const options = question.querySelectorAll('.option-label');
-  
-  options.forEach((option, index) => {
-    const checkbox = option.querySelector('input[type="checkbox"]');
-    const isCorrect = correctIndices.includes(index);
-    
-    if (isCorrect) {
-      option.classList.add('correct-option');
-      
-      // Füge ein visuelles Indikator hinzu
-      const correctIndicator = document.createElement('span');
-      correctIndicator.className = 'correct-indicator';
-      correctIndicator.textContent = ' ✓';
-      correctIndicator.style.color = 'green';
-      correctIndicator.style.fontWeight = 'bold';
-      option.appendChild(correctIndicator);
-    }
-  });
 }
 
 // Hilfsfunktion zum Mischen eines Arrays
