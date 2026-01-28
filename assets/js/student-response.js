@@ -373,7 +373,25 @@
         content === 'student-response'
       );
       
-      if (isDisplay) {
+      // Check for quiz results display
+      const isQuizResults = className.includes('language-quiz-results-display') ||
+                            content === 'quiz-results-display' ||
+                            content.startsWith('quiz-results-display');
+      
+      if (isQuizResults) {
+        const quizResultsDiv = document.createElement('div');
+        quizResultsDiv.className = 'quiz-results-display';
+        quizResultsDiv.innerHTML = `
+          <div class="qr-controls">
+            <select class="qr-quiz-select">
+              <option value="">-- Quiz auswählen --</option>
+            </select>
+            <button class="qr-refresh-btn">Aktualisieren</button>
+          </div>
+          <div class="qr-table-container"></div>
+        `;
+        pre.parentNode.replaceChild(quizResultsDiv, pre);
+      } else if (isDisplay) {
         let presetTask = '';
         if (className.includes('language-student-responses-display')) {
           presetTask = content.trim();
@@ -421,6 +439,210 @@
     });
   }
 
+  // ===== QUIZ-ERGEBNIS-ANZEIGE =====
+
+  function initQuizResultsDisplays() {
+    const displays = document.querySelectorAll('.quiz-results-display');
+    
+    displays.forEach(display => {
+      const quizSelect = display.querySelector('.qr-quiz-select');
+      const refreshBtn = display.querySelector('.qr-refresh-btn');
+      const tableContainer = display.querySelector('.qr-table-container');
+      
+      let allResults = [];
+      
+      loadQuizResults();
+      
+      if (refreshBtn) {
+        refreshBtn.addEventListener('click', loadQuizResults);
+      }
+      
+      if (quizSelect) {
+        quizSelect.addEventListener('change', renderQuizResults);
+      }
+      
+      async function loadQuizResults() {
+        if (!tableContainer) return;
+        
+        tableContainer.innerHTML = '<div class="qr-loading">Lade Ergebnisse...</div>';
+        
+        try {
+          const sheetUrl = window.STUDENT_RESPONSE_SHEET_URL;
+          if (!sheetUrl) {
+            throw new Error('Sheet-URL nicht konfiguriert');
+          }
+          
+          const response = await fetch(sheetUrl);
+          const text = await response.text();
+          
+          const jsonStart = text.indexOf('{');
+          const jsonEnd = text.lastIndexOf('}') + 1;
+          const jsonText = text.substring(jsonStart, jsonEnd);
+          const data = JSON.parse(jsonText);
+          
+          allResults = parseQuizResultsData(data);
+          
+          if (quizSelect) {
+            updateQuizSelect(allResults);
+          }
+          
+          renderQuizResults();
+          
+        } catch (error) {
+          console.error('Fehler beim Laden:', error);
+          tableContainer.innerHTML = '<div class="qr-empty">Fehler beim Laden der Ergebnisse.</div>';
+        }
+      }
+      
+      function parseQuizResultsData(data) {
+        const results = [];
+        const rows = data.table?.rows || [];
+        const cols = data.table?.cols || [];
+        
+        const colMap = {};
+        cols.forEach((col, i) => {
+          const label = col.label?.toLowerCase() || '';
+          if (label.includes('zeit') || label.includes('time') || label.includes('stamp')) colMap.timestamp = i;
+          else if (label.includes('name')) colMap.name = i;
+          else if (label.includes('aufgabe') || label.includes('task')) colMap.taskId = i;
+          else if (label.includes('antwort') || label.includes('text') || label.includes('response')) colMap.text = i;
+        });
+        
+        if (Object.keys(colMap).length === 0) {
+          colMap.timestamp = 0;
+          colMap.name = 1;
+          colMap.taskId = 2;
+          colMap.text = 3;
+        }
+        
+        rows.forEach(row => {
+          const cells = row.c || [];
+          const getValue = (idx) => cells[idx]?.v || cells[idx]?.f || '';
+          
+          const text = getValue(colMap.text);
+          // Nur Quiz-Ergebnisse (Format: "XX% (X/Y)")
+          const percentMatch = text.match(/(\d+)%\s*\((\d+)\/(\d+)\)/);
+          
+          if (percentMatch) {
+            results.push({
+              timestamp: getValue(colMap.timestamp),
+              name: getValue(colMap.name) || 'Anonym',
+              taskId: getValue(colMap.taskId),
+              percentage: parseInt(percentMatch[1]),
+              correct: parseInt(percentMatch[2]),
+              total: parseInt(percentMatch[3])
+            });
+          }
+        });
+        
+        return results;
+      }
+      
+      function updateQuizSelect(results) {
+        const quizzes = [...new Set(results.map(r => r.taskId).filter(t => t))];
+        quizzes.sort();
+        
+        const currentValue = quizSelect.value;
+        
+        quizSelect.innerHTML = '<option value="">-- Quiz auswählen --</option>';
+        quizzes.forEach(quiz => {
+          const option = document.createElement('option');
+          option.value = quiz;
+          option.textContent = quiz;
+          quizSelect.appendChild(option);
+        });
+        
+        if (currentValue && quizzes.includes(currentValue)) {
+          quizSelect.value = currentValue;
+        }
+      }
+      
+      function renderQuizResults() {
+        if (!tableContainer) return;
+        
+        const selectedQuiz = quizSelect ? quizSelect.value : '';
+        
+        if (!selectedQuiz) {
+          tableContainer.innerHTML = '<div class="qr-empty">Bitte wähle ein Quiz aus.</div>';
+          return;
+        }
+        
+        // Filtere nach Quiz und gruppiere nach Schüler (neuestes Ergebnis)
+        const quizResults = allResults.filter(r => r.taskId === selectedQuiz);
+        
+        // Gruppiere nach Schüler - behalte nur das neueste Ergebnis
+        const studentResults = {};
+        quizResults.forEach(r => {
+          if (!studentResults[r.name] || new Date(r.timestamp) > new Date(studentResults[r.name].timestamp)) {
+            studentResults[r.name] = r;
+          }
+        });
+        
+        // Erstelle Tabelle mit allen Schülern aus der Liste
+        const tableData = schuelerListe.map(s => {
+          const result = studentResults[s.name];
+          return {
+            name: s.name,
+            hasResult: !!result,
+            percentage: result ? result.percentage : null,
+            correct: result ? result.correct : null,
+            total: result ? result.total : null,
+            timestamp: result ? result.timestamp : null
+          };
+        });
+        
+        // Sortiere: Ergebnisse zuerst (nach Prozent absteigend), dann ohne Ergebnis
+        tableData.sort((a, b) => {
+          if (a.hasResult && !b.hasResult) return -1;
+          if (!a.hasResult && b.hasResult) return 1;
+          if (a.hasResult && b.hasResult) return b.percentage - a.percentage;
+          return a.name.localeCompare(b.name);
+        });
+        
+        // Statistik berechnen
+        const completedCount = tableData.filter(r => r.hasResult).length;
+        const totalStudents = tableData.length;
+        const avgPercentage = completedCount > 0 
+          ? Math.round(tableData.filter(r => r.hasResult).reduce((sum, r) => sum + r.percentage, 0) / completedCount)
+          : 0;
+        
+        let html = `
+          <div class="qr-stats">
+            <span><strong>Abgaben:</strong> ${completedCount}/${totalStudents}</span>
+            <span><strong>Durchschnitt:</strong> ${avgPercentage}%</span>
+          </div>
+          <table class="qr-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Ergebnis</th>
+                <th>Prozent</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+        
+        tableData.forEach(r => {
+          const percentClass = r.hasResult 
+            ? (r.percentage >= 80 ? 'qr-good' : (r.percentage >= 50 ? 'qr-ok' : 'qr-poor'))
+            : 'qr-missing';
+          
+          html += `
+            <tr class="${percentClass}">
+              <td>${escapeHtml(r.name)}</td>
+              <td>${r.hasResult ? `${r.correct}/${r.total}` : '<em>Keine Abgabe</em>'}</td>
+              <td>${r.hasResult ? `${r.percentage}%` : '-'}</td>
+            </tr>
+          `;
+        });
+        
+        html += '</tbody></table>';
+        
+        tableContainer.innerHTML = html;
+      }
+    });
+  }
+
   // ===== INITIALISIERUNG =====
 
   document.addEventListener('DOMContentLoaded', async () => {
@@ -431,6 +653,7 @@
     // Dann Funktionalität initialisieren
     initResponseForms();
     initResponseDisplays();
+    initQuizResultsDisplays();
   });
 
 })();

@@ -3,7 +3,14 @@
 // Globale Variable für das Codewort
 let extractedCodeword = null;
 
+// Globale Schülerdaten für Quiz-Authentifizierung
+let quizSchuelerDaten = null;
+let quizSchuelerListe = [];
+
 document.addEventListener('DOMContentLoaded', function() {
+  // Lade Schülerdaten für Authentifizierung
+  loadQuizSchuelerDaten();
+  
   // Extrahiere das Codewort beim Laden der Seite
   extractCodewordFromMarkdown();
   
@@ -61,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     checkButton.textContent = 'Alle Antworten überprüfen';
     checkButton.className = 'check-all-answers-btn';
     checkButton.addEventListener('click', function() {
-      checkAllAnswers();
+      showQuizAuthModal();
     });
     
     // Füge den Button am Ende der Seite ein
@@ -74,8 +81,158 @@ document.addEventListener('DOMContentLoaded', function() {
     resultContainer.className = 'quiz-total-result';
     resultContainer.style.display = 'none';
     mainContent.appendChild(resultContainer);
+    
+    // Erstelle das Authentifizierungs-Modal
+    createQuizAuthModal();
   }
 });
+
+// ===== SCHÜLERDATEN LADEN FÜR QUIZ =====
+
+async function loadQuizSchuelerDaten() {
+  try {
+    const response = await fetch('/assets/data/schueler.json');
+    if (!response.ok) throw new Error('Schülerliste nicht gefunden');
+    quizSchuelerDaten = await response.json();
+    
+    // Standardklasse laden oder erste verfügbare
+    const klasse = quizSchuelerDaten.standardKlasse || Object.keys(quizSchuelerDaten.klassen)[0];
+    quizSchuelerListe = quizSchuelerDaten.klassen[klasse] || [];
+    
+    return true;
+  } catch (error) {
+    console.error('Fehler beim Laden der Schülerliste:', error);
+    return false;
+  }
+}
+
+function validateQuizCode(name, code) {
+  const schueler = quizSchuelerListe.find(s => s.name === name);
+  if (!schueler) return false;
+  return schueler.code === code.trim();
+}
+
+// ===== AUTHENTIFIZIERUNGS-MODAL =====
+
+function createQuizAuthModal() {
+  // Prüfe ob Modal bereits existiert
+  if (document.getElementById('quiz-auth-modal')) return;
+  
+  const modal = document.createElement('div');
+  modal.id = 'quiz-auth-modal';
+  modal.className = 'quiz-auth-modal';
+  modal.style.display = 'none';
+  
+  modal.innerHTML = `
+    <div class="quiz-auth-content">
+      <h3>Anmeldung zur Überprüfung</h3>
+      <p>Bitte melde dich an, damit dein Ergebnis gespeichert werden kann.</p>
+      
+      <label for="quiz-auth-name">Dein Name:</label>
+      <select id="quiz-auth-name" class="quiz-auth-select">
+        <option value="">-- Name auswählen --</option>
+      </select>
+      
+      <label for="quiz-auth-code">Dein Code:</label>
+      <input type="text" id="quiz-auth-code" class="quiz-auth-input" placeholder="Code eingeben...">
+      
+      <div id="quiz-auth-error" class="quiz-auth-error" style="display: none;"></div>
+      
+      <div class="quiz-auth-buttons">
+        <button id="quiz-auth-cancel" class="quiz-auth-btn cancel">Abbrechen</button>
+        <button id="quiz-auth-submit" class="quiz-auth-btn submit">Überprüfen</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  // Event-Listener
+  document.getElementById('quiz-auth-cancel').addEventListener('click', hideQuizAuthModal);
+  document.getElementById('quiz-auth-submit').addEventListener('click', handleQuizAuthSubmit);
+  
+  // Schließen bei Klick außerhalb
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      hideQuizAuthModal();
+    }
+  });
+  
+  // Enter-Taste zum Absenden
+  document.getElementById('quiz-auth-code').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      handleQuizAuthSubmit();
+    }
+  });
+}
+
+function showQuizAuthModal() {
+  const modal = document.getElementById('quiz-auth-modal');
+  const nameSelect = document.getElementById('quiz-auth-name');
+  const codeInput = document.getElementById('quiz-auth-code');
+  const errorDiv = document.getElementById('quiz-auth-error');
+  
+  // Dropdown befüllen
+  nameSelect.innerHTML = '<option value="">-- Name auswählen --</option>';
+  quizSchuelerListe.forEach(s => {
+    const option = document.createElement('option');
+    option.value = s.name;
+    option.textContent = s.name;
+    nameSelect.appendChild(option);
+  });
+  
+  // Gespeicherte Werte laden
+  const savedName = localStorage.getItem('studentResponseName');
+  const savedCode = localStorage.getItem('studentResponseCode');
+  if (savedName) nameSelect.value = savedName;
+  if (savedCode) codeInput.value = savedCode;
+  
+  // Fehler zurücksetzen
+  errorDiv.style.display = 'none';
+  
+  modal.style.display = 'flex';
+}
+
+function hideQuizAuthModal() {
+  const modal = document.getElementById('quiz-auth-modal');
+  modal.style.display = 'none';
+}
+
+function handleQuizAuthSubmit() {
+  const nameSelect = document.getElementById('quiz-auth-name');
+  const codeInput = document.getElementById('quiz-auth-code');
+  const errorDiv = document.getElementById('quiz-auth-error');
+  
+  const name = nameSelect.value;
+  const code = codeInput.value.trim();
+  
+  // Validierung
+  if (!name) {
+    errorDiv.textContent = 'Bitte wähle deinen Namen aus.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
+  if (!code) {
+    errorDiv.textContent = 'Bitte gib deinen Code ein.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
+  if (!validateQuizCode(name, code)) {
+    errorDiv.textContent = 'Der Code ist falsch.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
+  // Speichern für nächstes Mal
+  localStorage.setItem('studentResponseName', name);
+  localStorage.setItem('studentResponseCode', code);
+  
+  // Modal schließen und Quiz überprüfen
+  hideQuizAuthModal();
+  checkAllAnswersWithAuth(name);
+}
 
 // Prüft, ob es sich um eine Quizfrage im neuen Format handelt
 function checkIfNewFormatQuizQuestion(h3, elements) {
@@ -996,16 +1153,177 @@ function addCodewordStyles() {
       margin-bottom: 10px;
       text-align: center;
     }
+    
+    /* Quiz Auth Modal Styles */
+    .quiz-auth-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    
+    .quiz-auth-content {
+      background: var(--bg-secondary, #262626);
+      border: 1px solid var(--accent-2, #80C7B2);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    .quiz-auth-content h3 {
+      color: var(--h2-color, #A9E2EA);
+      margin: 0 0 1rem 0;
+      text-align: center;
+    }
+    
+    .quiz-auth-content p {
+      color: var(--text-muted, #999);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .quiz-auth-content label {
+      display: block;
+      color: var(--text-normal, #dcddde);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .quiz-auth-select,
+    .quiz-auth-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--text-faint, #666);
+      border-radius: 6px;
+      background: var(--bg-primary, #2d2d2d);
+      color: var(--text-normal, #dcddde);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+    }
+    
+    .quiz-auth-select:focus,
+    .quiz-auth-input:focus {
+      outline: none;
+      border-color: var(--accent-2, #80C7B2);
+    }
+    
+    .quiz-auth-error {
+      background: rgba(225, 162, 237, 0.2);
+      border: 1px solid var(--accent-3, #E1A2ED);
+      color: var(--accent-3, #E1A2ED);
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .quiz-auth-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .quiz-auth-btn {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .quiz-auth-btn.cancel {
+      background: var(--text-faint, #666);
+      color: var(--text-normal, #dcddde);
+    }
+    
+    .quiz-auth-btn.cancel:hover {
+      background: var(--text-muted, #999);
+    }
+    
+    .quiz-auth-btn.submit {
+      background: var(--accent-2, #80C7B2);
+      color: var(--bg-primary, #2d2d2d);
+    }
+    
+    .quiz-auth-btn.submit:hover {
+      background: var(--h1-color, #94D3C6);
+    }
   `;
   
   document.head.appendChild(style);
 }
 
+// Füge Styles beim Laden hinzu
+document.addEventListener('DOMContentLoaded', addCodewordStyles);
+
 /**
- * Erweiterte checkAllAnswers Funktion mit Codewort-Anzeige
- * Diese Funktion ersetzt die bestehende checkAllAnswers Funktion
+ * Quiz-ID aus der Seite ermitteln
  */
-function checkAllAnswers() {
+function getQuizId() {
+  // Versuche zuerst, eine explizite Quiz-ID aus dem Seitentitel oder einem data-Attribut zu holen
+  const pageTitle = document.querySelector('h1, h2, .page-title');
+  if (pageTitle) {
+    return pageTitle.textContent.trim();
+  }
+  
+  // Fallback: Verwende den Seitenpfad
+  return window.location.pathname;
+}
+
+/**
+ * Sendet Quiz-Ergebnis an Google Sheets
+ */
+async function sendQuizResult(name, percentage, correctCount, totalCount) {
+  const scriptUrl = window.STUDENT_RESPONSE_SCRIPT_URL;
+  if (!scriptUrl) {
+    console.warn('Script-URL nicht konfiguriert, Quiz-Ergebnis wird nicht gespeichert');
+    return;
+  }
+  
+  const quizId = getQuizId();
+  
+  try {
+    await fetch(scriptUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'quiz-result',
+        name: name,
+        taskId: quizId,
+        text: `${percentage}% (${correctCount}/${totalCount})`,
+        percentage: percentage,
+        correctCount: correctCount,
+        totalCount: totalCount,
+        timestamp: new Date().toISOString(),
+        page: window.location.pathname
+      })
+    });
+    
+    console.log('Quiz-Ergebnis gesendet:', { name, quizId, percentage });
+  } catch (error) {
+    console.error('Fehler beim Senden des Quiz-Ergebnisses:', error);
+  }
+}
+
+/**
+ * Erweiterte checkAllAnswers Funktion mit Authentifizierung und Ergebnis-Übertragung
+ */
+function checkAllAnswersWithAuth(studentName) {
   const questions = document.querySelectorAll('.formatted-question');
   let correctCount = 0;
   let totalCount = 0;
@@ -1238,11 +1556,20 @@ function checkAllAnswers() {
   const successRate = totalCount > 0 ? (correctCount / totalCount) : 0;
   const percentageCorrect = Math.round(successRate * 100);
   
+  // Sende Ergebnis an Google Sheets
+  sendQuizResult(studentName, percentageCorrect, correctCount, totalCount);
+  
   // Zeige Gesamtergebnis mit Codewort-Funktionalität
   const resultDiv = document.getElementById('quiz-total-result');
   if (resultDiv) {
     // Lösche vorherigen Inhalt
     resultDiv.innerHTML = '';
+    
+    // Zeige angemeldeten Schüler
+    const studentInfoDiv = document.createElement('div');
+    studentInfoDiv.className = 'quiz-student-info';
+    studentInfoDiv.innerHTML = `<strong>Ergebnis für:</strong> ${studentName}`;
+    resultDiv.appendChild(studentInfoDiv);
     
     // Basis-Ergebnis
     const baseResultDiv = document.createElement('div');
@@ -1268,16 +1595,13 @@ function checkAllAnswers() {
       `;
       
       resultDiv.appendChild(codewordDiv);
-      
-      // Zusätzliches Styling für das Codewort
-      addCodewordStyles();
     } else if (successRate >= 0.8) {
       // Gute Leistung, aber kein Codewort verfügbar
       const goodResultDiv = document.createElement('div');
       goodResultDiv.className = 'good-result';
       goodResultDiv.innerHTML = `
         <h3>🎉 Sehr gut! Du hast ${percentageCorrect}% der Aufgaben richtig gelöst!</h3>
-        <p>Zeige dein Ergebnis deiner Lehrkraft.</p>
+        <p>Dein Ergebnis wurde gespeichert.</p>
       `;
       resultDiv.appendChild(goodResultDiv);
     } else {
@@ -1299,6 +1623,11 @@ function checkAllAnswers() {
     // Scroll zum Ergebnis
     resultDiv.scrollIntoView({ behavior: 'smooth' });
   }
+}
+
+// Alte Funktion für Rückwärtskompatibilität (ohne Auth)
+function checkAllAnswers() {
+  showQuizAuthModal();
 }
 
 // Hilfsfunktion zum Anzeigen der richtigen MC-Antworten
