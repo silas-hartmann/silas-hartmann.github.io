@@ -8,10 +8,41 @@
  *   window.STUDENT_RESPONSE_SCRIPT_URL = "https://script.google.com/macros/s/DEINE_ID/exec";
  *   window.STUDENT_RESPONSE_SHEET_URL = "https://docs.google.com/spreadsheets/d/DEINE_ID/gviz/tq?tqx=out:json";
  * </script>
+ * 
+ * Schülerliste in: /assets/data/schueler.json
  */
 
 (function() {
   'use strict';
+
+  // Globale Schülerdaten
+  let schuelerDaten = null;
+  let schuelerListe = [];
+
+  // ===== SCHÜLERDATEN LADEN =====
+
+  async function loadSchuelerDaten() {
+    try {
+      const response = await fetch('/assets/data/schueler.json');
+      if (!response.ok) throw new Error('Schülerliste nicht gefunden');
+      schuelerDaten = await response.json();
+      
+      // Standardklasse laden oder erste verfügbare
+      const klasse = schuelerDaten.standardKlasse || Object.keys(schuelerDaten.klassen)[0];
+      schuelerListe = schuelerDaten.klassen[klasse] || [];
+      
+      return true;
+    } catch (error) {
+      console.error('Fehler beim Laden der Schülerliste:', error);
+      return false;
+    }
+  }
+
+  function validateCode(name, code) {
+    const schueler = schuelerListe.find(s => s.name === name);
+    if (!schueler) return false;
+    return schueler.code === code.trim();
+  }
 
   // ===== FORMULAR-FUNKTIONALITÄT =====
 
@@ -20,32 +51,64 @@
     
     forms.forEach(form => {
       const taskId = form.dataset.taskId || 'unbekannt';
-      const nameInput = form.querySelector('.sr-name-input');
+      const nameSelect = form.querySelector('.sr-name-select');
+      const codeInput = form.querySelector('.sr-code-input');
       const textInput = form.querySelector('.sr-text-input');
       const submitBtn = form.querySelector('.sr-submit-btn');
       const statusDiv = form.querySelector('.sr-status');
 
-      // Gespeicherten Namen laden
-      const savedName = localStorage.getItem('studentResponseName');
-      if (savedName && nameInput) {
-        nameInput.value = savedName;
+      // Dropdown mit Schülern befüllen
+      if (nameSelect && schuelerListe.length > 0) {
+        nameSelect.innerHTML = '<option value="">-- Name auswählen --</option>';
+        schuelerListe.forEach(s => {
+          const option = document.createElement('option');
+          option.value = s.name;
+          option.textContent = s.name;
+          nameSelect.appendChild(option);
+        });
+
+        // Gespeicherten Namen laden
+        const savedName = localStorage.getItem('studentResponseName');
+        const savedCode = localStorage.getItem('studentResponseCode');
+        if (savedName) {
+          nameSelect.value = savedName;
+        }
+        if (savedCode && codeInput) {
+          codeInput.value = savedCode;
+        }
       }
 
       submitBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         
-        const name = nameInput ? nameInput.value.trim() : 'Anonym';
+        const name = nameSelect ? nameSelect.value : '';
+        const code = codeInput ? codeInput.value.trim() : '';
         const text = textInput.value.trim();
+
+        // Validierungen
+        if (!name) {
+          showStatus(statusDiv, 'error', 'Bitte wähle deinen Namen aus.');
+          return;
+        }
+
+        if (!code) {
+          showStatus(statusDiv, 'error', 'Bitte gib deinen Code ein.');
+          return;
+        }
+
+        if (!validateCode(name, code)) {
+          showStatus(statusDiv, 'error', 'Der Code ist falsch.');
+          return;
+        }
 
         if (!text) {
           showStatus(statusDiv, 'error', 'Bitte gib eine Antwort ein.');
           return;
         }
 
-        // Namen speichern
-        if (nameInput && name) {
-          localStorage.setItem('studentResponseName', name);
-        }
+        // Name und Code speichern
+        localStorage.setItem('studentResponseName', name);
+        localStorage.setItem('studentResponseCode', code);
 
         // Absenden
         submitBtn.disabled = true;
@@ -59,7 +122,7 @@
 
           const response = await fetch(scriptUrl, {
             method: 'POST',
-            mode: 'no-cors', // Google Apps Script erfordert no-cors
+            mode: 'no-cors',
             headers: {
               'Content-Type': 'application/json',
             },
@@ -72,7 +135,6 @@
             })
           });
 
-          // Bei no-cors können wir die Antwort nicht lesen, aber der Request ging durch
           showStatus(statusDiv, 'success', 'Antwort wurde gespeichert!');
           textInput.value = '';
 
@@ -90,8 +152,8 @@
     if (!element) return;
     element.className = 'sr-status ' + type;
     element.textContent = message;
+    element.style.display = 'block';
     
-    // Erfolgsmeldung nach 5 Sekunden ausblenden
     if (type === 'success') {
       setTimeout(() => {
         element.style.display = 'none';
@@ -115,20 +177,16 @@
       
       let allResponses = [];
 
-      // Initiales Laden
       loadResponses();
 
-      // Refresh-Button
       if (refreshBtn) {
         refreshBtn.addEventListener('click', loadResponses);
       }
 
-      // Filter - Select
       if (filterSelect) {
         filterSelect.addEventListener('change', applyFilters);
       }
 
-      // Filter - Textfeld
       if (filterInput) {
         filterInput.addEventListener('input', applyFilters);
       }
@@ -153,7 +211,6 @@
           const response = await fetch(sheetUrl);
           const text = await response.text();
           
-          // Google Sheets JSON-Response parsen (hat einen Prefix)
           const jsonStart = text.indexOf('{');
           const jsonEnd = text.lastIndexOf('}') + 1;
           const jsonText = text.substring(jsonStart, jsonEnd);
@@ -161,12 +218,10 @@
 
           allResponses = parseSheetData(data);
           
-          // Aufgaben-Dropdown befüllen
           if (filterSelect) {
             updateTaskSelect(allResponses);
           }
           
-          // Filter anwenden
           applyFilters();
 
         } catch (error) {
@@ -180,7 +235,6 @@
         const rows = data.table?.rows || [];
         const cols = data.table?.cols || [];
 
-        // Spalten-Indizes ermitteln
         const colMap = {};
         cols.forEach((col, i) => {
           const label = col.label?.toLowerCase() || '';
@@ -190,7 +244,6 @@
           else if (label.includes('antwort') || label.includes('text') || label.includes('response')) colMap.text = i;
         });
 
-        // Falls keine Labels, Standard-Reihenfolge annehmen
         if (Object.keys(colMap).length === 0) {
           colMap.timestamp = 0;
           colMap.name = 1;
@@ -210,20 +263,16 @@
           });
         });
 
-        // Neueste zuerst
         responses.reverse();
         return responses;
       }
 
       function updateTaskSelect(responses) {
-        // Eindeutige Aufgaben-IDs sammeln
         const tasks = [...new Set(responses.map(r => r.taskId).filter(t => t))];
         tasks.sort();
         
-        // Aktuellen Wert merken (oder Preset verwenden beim ersten Laden)
         const currentValue = filterSelect.value || presetTask;
         
-        // Options aktualisieren
         filterSelect.innerHTML = '<option value="">Alle Aufgaben</option>';
         tasks.forEach(task => {
           const option = document.createElement('option');
@@ -232,7 +281,6 @@
           filterSelect.appendChild(option);
         });
         
-        // Wert setzen falls vorhanden
         if (currentValue && tasks.includes(currentValue)) {
           filterSelect.value = currentValue;
         }
@@ -240,10 +288,8 @@
 
       function filterResponses(responses, taskFilter, textFilter) {
         return responses.filter(r => {
-          // Aufgaben-Filter
           if (taskFilter && r.taskId !== taskFilter) return false;
           
-          // Text-Filter (Name oder Antworttext)
           if (textFilter) {
             const lower = textFilter.toLowerCase();
             if (!r.name.toLowerCase().includes(lower) && 
@@ -283,7 +329,6 @@
       function formatTimestamp(ts) {
         if (!ts) return '';
         try {
-          // Google Sheets Date-Format: "Date(2024,0,15,10,30,0)"
           if (typeof ts === 'string' && ts.startsWith('Date(')) {
             const parts = ts.match(/Date\((\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\)/);
             if (parts) {
@@ -308,11 +353,8 @@
   }
 
   // ===== CODE-BLOCK KONVERTER =====
-  // Jekyll rendert ```student-response:id``` als <pre><code class="language-student-response">id</code></pre>
-  // Diese Funktion ersetzt diese Code-Blöcke durch die entsprechenden Formulare
 
   function convertCodeBlocks() {
-    // Alle Code-Blöcke durchgehen
     const allCodeBlocks = document.querySelectorAll('pre > code');
     
     allCodeBlocks.forEach(codeBlock => {
@@ -320,7 +362,6 @@
       const className = codeBlock.className || '';
       const content = codeBlock.textContent.trim();
       
-      // WICHTIG: Zuerst auf "display" prüfen (längerer Match zuerst)
       const isDisplay = className.includes('language-student-responses-display') || 
                         content === 'student-responses-display' ||
                         content.startsWith('student-responses-display\n');
@@ -333,13 +374,10 @@
       );
       
       if (isDisplay) {
-        // Aufgaben-ID extrahieren
         let presetTask = '';
         if (className.includes('language-student-responses-display')) {
-          // Syntax: ```student-responses-display\naufgaben-id```
           presetTask = content.trim();
         } else {
-          // Fallback-Syntax ohne Sprach-Klasse
           presetTask = content.replace('student-responses-display', '').trim();
         }
         
@@ -368,7 +406,11 @@
         formDiv.dataset.taskId = taskId;
         formDiv.innerHTML = `
           <label>Dein Name:</label>
-          <input type="text" class="sr-name-input" placeholder="Name eingeben...">
+          <select class="sr-name-select">
+            <option value="">-- Name auswählen --</option>
+          </select>
+          <label>Dein Code:</label>
+          <input type="text" class="sr-code-input" placeholder="Code eingeben...">
           <label>Deine Antwort:</label>
           <textarea class="sr-text-input" placeholder="Schreibe deine Antwort hier..."></textarea>
           <button class="sr-submit-btn">Antwort absenden</button>
@@ -379,14 +421,12 @@
     });
   }
 
-  function escapeAttr(text) {
-    return text.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
-
   // ===== INITIALISIERUNG =====
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // Erst Code-Blöcke konvertieren
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Erst Schülerdaten laden
+    await loadSchuelerDaten();
+    // Dann Code-Blöcke konvertieren
     convertCodeBlocks();
     // Dann Funktionalität initialisieren
     initResponseForms();

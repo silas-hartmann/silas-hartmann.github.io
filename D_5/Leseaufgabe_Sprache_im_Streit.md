@@ -44,7 +44,7 @@ Die beiden schauen sich an. „Sorry", sagt Lena. „Ich hätte sagen sollen, da
 Warum eskaliert der Streit zwischen Lena und Mia?
 
 - [ ] Mia hat den Stift kaputt gemacht.
-- [x] Beide sagen nicht, wie sie sich wirklich fühlen.
+- [ ] Beide sagen nicht, wie sie sich wirklich fühlen. (richtig)
 - [ ] Julia mischt sich ein.
 
 ---
@@ -54,7 +54,7 @@ Warum eskaliert der Streit zwischen Lena und Mia?
 Was meint Lena mit „Ich hab mich nicht respektiert gefühlt"?
 
 - [ ] Mia hat sie beleidigt.
-- [x] Mia hat nicht gefragt, bevor sie den Stift genommen hat.
+- [ ] Mia hat nicht gefragt, bevor sie den Stift genommen hat. (richtig)
 - [ ] Mia hat gelogen.
 
 ---
@@ -65,7 +65,7 @@ Wie löst sich der Streit am Ende?
 
 - [ ] Julia entscheidet, wer Recht hat.
 - [ ] Lena und Mia ignorieren das Problem.
-- [x] Sie sprechen darüber, wie sie sich gefühlt haben.
+- [ ] Sie sprechen darüber, wie sie sich gefühlt haben. (richtig)
 
 ---
 
