@@ -6,7 +6,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 
 
 {button: (Klasse 5)(D_5/Digitaler%20Unterricht%20am%2026-01-2025)}
-{button: (Klasse 7)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/97_Bildvergleich)}
+{button: (Klasse 7)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/07_Bildvergleich)}
 
 ---
 
