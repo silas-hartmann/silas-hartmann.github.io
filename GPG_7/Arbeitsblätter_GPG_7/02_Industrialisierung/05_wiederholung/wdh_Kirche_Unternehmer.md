@@ -1,6 +1,6 @@
 # Wiederholung: Wie halfen Kirche und Unternehmer?
 
-
+![[TB_Kirche_Unternehmer.png]]
 ## Das Wichtigste in Kürze
 
 Nicht alle wollten das System komplett verändern. Manche versuchten, den Arbeitern direkt zu helfen. Zwei wichtige Gruppen waren die **Unternehmer** (Fabrikbesitzer) und die **Kirche**.

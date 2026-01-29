@@ -19,6 +19,11 @@ Viel Erfolg!
 5. [Wie wehrten sich die Arbeiter?](wdh_Streik)
 6. [Wie halfen Kirche und Unternehmer den Arbeitern?](wdh_Kirche_Unternehmer)
 7. [Welche Idee hatte Karl Marx?](wdh_Kommunismus)
+8. [Wie wurde das deutsche Reich gegründet?](wdh_Reichsgründung)
+
+---
+
+
 
 
 
