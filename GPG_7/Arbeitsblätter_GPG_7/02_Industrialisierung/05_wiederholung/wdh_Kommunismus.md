@@ -118,3 +118,4 @@ Was bedeutet "Proletarier aller Länder, vereinigt euch!"?
 
 ---
 
+{button: (Zurück zur Wiederholung zur Industrialisierung)(wiederholung-home)}

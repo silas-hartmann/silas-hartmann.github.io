@@ -116,3 +116,5 @@ Was wollten sowohl Unternehmer als auch Kirche verhindern?
 - Dass die Arbeiter heirateten
 
 ---
+
+{button: (Zurück zur Wiederholung zur Industrialisierung)(wiederholung-home)}
