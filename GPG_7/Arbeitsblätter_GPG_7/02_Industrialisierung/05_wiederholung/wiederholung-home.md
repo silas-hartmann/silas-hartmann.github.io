@@ -17,6 +17,11 @@ Viel Erfolg!
 3. [Warum zieht Johann in die Stadt?](wdh_Landflucht)
 4. [Warum ist Anna so unzufrieden mit dem Leben in der Stadt?](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wdh_Leben_in_der_Stadt)
 5. [Wie wehrten sich die Arbeiter?](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wdh_Streik)
-6. 
+6. [Wie halfen Kirche und Unternehmer den Arbeitern?](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wdh_Kirche_Unternehmer.md)
+7. [Welche Idee hatte Karl Marx?](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wdh_Kommunismus.md)
+
+
+
+
 
 
