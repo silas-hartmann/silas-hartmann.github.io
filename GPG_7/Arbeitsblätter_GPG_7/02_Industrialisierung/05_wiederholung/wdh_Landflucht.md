@@ -113,3 +113,6 @@ Erkläre: Warum zog Johann in die Stadt?
 Antwort: Johann zog in die Stadt, weil das Leben auf dem Land zu hart war. Der Hof war zu klein, die Arbeit war schwer, und die Erträge reichten kaum zum Leben. In der Stadt gab es Arbeit in Fabriken mit regelmäßigem Lohn. Johann hoffte auf ein besseres Leben für sich und seine Kinder.
 
 ---
+
+{button: (Zurück zur Wiederholung zur Industrialisierung)(wiederholung-home)}
+

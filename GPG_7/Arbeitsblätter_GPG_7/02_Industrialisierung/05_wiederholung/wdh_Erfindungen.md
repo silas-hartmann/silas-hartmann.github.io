@@ -114,3 +114,5 @@ Welche Aussage über die Erfindungen der Industrialisierung ist richtig?
 - Sie hatten keine negativen Folgen
 
 ---
+
+{button: (Zurück zur Wiederholung zur Industrialisierung)(wiederholung-home)}

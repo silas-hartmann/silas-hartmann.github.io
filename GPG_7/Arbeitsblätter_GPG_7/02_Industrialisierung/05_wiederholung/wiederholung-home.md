@@ -15,5 +15,8 @@ Viel Erfolg!
 1. [Dampfmaschine](wdh_dampfmaschine.md)
 2. [Erfindungen](wdh_Erfindungen.md)
 3. [Warum zieht Johann in die Stadt?](wdh_Landflucht.md)
+4. [Warum ist Anna so unzufrieden mit dem Leben in der Stadt?](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wdh_Leben_in_der_Stadt.md)
+5. [Wie wehrten sich die Arbeiter?](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wdh_Streik.md)
+6. 
 
 
