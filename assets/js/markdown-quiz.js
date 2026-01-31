@@ -500,7 +500,7 @@ function checkIfNewFormatQuizQuestion(h3, elements) {
   };
   
   // Regex, um die "Aufgabe X [TYP]" Struktur zu erkennen
-  const taskTypeRegex = /^Aufgabe\s+\d+\s*\[(MC|SC|OFFEN|LÜCKE|ORDER)\]\s*(.*)$/i;
+  const taskTypeRegex = /^Aufgabe\s+\d+\s*\[(MC|SC|OFFEN|LÜCKE|ORDER|ZUORDNUNG)\]\s*(.*)$/i;
   const match = h3.textContent.match(taskTypeRegex);
   
   if (match) {
@@ -609,6 +609,7 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
   let gapAnswers = [];
   let gapText = '';
   let orderItems = [];
+  let assignmentCategories = []; // Für ZUORDNUNG: [{name: 'Kategorie', items: [{text: 'Begriff', isImage: false, src: ''}]}]
   
   // Den Typ aus der Überschrift verwenden, falls vorhanden
   if (questionInfo.type) {
@@ -627,6 +628,9 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
         break;
       case 'ORDER':
         questionType = 'order';
+        break;
+      case 'ZUORDNUNG':
+        questionType = 'assignment';
         break;
     }
   }
@@ -1255,6 +1259,262 @@ function processQuestion(h3, elements, container, questionNumber, questionInfo) 
     });
     
     formattedQuestion.appendChild(orderContainer);
+  }
+  // ===== ZUORDNUNG (Assignment) =====
+  else if (questionType === 'assignment') {
+    // Parse Kategorien aus der OL-Liste
+    // Format: 1. Kategorie (Begriff1, Begriff2, ![Bild](url))
+    const olElement = elements.find(el => el.tagName === 'OL');
+    
+    if (olElement) {
+      const listItems = olElement.querySelectorAll('li');
+      
+      listItems.forEach((item, catIndex) => {
+        // Regex: Kategorie (item1, item2, ...)
+        const itemHtml = item.innerHTML;
+        const itemText = item.textContent;
+        const categoryMatch = itemText.match(/^([^(]+)\s*\((.+)\)\s*$/);
+        
+        if (categoryMatch) {
+          const categoryName = categoryMatch[1].trim();
+          const itemsText = categoryMatch[2];
+          
+          // Parse Items (berücksichtige Bilder im HTML)
+          const category = {
+            name: categoryName,
+            items: []
+          };
+          
+          // Finde alle Items zwischen den Klammern im HTML
+          const htmlMatch = itemHtml.match(/^[^(]+\((.+)\)\s*$/);
+          if (htmlMatch) {
+            const itemsHtml = htmlMatch[1];
+            // Teile bei Kommas, aber berücksichtige HTML-Tags
+            const itemParts = splitAssignmentItems(itemsHtml);
+            
+            itemParts.forEach(part => {
+              const trimmed = part.trim();
+              // Prüfe auf Bild: <img> oder ![]()
+              const imgMatch = trimmed.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/);
+              const mdImgMatch = trimmed.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+              
+              if (imgMatch) {
+                category.items.push({
+                  text: '',
+                  isImage: true,
+                  src: imgMatch[1],
+                  alt: ''
+                });
+              } else if (mdImgMatch) {
+                category.items.push({
+                  text: '',
+                  isImage: true,
+                  src: mdImgMatch[2],
+                  alt: mdImgMatch[1]
+                });
+              } else if (trimmed) {
+                // Entferne HTML-Tags für reinen Text
+                const textOnly = trimmed.replace(/<[^>]+>/g, '').trim();
+                if (textOnly) {
+                  category.items.push({
+                    text: textOnly,
+                    isImage: false,
+                    src: '',
+                    alt: ''
+                  });
+                }
+              }
+            });
+          }
+          
+          if (category.items.length > 0) {
+            assignmentCategories.push(category);
+          }
+        }
+      });
+    }
+    
+    if (assignmentCategories.length > 0) {
+      // Erstelle data-correct Struktur
+      const correctData = assignmentCategories.map(cat => ({
+        name: cat.name,
+        items: cat.items.map(item => item.isImage ? `IMG:${item.src}` : item.text)
+      }));
+      
+      formattedQuestion.setAttribute('data-type', 'assignment');
+      formattedQuestion.setAttribute('data-correct', JSON.stringify(correctData));
+      
+      // Sammle alle Items und mische sie
+      let allItems = [];
+      assignmentCategories.forEach((cat, catIdx) => {
+        cat.items.forEach((item, itemIdx) => {
+          allItems.push({
+            ...item,
+            categoryIndex: catIdx,
+            itemIndex: itemIdx,
+            id: `assign-item-${questionNumber}-${catIdx}-${itemIdx}`
+          });
+        });
+      });
+      shuffleArray(allItems);
+      
+      // Haupt-Container
+      const assignContainer = document.createElement('div');
+      assignContainer.className = 'assignment-container';
+      
+      // Pool mit allen Items (oben)
+      const poolContainer = document.createElement('div');
+      poolContainer.className = 'assignment-pool';
+      poolContainer.innerHTML = '<div class="assignment-pool-label">Ziehe die Begriffe in die richtige Kategorie:</div>';
+      
+      const poolItems = document.createElement('div');
+      poolItems.className = 'assignment-pool-items';
+      poolItems.id = `assignment-pool-${questionNumber}`;
+      
+      allItems.forEach((item, idx) => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'assignment-item';
+        itemEl.setAttribute('draggable', 'true');
+        itemEl.dataset.itemId = item.id;
+        itemEl.dataset.categoryIndex = item.categoryIndex;
+        itemEl.dataset.isImage = item.isImage;
+        itemEl.dataset.value = item.isImage ? `IMG:${item.src}` : item.text;
+        itemEl.id = item.id;
+        
+        if (item.isImage) {
+          const img = document.createElement('img');
+          img.src = item.src;
+          img.alt = item.alt || 'Bild';
+          img.className = 'assignment-item-image';
+          itemEl.appendChild(img);
+        } else {
+          itemEl.textContent = item.text;
+        }
+        
+        // Drag-Events
+        itemEl.addEventListener('dragstart', function(e) {
+          if (quizChecked) { e.preventDefault(); return; }
+          e.dataTransfer.setData('text/plain', this.id);
+          e.dataTransfer.setData('application/item-id', this.dataset.itemId);
+          this.classList.add('dragging');
+        });
+        
+        itemEl.addEventListener('dragend', function() {
+          this.classList.remove('dragging');
+        });
+        
+        // Klick-Auswahl für Touch-Geräte
+        itemEl.addEventListener('click', function() {
+          if (quizChecked) return;
+          // Toggle selection
+          const wasSelected = this.classList.contains('selected');
+          // Deselect all
+          poolItems.querySelectorAll('.assignment-item').forEach(i => i.classList.remove('selected'));
+          assignContainer.querySelectorAll('.assignment-category-items .assignment-item').forEach(i => i.classList.remove('selected'));
+          if (!wasSelected) {
+            this.classList.add('selected');
+          }
+        });
+        
+        poolItems.appendChild(itemEl);
+      });
+      
+      poolContainer.appendChild(poolItems);
+      assignContainer.appendChild(poolContainer);
+      
+      // Kategorien (unten)
+      const categoriesContainer = document.createElement('div');
+      categoriesContainer.className = 'assignment-categories';
+      
+      assignmentCategories.forEach((cat, catIdx) => {
+        const catEl = document.createElement('div');
+        catEl.className = 'assignment-category';
+        catEl.dataset.categoryIndex = catIdx;
+        
+        const catHeader = document.createElement('div');
+        catHeader.className = 'assignment-category-header';
+        catHeader.textContent = cat.name;
+        catEl.appendChild(catHeader);
+        
+        const catItems = document.createElement('div');
+        catItems.className = 'assignment-category-items';
+        catItems.dataset.categoryIndex = catIdx;
+        catItems.id = `assignment-cat-${questionNumber}-${catIdx}`;
+        
+        // Drop-Events
+        catItems.addEventListener('dragover', function(e) {
+          if (quizChecked) return;
+          e.preventDefault();
+          this.classList.add('dragover');
+        });
+        
+        catItems.addEventListener('dragleave', function() {
+          this.classList.remove('dragover');
+        });
+        
+        catItems.addEventListener('drop', function(e) {
+          if (quizChecked) return;
+          e.preventDefault();
+          this.classList.remove('dragover');
+          
+          const itemId = e.dataTransfer.getData('text/plain');
+          const itemEl = document.getElementById(itemId);
+          
+          if (itemEl) {
+            this.appendChild(itemEl);
+          }
+        });
+        
+        // Klick zum Zuordnen (für ausgewähltes Item)
+        catItems.addEventListener('click', function(e) {
+          if (quizChecked) return;
+          if (e.target === this || e.target.classList.contains('assignment-category-placeholder')) {
+            const selectedItem = assignContainer.querySelector('.assignment-item.selected');
+            if (selectedItem) {
+              this.appendChild(selectedItem);
+              selectedItem.classList.remove('selected');
+            }
+          }
+        });
+        
+        // Platzhalter
+        const placeholder = document.createElement('div');
+        placeholder.className = 'assignment-category-placeholder';
+        placeholder.textContent = 'Begriffe hier ablegen';
+        catItems.appendChild(placeholder);
+        
+        catEl.appendChild(catItems);
+        categoriesContainer.appendChild(catEl);
+      });
+      
+      assignContainer.appendChild(categoriesContainer);
+      
+      // Rückgabe-Bereich (Pool als Drop-Zone)
+      poolItems.addEventListener('dragover', function(e) {
+        if (quizChecked) return;
+        e.preventDefault();
+        this.classList.add('dragover');
+      });
+      
+      poolItems.addEventListener('dragleave', function() {
+        this.classList.remove('dragover');
+      });
+      
+      poolItems.addEventListener('drop', function(e) {
+        if (quizChecked) return;
+        e.preventDefault();
+        this.classList.remove('dragover');
+        
+        const itemId = e.dataTransfer.getData('text/plain');
+        const itemEl = document.getElementById(itemId);
+        
+        if (itemEl) {
+          this.appendChild(itemEl);
+        }
+      });
+      
+      formattedQuestion.appendChild(assignContainer);
+    }
   }
   else {
     // Fallback für unerkannte Fragetypen - setze trotzdem ein Textfeld
@@ -1912,4 +2172,34 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+}
+
+// Hilfsfunktion zum Aufteilen von Assignment-Items (berücksichtigt HTML-Tags)
+function splitAssignmentItems(html) {
+  const items = [];
+  let current = '';
+  let depth = 0;
+  
+  for (let i = 0; i < html.length; i++) {
+    const char = html[i];
+    
+    if (char === '<') {
+      depth++;
+      current += char;
+    } else if (char === '>') {
+      depth--;
+      current += char;
+    } else if (char === ',' && depth === 0) {
+      items.push(current.trim());
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  
+  if (current.trim()) {
+    items.push(current.trim());
+  }
+  
+  return items;
 }
