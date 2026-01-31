@@ -55,9 +55,8 @@ Warum wurden die Bauernhöfe immer kleiner?
 
 Vervollständige die Zuordnung der Faktoren:
 
-Push-Faktoren (vom Land weg) waren: [Hof zu klein], [schwere körperliche Arbeit], [geringe Erträge], [abhängig vom Wetter] und [keine Zukunft für Kinder].
-
-Pull-Faktoren (zur Stadt hin) waren: [Arbeit in Fabriken], [regelmäßiger Lohn], [Hoffnung auf Wohlstand] und [moderne Technik].
+**Push-Faktoren** (vom Land weg) waren: [Hof zu klein], [schwere körperliche Arbeit], [geringe Erträge], [abhängig vom Wetter] und [keine Zukunft für Kinder].
+**Pull-Faktoren** (zur Stadt hin) waren: [Arbeit in Fabriken], [regelmäßiger Lohn], [Hoffnung auf Wohlstand] und [moderne Technik].
 
 Lücken: Hof zu klein, schwere körperliche Arbeit, geringe Erträge, abhängig vom Wetter, keine Zukunft für Kinder, Arbeit in Fabriken, regelmäßiger Lohn, Hoffnung auf Wohlstand, moderne Technik
 
