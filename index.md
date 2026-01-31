@@ -4,9 +4,10 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
-{button: (Bildvergleich)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/07_Bildvergleich)}
-[07_Bildvergleich](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/07_Bildvergleich)
-Hier findet ihr Möglichkeiten Themen aus der letzten Sequenz zu wiederholen: [Wiederholung für den LNW Industrialisierung und Reichsgründung](GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wiederholung-home)
+{button: (🖼️ Bildvergleich)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/04_Reichsgründung_Einigungskriege/07_Bildvergleich)}
+
+{button: (♻️ Wiederholung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wiederholung-home)}
+
 
 ![unsplash](https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
