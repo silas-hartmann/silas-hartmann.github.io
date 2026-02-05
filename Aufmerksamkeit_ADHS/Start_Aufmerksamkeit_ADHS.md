@@ -16,20 +16,7 @@
 
 ## ADHS
 
-1. Was ist ADHS → [01_ADHS-Definition_und_Diagnose](01_ADHS-Definition_und_Diagnose.md) ✅
-	1. Diagnosemanual Definition
-	2. chemische Funktionsweise / Neurologie / Psychologie
-2. Auswirkungen von ADHS
-	1. "Stärken / Vorteile" durch ADHS
-	2. Probleme von ADHS
-	3. ADHS im System Schule: Unangepasstheit des Systems statt individuelles Problem
-	4. mögliche Folgestörungen / Komorbiditäten
-3. Umgang mit ADHS
-	1. "Do's" - Unterrichtsgestaltung und Einflussbereich von Lehrkräften
-	2. "Dont's" - Unterrichtsgestaltung und Einflussbereich von Lehrkräften
-	3. Empfehlungen für Menschen mit ADHS: Therapie, Medikamentation und Verhaltensmodifikation / Verhaltenstipps, schädliche Gewohnheiten
-	4. Systemische Änderungsbedarfe
-
+[[ADHS_Grundlagen_und_Pädagogik]]
 
 ### Verwendete Literatur:
 

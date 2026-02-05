@@ -1,4 +1,4 @@
-# 1. Was ist ADHS
+1. Was ist ADHS
 
 ## 1.1 Definition nach Diagnosemanualen
 
@@ -111,295 +111,303 @@ Die Grenze zwischen "normal" und "auffällig" ist fließend – vergleichbar mit
 
 ---
 
-## 1.2 Neurobiologische und psychologische Grundlagen
 
-### Das biopsychosoziale Störungsmodell
+##  Wie funktioniert Aufmerksamkeit im Gehirn?
 
-ADHS wird als Ergebnis eines **komplexen Zusammenspiels** von drei Faktorengruppen verstanden:
+### Die Grundidee
 
-```mermaid
-flowchart TB
-    subgraph Ursachen["Ursachenfaktoren"]
-        GEN["Genetische Faktoren<br>(Heritabilität 0.76)"]
-        NEURO["Neurobiologische<br>Veränderungen"]
-        UMW["Umweltfaktoren<br>(modulierend)"]
-    end
-    
-    subgraph Ebenen["Vermittelnde Ebenen"]
-        ENDOPH["Endophänotypen"]
-        NEUROPS["Neuropsychologische<br>Defizite"]
-    end
-    
-    subgraph Ergebnis["Klinisches Bild"]
-        PHENO["ADHS-Phänotyp<br>(Symptomausprägung)"]
-    end
-    
-    GEN --> ENDOPH
-    NEURO --> ENDOPH
-    ENDOPH --> NEUROPS
-    UMW --> NEUROPS
-    NEUROPS --> PHENO
-    UMW -.->|moduliert| PHENO
-```
+Das Gehirn wird ständig mit Reizen überflutet: Geräusche, Bilder, Gedanken, Körperempfindungen. **Aufmerksamkeit** ist der Mechanismus, der auswählt, welche dieser Reize verarbeitet werden und welche ignoriert werden.
 
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf (modifiziert nach Williams et al., 2012)
+> **Quelle:** Reh_Berdelmann_Dinkelaker_Aufmersamkeit_Geschichte-Theorie-Empirie.pdf
 
----
+### Zwei Aufmerksamkeitssysteme
 
-### Genetische Faktoren
-
-**ADHS gehört zu den am stärksten genetisch beeinflussten psychischen Störungen:**
-
-|Befund|Wert|
-|---|---|
-|Heritabilität (Erblichkeit)|**0.76** (zum Vergleich: Körpergröße 0.8–0.9; Intelligenz 0.55–0.70)|
-|Risiko bei Verwandten 1. Grades|**8-fach erhöht**|
-|Betroffene Geschwister/Eltern|**10–35%**|
-|Risiko für Kinder von ADHS-Erwachsenen|**40–60%**|
-
-**Vererbungsmodus:**
-
-- **Polygen** = viele Gene mit jeweils kleinem Effekt
-- Ca. 40% der genetischen Varianz durch häufige Genvarianten erklärbar
-- Betroffen sind v.a. Gene des **katecholaminergen Systems** (Dopamin- und Noradrenalin-Rezeptoren und -Transporter)
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
-
----
-
-### Neuroanatomische Grundlagen
-
-**Zentrale betroffene Hirnstrukturen:**
-
-```mermaid
-flowchart TB
-    subgraph Frontalhirn["Frontalhirn"]
-        PFC["PRÄFRONTALER KORTEX<br>• Exekutive Funktionen<br>• Handlungsplanung<br>• Aufmerksamkeitskontrolle"]
-    end
-    
-    subgraph Basalganglien["Basalganglien / Corpus Striatum"]
-        BG["BASALGANGLIEN<br>• Motorische Kontrolle<br>• Willkürliche Bewegungen"]
-        NA["NUCLEUS ACCUMBENS<br>• Belohnungssystem<br>• Motivation"]
-    end
-    
-    subgraph Kleinhirn["Kleinhirn"]
-        CB["CEREBELLUM<br>• Koordination<br>• Timing"]
-    end
-    
-    PFC <-->|"Dopamin<br>Noradrenalin"| BG
-    PFC <-->|"Regelkreislauf"| NA
-    BG <--> CB
-    PFC <-.->|"Default Mode<br>Network"| CB
-    
-```
-
-**Befunde bei ADHS-Betroffenen:**
-
-- **Reifungsverzögerung:** Der präfrontale Kortex erreicht erst ca. 3 Jahre später eine vergleichbare kortikale Dicke wie bei nicht-betroffenen Kindern
-- **Dysfunktion des fronto-subcortical-cerebellären Regelkreislaufs**
-- **Veränderte Durchblutungsverhältnisse** im vorderen Frontalhirn
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
-
----
-
-### Neurochemische Grundlagen: Das Dopamin-Noradrenalin-System
-
-**Die zwei zentralen Neurotransmitter bei ADHS:**
-
-|Neurotransmitter|Funktion|Störung bei ADHS|
-|---|---|---|
-|**Dopamin**|Motorisches Verhalten, kognitive Prozesse, Belohnungsverarbeitung, Antrieb, Motivation|Unterfunktion im präfrontalen Kortex|
-|**Noradrenalin**|Vigilanz (Wachheit), Aufmerksamkeitssteuerung|Unterfunktion im Aufmerksamkeitssystem|
-
-**Der Dopamintransporter-Mechanismus:**
+Das Gehirn besitzt zwei Systeme, die zusammenarbeiten:
 
 ```mermaid
 flowchart LR
-    subgraph Normal["Normale Synapse"]
-        direction TB
-        N1["Dopamin wird<br>freigesetzt"]
-        N2["Verbleibt ausreichend<br>im synaptischen Spalt"]
-        N3["Rezeptor bindet<br>Dopamin"]
-        N4["Signal wird<br>übertragen ✓"]
-        N1 --> N2 --> N3 --> N4
+    subgraph Vorne["Vorderes System"]
+        PFC["Stirnhirn<br>(Präfrontaler Kortex)"]
+        F1["Planung"]
+        F2["Entscheidungen"]
+        F3["Impulskontrolle"]
+        PFC --- F1
+        PFC --- F2
+        PFC --- F3
     end
     
-    subgraph ADHS["ADHS-Synapse"]
-        direction TB
-        A1["Dopamin wird<br>freigesetzt"]
-        A2["Dopamintransporter<br>zu aktiv"]
-        A3["Dopamin wird zu schnell<br>zurücktransportiert"]
-        A4["Zu wenig Dopamin<br>verfügbar ✗"]
-        A1 --> A2 --> A3 --> A4
+    subgraph Hinten["Hinteres System"]
+        PAR["Scheitellappen<br>(Parietaler Kortex)"]
+        H1["Sinneseindrücke<br>verarbeiten"]
+        H2["Räumliche<br>Orientierung"]
+        PAR --- H1
+        PAR --- H2
     end
     
-    style N4 fill:#ccffcc
-    style A4 fill:#ffcccc
+    Vorne <-->|"Ständiger<br>Austausch"| Hinten
 ```
 
-**Kernhypothese:** Bei ADHS ist die Dichte der Dopamintransporter erhöht. Dadurch wird Dopamin am synaptischen Spalt zu schnell wieder in die Zelle zurücktransportiert. Folge: In dopaminabhängigen Hirnregionen (v.a. präfrontaler Kortex) steht nicht genügend Dopamin zur Verfügung.
+|System|Botenstoff|Hauptfunktion|
+|---|---|---|
+|Vorderes System|Dopamin|Antrieb, Motivation, Handlungssteuerung|
+|Hinteres System|Noradrenalin|Wachheit, Aufmerksamkeitsausrichtung|
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Wie Nervenzellen kommunizieren
+
+Nervenzellen (Neuronen) sprechen nicht direkt miteinander. Sie schicken sich chemische Botenstoffe über einen winzigen Spalt (die Synapse).
+
+```mermaid
+flowchart LR
+    subgraph Sender["Sendende Zelle"]
+        S1["Signal kommt an"]
+        S2["Botenstoff wird<br>freigesetzt"]
+    end
+    
+    subgraph Spalt["Synaptischer Spalt"]
+        SP["Botenstoff<br>(z.B. Dopamin)<br>schwimmt rüber"]
+    end
+    
+    subgraph Empfänger["Empfangende Zelle"]
+        E1["Botenstoff dockt<br>an Rezeptor an"]
+        E2["Signal wird<br>weitergeleitet"]
+    end
+    
+    S1 --> S2 --> SP --> E1 --> E2
+```
+
+Die wichtigsten Botenstoffe für Aufmerksamkeit:
+
+|Botenstoff|Funktion|
+|---|---|
+|**Dopamin**|Motivation, Antrieb, Belohnungsempfinden, Bewegungssteuerung|
+|**Noradrenalin**|Wachheit, Aufmerksamkeitslenkung|
 
 > **Quelle:** Dägling_Gehirn_und_ADHS.md; Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
 
 ---
 
-### Das Default Mode Network (DMN)
+## 2. Was ist bei ADHS anders?
 
-**Neuere Forschungsergebnisse:**
+### Das Kernproblem: Zu wenig Botenstoffe verfügbar
 
-Das "Default Mode Network" sind Hirnregionen, die:
-
-- Im **Ruhezustand aktiv** werden (Tagträumen, zielloses Nachdenken)
-- Bei **Aufgabenbearbeitung deaktiviert** werden sollen
-
-**Bei ADHS:**
-
-- Verminderte Deaktivierung des DMN bei kognitiven Aufgaben
-- Folge: Mehr Fehler und verlängerte Reaktionszeiten bei Aufgabenbearbeitung
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
-
----
-
-### Neuropsychologische Defizite: Exekutive Funktionen
-
-**Exekutive Funktionen** = Fähigkeiten zur Selbstregulation und Handlungssteuerung
-
-|Beeinträchtigte Funktion|Auswirkung bei ADHS|
-|---|---|
-|**Reaktionshemmung (Inhibition)**|Kann Handlungsimpulse nicht unterdrücken|
-|**Arbeitsgedächtnis**|Kann Informationen nicht ausreichend "online" halten|
-|**Kognitive Flexibilität**|Schwierigkeiten beim Wechsel zwischen Aufgaben|
-|**Interferenzkontrolle**|Kann störende Reize nicht ausblenden|
-|**Planungsfähigkeit**|Schwierigkeiten bei Organisation und Vorausplanung|
-|**Zeitverarbeitung**|Verzerrte Zeitwahrnehmung|
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
-
----
-
-### Motivationale Defizite: Das Belohnungssystem
-
-**Zentrale Erkenntnis:** ADHS ist nicht nur eine Störung der Aufmerksamkeit, sondern auch eine **Störung der Motivation und Belohnungsverarbeitung**.
-
-**Das dopaminerge Belohnungssystem:**
-
-- Ursprung: Area tegmentalis ventralis (Mittelhirn)
-- Projektionen zu: Nucleus accumbens, Striatum, Amygdala, Hippocampus
-- Funktion: Entstehung von Lustgefühlen, positive Verstärkung von Verhalten
-
-**Bei ADHS:**
-
-- **Verzögerungsaversion:** Betroffene bevorzugen sofortige kleine Belohnungen gegenüber späteren größeren
-- **Verstärkte Suche nach Stimulation:** Brauchen stärkere/unmittelbarere Verstärker
-- **Dysfunktionale Dopaminausschüttung:** Beeinträchtigt das belohnungssuchende Verhalten
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
-
----
-
-### Weitere Risikofaktoren
-
-**Pränatale/perinatale Faktoren:**
-
-- Mütterliches Rauchen in der Schwangerschaft (OR: 1.60)
-- Mütterlicher Alkohol-/Substanzmissbrauch
-- Frühgeburtlichkeit / niedriges Geburtsgewicht
-- Geburtskomplikationen / Sauerstoffmangel
-
-**Psychosoziale Faktoren (modulierend):**
-
-- Ungünstige familiäre Bedingungen
-- Inkonsistentes Erziehungsverhalten
-- Negative Mutter-Kind-Interaktion
-- Niedriger sozioökonomischer Status
-
-**Wichtig:** Psychosoziale Faktoren sind **nicht ursächlich**, sondern **modulieren** den Schweregrad. Eine positive Mutter-Kind-Beziehung kann das Risiko reduzieren!
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
-
----
-
-### Zusammenfassung: Das Zwei-Pfad-Modell
+Bei ADHS funktioniert die Kommunikation zwischen Nervenzellen nicht optimal. Der Hauptgrund: **Dopamintransporter sind zu aktiv**.
 
 ```mermaid
 flowchart TB
-    subgraph Basis["Neurobiologische Basis"]
-        FRONTO["Fronto-striatale Dysfunktion<br>(Dopamin / Noradrenalin)"]
-    end
-    
-    subgraph Pfade["Zwei Erklärungspfade"]
+    subgraph Normal["Normale Synapse"]
         direction LR
-        subgraph Kognitiv["Kognitiver Pfad"]
-            EF["Exekutive Funktionen"]
-            AG["Arbeitsgedächtnis"]
-            INH["Inhibition"]
-            EF --- AG
-            EF --- INH
-        end
-        
-        subgraph Motivational["Motivationaler Pfad"]
-            BEL["Belohnungssystem"]
-            VA["Verzögerungsaversion"]
-            DOP["Dopaminerge Dysfunktion"]
-            BEL --- VA
-            BEL --- DOP
-        end
+        N1["Dopamin wird<br>freigesetzt"] --> N2["Bleibt lange genug<br>im Spalt"] --> N3["Signal kommt<br>vollständig an ✓"]
     end
     
-    subgraph Symptome["ADHS-Symptomatik"]
-        UNAUF["Unaufmerksamkeit"]
-        HYPER["Hyperaktivität"]
-        IMPULS["Impulsivität"]
+    subgraph ADHS["ADHS-Synapse"]
+        direction LR
+        A1["Dopamin wird<br>freigesetzt"] --> A2["Transporter holt<br>es zu schnell zurück"] --> A3["Signal zu schwach ✗"]
     end
     
-    FRONTO --> Kognitiv
-    FRONTO --> Motivational
-    Kognitiv --> Symptome
-    Motivational --> Symptome
-    
-    style FRONTO fill:#e6e6fa
-    style UNAUF fill:#ffcccc
-    style HYPER fill:#ffffcc
-    style IMPULS fill:#ffcc99
+    style N3 fill:#90EE90
+    style A3 fill:#FFB6C1
 ```
+
+**Vereinfacht gesagt:** Bei ADHS wird der Botenstoff Dopamin zu schnell wieder "aufgesaugt", bevor er seine Wirkung entfalten kann. Dadurch fehlt den zuständigen Hirnregionen der "Treibstoff" für Aufmerksamkeit und Selbststeuerung.
+
+> **Quelle:** Dägling_Gehirn_und_ADHS.md
+
+### Betroffene Hirnregionen
+
+```mermaid
+flowchart TB
+    subgraph Betroffene_Bereiche["Bei ADHS beeinträchtigte Bereiche"]
+        PFC["**Stirnhirn**<br>Planung, Impulskontrolle,<br>Aufmerksamkeit"]
+        BG["**Basalganglien**<br>Bewegungssteuerung"]
+        NA["**Nucleus Accumbens**<br>Belohnung, Motivation"]
+        CB["**Kleinhirn**<br>Timing, Koordination"]
+    end
+    
+    PFC <--> BG
+    PFC <--> NA
+    BG <--> CB
+```
+
+**Wichtiger Befund:** Bei Kindern mit ADHS erreicht das Stirnhirn etwa 3 Jahre später seine volle Reife als bei anderen Kindern.
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Zwei Wege zur Symptomatik
+
+ADHS entsteht nicht nur durch Aufmerksamkeitsprobleme. Es gibt zwei Erklärungswege:
+
+```mermaid
+flowchart TB
+    BASIS["Dopamin-/Noradrenalin-Mangel<br>im Stirnhirn"]
+    
+    subgraph Weg1["Kognitiver Weg"]
+        K1["Exekutive Funktionen gestört"]
+        K2["Kann Handlungen nicht<br>gut planen/steuern"]
+        K3["Kann Impulse nicht<br>unterdrücken"]
+    end
+    
+    subgraph Weg2["Motivationaler Weg"]
+        M1["Belohnungssystem gestört"]
+        M2["Braucht sofortige<br>Belohnung"]
+        M3["Kann nicht auf spätere<br>Belohnung warten"]
+    end
+    
+    BASIS --> Weg1
+    BASIS --> Weg2
+    
+    Weg1 --> SYM["ADHS-Symptome:<br>Unaufmerksamkeit,<br>Hyperaktivität,<br>Impulsivität"]
+    Weg2 --> SYM
+```
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Die wichtigsten Funktionseinschränkungen
+
+|Bereich|Was ist eingeschränkt|Wie zeigt sich das?|
+|---|---|---|
+|Reaktionshemmung|Impulse unterdrücken|Platzt mit Antworten heraus, kann nicht warten|
+|Arbeitsgedächtnis|Informationen kurz behalten|Vergisst Anweisungen, verliert den Faden|
+|Kognitive Flexibilität|Zwischen Aufgaben wechseln|Kommt schwer aus einer Tätigkeit heraus|
+|Zeitverarbeitung|Zeit richtig einschätzen|Verplant sich ständig, kommt zu spät|
+|Belohnungsaufschub|Auf spätere Belohnung warten|Will alles sofort, keine Geduld|
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Das Default Mode Network
+
+Neuere Forschung zeigt: Es gibt auch ein Problem mit dem "Tagtraum-Netzwerk" (Default Mode Network).
+
+|Zustand|Bei den meisten Menschen|Bei ADHS|
+|---|---|---|
+|Ruhe/Tagträumen|Tagtraum-Netzwerk aktiv|Tagtraum-Netzwerk aktiv|
+|Aufgabe bearbeiten|Tagtraum-Netzwerk schaltet ab|Tagtraum-Netzwerk bleibt teilweise aktiv|
+
+**Folge:** Gedanken schweifen ab, mehr Fehler, längere Reaktionszeiten.
 
 > **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
 
 ---
 
-### Aufmerksamkeitssysteme im Gehirn
+## 3. Was bedeutet das für die Pädagogik?
+
+### Die zentrale Erkenntnis
+
+ADHS ist **keine Erziehungsfrage** und **kein Unwille**. Es handelt sich um eine neurobiologisch bedingte Störung der Selbststeuerung. Betroffene können nicht einfach "sich zusammenreißen".
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Vier Grundprinzipien für den pädagogischen Umgang
+
+```mermaid
+flowchart TB
+    subgraph Prinzipien["Pädagogische Grundprinzipien bei ADHS"]
+        P1["**1. Kontinuität**<br>Maßnahmen dauerhaft beibehalten<br>(chronischer Verlauf!)"]
+        P2["**2. Beziehung**<br>Positiv, strukturierend,<br>konsequent"]
+        P3["**3. Kompensation**<br>Neuropsychologische Defizite<br>ausgleichen"]
+        P4["**4. Kooperation**<br>Elternhaus, Therapeuten,<br>Schule"]
+    end
+```
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Konkrete pädagogische Konsequenzen
+
+#### Aus dem Dopamin-Defizit folgt:
+
+|Problem|Pädagogische Antwort|
+|---|---|
+|Motivation kommt nicht "von innen"|**Äußere Anreize** konsequent und häufig einsetzen|
+|Späte Belohnung wirkt nicht|**Sofortige, unmittelbare** Rückmeldung geben|
+|Normale Verstärker reichen nicht|**Stärkere, konkretere** Verstärker verwenden|
+
+#### Aus den exekutiven Defiziten folgt:
+
+|Problem|Pädagogische Antwort|
+|---|---|
+|Kann nicht lange planen|**Aufgaben kleinschrittig** strukturieren|
+|Vergisst Anweisungen|**Schriftliche Erinnerungen**, Checklisten|
+|Kann sich nicht selbst organisieren|**Externe Struktur** vorgeben (Zeitpläne, Routinen)|
+|Kann Impulse nicht hemmen|**Klare Regeln**, konsequente (nicht harte) Konsequenzen|
+
+#### Aus dem Default-Mode-Problem folgt:
+
+|Problem|Pädagogische Antwort|
+|---|---|
+|Gedanken schweifen ab|**Häufiger Blickkontakt**, direkt ansprechen|
+|Verliert sich in Tagträumen|**Aufgaben aktivierend** gestalten, Wechsel einbauen|
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Verstärkersysteme: Warum sie bei ADHS besonders wichtig sind
+
+Das gestörte Belohnungssystem erklärt, warum Kinder mit ADHS **viel mehr externe Motivation** brauchen als andere:
 
 ```mermaid
 flowchart LR
-    subgraph Vorne["Vorderes Aufmerksamkeitssystem"]
-        PFC2["Präfrontaler Kortex"]
-        DA["Dopamin:<br>Antrieb, Motivation,<br>exekutive Funktionen"]
-        PFC2 --- DA
+    subgraph Normal["Andere Kinder"]
+        N1["Innere Motivation<br>funktioniert"] --> N2["Können auf<br>spätere Belohnung<br>warten"]
     end
     
-    subgraph Hinten["Hinteres Aufmerksamkeitssystem"]
-        PAR["Hinterer parietaler<br>Kortex"]
-        NA2["Noradrenalin:<br>Aufmerksamkeit"]
-        PAR --- NA2
+    subgraph ADHS_Kind["Kinder mit ADHS"]
+        A1["Innere Motivation<br>eingeschränkt"] --> A2["Brauchen sofortige,<br>konkrete<br>Verstärkung"]
     end
-    
-    Vorne <-->|"gestörte<br>Verbindung<br>bei ADHS"| Hinten
-    
-    style DA fill:#ffcccc
-    style NA2 fill:#ccccff
 ```
 
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf (nach Döpfner, 2005)
+**Praktische Umsetzung:**
+
+- Verstärkerpunktepläne (Token-Systeme)
+- Tages-/Wochenrückmeldungen
+- Sofortige positive Rückmeldung für erwünschtes Verhalten
+- Verhaltensverträge mit klaren, erreichbaren Zielen
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+
+### Was NICHT funktioniert
+
+|Unwirksam|Warum|
+|---|---|
+|"Reiß dich zusammen!"|Setzt voraus, was neurobiologisch eingeschränkt ist|
+|Nur Strafen|Wirken kurzfristig, zerstören Beziehung|
+|Lange Ermahnungen|Werden nicht verarbeitet (Arbeitsgedächtnis!)|
+|Vage Ankündigungen|Brauchen konkrete, sofortige Konsequenzen|
+|Ausschließlich spätere Belohnungen|Motivationssystem reagiert nicht darauf|
+
+> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
 
 ---
 
-### Pädagogische Schlussfolgerungen
+## Zusammenfassung
 
-1. **Kein genetischer Determinismus:** Genetische Disposition bedeutet nicht Unveränderlichkeit
-2. **Frühe Intervention wichtig:** Je jünger das Kind, desto weniger kann es selbst kompensieren
-3. **Eltern oft mitbetroffen:** Bei 10–35% der Eltern liegt ebenfalls ADHS vor → Einfluss auf Therapie-Compliance
-4. **Pädagogische Strukturvorgabe entscheidend:** Die Symptomausprägung ist erheblich abhängig von äußerer Steuerung und pädagogisch-didaktischen Kompensationsmöglichkeiten
+```mermaid
+flowchart TB
+    subgraph Ursache["Neurobiologische Ursache"]
+        U["Dopamin/Noradrenalin-Mangel<br>im Stirnhirn"]
+    end
+    
+    subgraph Folgen["Funktionelle Folgen"]
+        F1["Exekutive Funktionen↓"]
+        F2["Belohnungssystem↓"]
+        F3["Selbststeuerung↓"]
+    end
+    
+    subgraph Symptome["Sichtbare Symptome"]
+        S1["Unaufmerksamkeit"]
+        S2["Hyperaktivität"]
+        S3["Impulsivität"]
+    end
+    
+    subgraph Paedagogik["Pädagogische Antwort"]
+        P1["Externe Struktur"]
+        P2["Sofortige Verstärkung"]
+        P3["Positive Beziehung"]
+        P4["Konsequenz + Geduld"]
+    end
+    
+    Ursache --> Folgen --> Symptome --> Paedagogik
+```
 
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+**Kernbotschaft:** ADHS ist keine Charakterschwäche, sondern eine Entwicklungsstörung der Selbststeuerung. Pädagogisches Handeln muss die neurobiologischen Einschränkungen **kompensieren** – nicht durch Appelle an den Willen, sondern durch Struktur, sofortige Verstärkung und eine tragfähige Beziehung.
+
+> **Quellen:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf; Dägling_Gehirn_und_ADHS.md
