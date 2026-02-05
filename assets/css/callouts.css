@@ -119,10 +119,14 @@
   --callout-color: 0, 176, 255;
 }
 
-/* Info/Todo - Cyan */
-.callout[data-callout="info"],
-.callout[data-callout="todo"] {
+/* Info - Cyan */
+.callout[data-callout="info"] {
   --callout-color: 0, 184, 212;
+}
+
+/* Todo - Cyan */
+.callout[data-callout="todo"] {
+  --callout-color: 8, 109, 221;
 }
 
 /* Tip/Hint/Important - Teal */
@@ -190,8 +194,9 @@
 .callout[data-callout="summary"] .callout-icon::before,
 .callout[data-callout="tldr"] .callout-icon::before { content: "📋"; }
 
-.callout[data-callout="info"] .callout-icon::before,
-.callout[data-callout="todo"] .callout-icon::before { content: "ℹ️"; }
+.callout[data-callout="info"] .callout-icon::before { content: "ℹ️"; }
+
+.callout[data-callout="todo"] .callout-icon::before { content: "☑️"; }
 
 .callout[data-callout="tip"] .callout-icon::before,
 .callout[data-callout="hint"] .callout-icon::before,

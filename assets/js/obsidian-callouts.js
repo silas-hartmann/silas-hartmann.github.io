@@ -16,11 +16,12 @@
 (function() {
   'use strict';
 
-  // Callout-Typen und ihre Aliase
+  // Callout-Typen und ihre Aliase (gemäß Obsidian-Dokumentation)
   const CALLOUT_TYPES = {
     'note': 'note',
     'abstract': 'abstract', 'summary': 'abstract', 'tldr': 'abstract',
-    'info': 'info', 'todo': 'info',
+    'info': 'info',
+    'todo': 'todo',
     'tip': 'tip', 'hint': 'tip', 'important': 'tip',
     'success': 'success', 'check': 'success', 'done': 'success',
     'question': 'question', 'help': 'question', 'faq': 'question',
@@ -37,6 +38,7 @@
     'note': 'Hinweis',
     'abstract': 'Zusammenfassung',
     'info': 'Info',
+    'todo': 'Aufgabe',
     'tip': 'Tipp',
     'success': 'Erfolg',
     'question': 'Frage',
