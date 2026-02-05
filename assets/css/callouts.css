@@ -7,8 +7,7 @@
   padding: 0;
   display: flex;
   gap: 0;
-  border-left: 4px solid rgb(var(--callout-color));
-  background-color: rgba(var(--callout-color), 0.1);
+  background-color: var(--callout-bg);
   color: var(--text-normal, #dcddde);
   overflow: hidden;
 }
@@ -20,7 +19,7 @@
   justify-content: center;
   padding: 1em 0.75em 1em 1em;
   font-size: 1.2em;
-  color: rgb(var(--callout-color));
+  color: var(--callout-title-color);
 }
 
 .callout-content {
@@ -31,7 +30,7 @@
 
 .callout-title {
   font-weight: 600;
-  color: rgb(var(--callout-color));
+  color: var(--callout-title-color);
   margin-bottom: 0.5em;
   display: flex;
   align-items: center;
@@ -65,7 +64,7 @@
 }
 
 .callout-body a {
-  color: rgb(var(--callout-color));
+  color: var(--callout-title-color);
   text-decoration: underline;
 }
 
@@ -106,84 +105,99 @@
 }
 
 /* ===== CALLOUT TYPEN MIT FARBEN ===== */
+/* Hintergrund: subtil, nah am Theme-Grau (#2d2d2d) */
+/* Titel: heller, besser lesbar */
 
 /* Note - Blau */
 .callout[data-callout="note"] {
-  --callout-color: 68, 138, 255;
+  --callout-bg: #2d3038;
+  --callout-title-color: #7aa2c9;
 }
 
 /* Abstract/Summary/TLDR - Hellblau */
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
-  --callout-color: 0, 176, 255;
+  --callout-bg: #2d3538;
+  --callout-title-color: #6bc5d9;
 }
 
 /* Info - Cyan */
 .callout[data-callout="info"] {
-  --callout-color: 0, 184, 212;
+  --callout-bg: #2d3536;
+  --callout-title-color: #5bbfd4;
 }
 
-/* Todo - Cyan */
+/* Todo - Blau */
 .callout[data-callout="todo"] {
-  --callout-color: 8, 109, 221;
+  --callout-bg: #2d3038;
+  --callout-title-color: #6a9fd4;
 }
 
 /* Tip/Hint/Important - Teal */
 .callout[data-callout="tip"],
 .callout[data-callout="hint"],
 .callout[data-callout="important"] {
-  --callout-color: 0, 191, 165;
+  --callout-bg: #2d3634;
+  --callout-title-color: #5bc4a8;
 }
 
 /* Success/Check/Done - Grün */
 .callout[data-callout="success"],
 .callout[data-callout="check"],
 .callout[data-callout="done"] {
-  --callout-color: 0, 200, 83;
+  --callout-bg: #363830;
+  --callout-title-color: #AAC169;
 }
 
 /* Question/Help/FAQ - Hellgrün */
 .callout[data-callout="question"],
 .callout[data-callout="help"],
 .callout[data-callout="faq"] {
-  --callout-color: 100, 221, 23;
+  --callout-bg: #343830;
+  --callout-title-color: #9ac45a;
 }
 
 /* Warning/Caution/Attention - Orange */
 .callout[data-callout="warning"],
 .callout[data-callout="caution"],
 .callout[data-callout="attention"] {
-  --callout-color: 255, 145, 0;
+  --callout-bg: #3a3530;
+  --callout-title-color: #d4a35b;
 }
 
 /* Failure/Fail/Missing - Rot */
 .callout[data-callout="failure"],
 .callout[data-callout="fail"],
 .callout[data-callout="missing"] {
-  --callout-color: 255, 82, 82;
+  --callout-bg: #382d2d;
+  --callout-title-color: #c97a7a;
 }
 
 /* Danger/Error - Dunkelrot */
 .callout[data-callout="danger"],
 .callout[data-callout="error"] {
-  --callout-color: 255, 23, 68;
+  --callout-bg: #3a2d2d;
+  --callout-title-color: #d46a6a;
 }
 
 /* Bug - Pink */
 .callout[data-callout="bug"] {
-  --callout-color: 245, 0, 87;
+  --callout-bg: #382d34;
+  --callout-title-color: #c96a8a;
 }
 
 /* Example - Lila */
 .callout[data-callout="example"] {
-  --callout-color: 124, 77, 255;
+  --callout-bg: #342d38;
+  --callout-title-color: #a07ad4;
 }
 
 /* Quote/Cite - Grau */
 .callout[data-callout="quote"],
 .callout[data-callout="cite"] {
-  --callout-color: 158, 158, 158;
+  --callout-bg: #333333;
+  --callout-title-color: #a0a0a0;
 }
 
 /* ===== ICONS FÜR CALLOUT-TYPEN ===== */
@@ -227,25 +241,6 @@
 
 .callout[data-callout="quote"] .callout-icon::before,
 .callout[data-callout="cite"] .callout-icon::before { content: "💬"; }
-
-/* ===== DARK MODE ANPASSUNGEN ===== */
-
-/* Passend zum obsidian-minimal-theme.css */
-@media (prefers-color-scheme: dark) {
-  .callout {
-    color: var(--text-normal, #dcddde);
-  }
-  
-  .callout-body code {
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-}
-
-/* Explizite Dark-Mode-Styles (falls body-Klasse verwendet wird) */
-body.dark-mode .callout,
-body[data-theme="dark"] .callout {
-  color: var(--text-normal, #dcddde);
-}
 
 /* ===== RESPONSIVE ANPASSUNGEN ===== */
 
