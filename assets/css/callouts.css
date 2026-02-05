@@ -1,193 +1,260 @@
-/* Obsidian Callouts CSS */
+/* Obsidian Callouts CSS - Dark Mode optimiert */
 
-:root {
-  --text-color: #333333;
-}
-
+/* Callout Container */
 .callout {
-  border-radius: 5px;
-  margin: 1em 0;
-  padding: 1em 1em 1em 1em;
+  border-radius: 6px;
+  margin: 1.5em 0;
+  padding: 0;
   display: flex;
-  gap: 10px;
-  border-left: 4px solid;
+  gap: 0;
+  border-left: 4px solid rgb(var(--callout-color));
   background-color: rgba(var(--callout-color), 0.1);
-  color: var(--text-color);
+  color: var(--text-normal, #dcddde);
+  overflow: hidden;
 }
 
 .callout-icon {
-  flex: 0 0 2em;
+  flex: 0 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding: 1em 0.75em 1em 1em;
   font-size: 1.2em;
-  color: rgba(var(--callout-color), 1);
+  color: rgb(var(--callout-color));
 }
 
 .callout-content {
   flex: 1;
+  padding: 1em 1em 1em 0;
+  min-width: 0;
 }
 
 .callout-title {
-  font-weight: bold;
-  color: rgba(var(--callout-color), 1);
+  font-weight: 600;
+  color: rgb(var(--callout-color));
   margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
-.callout-content > p:first-child {
+.callout-body {
+  color: var(--text-normal, #dcddde);
+}
+
+.callout-body > *:first-child {
   margin-top: 0;
 }
 
-.callout-content > p:last-child {
+.callout-body > *:last-child {
   margin-bottom: 0;
 }
 
-/* Collapsible callouts */
+.callout-body p {
+  margin: 0.5em 0;
+}
+
+.callout-body ul,
+.callout-body ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.callout-body li {
+  margin: 0.25em 0;
+}
+
+.callout-body a {
+  color: rgb(var(--callout-color));
+  text-decoration: underline;
+}
+
+.callout-body a:hover {
+  opacity: 0.8;
+}
+
+.callout-body code {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Collapsible Callouts */
 .callout[data-callout-fold="1"] .callout-title {
   cursor: pointer;
-  display: flex;
-  align-items: center;
+  user-select: none;
 }
 
 .callout[data-callout-fold="1"] .callout-title::before {
   content: "▼";
-  font-size: 0.8em;
-  margin-right: 5px;
-  transition: transform 0.2s;
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.callout[data-callout-fold="1"] .callout-title:hover::before {
+  opacity: 1;
 }
 
 .callout[data-callout-fold="1"].is-collapsed .callout-title::before {
   transform: rotate(-90deg);
 }
 
-.callout[data-callout-fold="1"].is-collapsed .callout-content > *:not(.callout-title) {
+.callout[data-callout-fold="1"].is-collapsed .callout-body {
   display: none;
 }
 
-/* Common callout types */
+/* ===== CALLOUT TYPEN MIT FARBEN ===== */
+
+/* Note - Blau */
 .callout[data-callout="note"] {
-  --callout-color: 68, 138, 255; /* blue */
+  --callout-color: 68, 138, 255;
 }
 
+/* Abstract/Summary/TLDR - Hellblau */
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
-  --callout-color: 0, 176, 255; /* light blue */
+  --callout-color: 0, 176, 255;
 }
 
+/* Info/Todo - Cyan */
 .callout[data-callout="info"],
 .callout[data-callout="todo"] {
-  --callout-color: 0, 184, 212; /* cyan */
+  --callout-color: 0, 184, 212;
 }
 
+/* Tip/Hint/Important - Teal */
 .callout[data-callout="tip"],
 .callout[data-callout="hint"],
 .callout[data-callout="important"] {
-  --callout-color: 0, 191, 165; /* teal */
+  --callout-color: 0, 191, 165;
 }
 
+/* Success/Check/Done - Grün */
 .callout[data-callout="success"],
 .callout[data-callout="check"],
 .callout[data-callout="done"] {
-  --callout-color: 0, 200, 83; /* green */
+  --callout-color: 0, 200, 83;
 }
 
+/* Question/Help/FAQ - Hellgrün */
 .callout[data-callout="question"],
 .callout[data-callout="help"],
 .callout[data-callout="faq"] {
-  --callout-color: 100, 221, 23; /* light green */
+  --callout-color: 100, 221, 23;
 }
 
+/* Warning/Caution/Attention - Orange */
 .callout[data-callout="warning"],
 .callout[data-callout="caution"],
 .callout[data-callout="attention"] {
-  --callout-color: 255, 145, 0; /* orange */
+  --callout-color: 255, 145, 0;
 }
 
+/* Failure/Fail/Missing - Rot */
 .callout[data-callout="failure"],
 .callout[data-callout="fail"],
 .callout[data-callout="missing"] {
-  --callout-color: 255, 82, 82; /* red */
+  --callout-color: 255, 82, 82;
 }
 
+/* Danger/Error - Dunkelrot */
 .callout[data-callout="danger"],
 .callout[data-callout="error"] {
-  --callout-color: 255, 23, 68; /* dark red */
+  --callout-color: 255, 23, 68;
 }
 
+/* Bug - Pink */
 .callout[data-callout="bug"] {
-  --callout-color: 245, 0, 87; /* pink */
+  --callout-color: 245, 0, 87;
 }
 
+/* Example - Lila */
 .callout[data-callout="example"] {
-  --callout-color: 124, 77, 255; /* purple */
+  --callout-color: 124, 77, 255;
 }
 
+/* Quote/Cite - Grau */
 .callout[data-callout="quote"],
 .callout[data-callout="cite"] {
-  --callout-color: 158, 158, 158; /* gray */
+  --callout-color: 158, 158, 158;
 }
 
-/* Icons for each callout type */
-.callout[data-callout="note"] .callout-icon::before {
-  content: "📝";
-}
+/* ===== ICONS FÜR CALLOUT-TYPEN ===== */
+
+.callout[data-callout="note"] .callout-icon::before { content: "📝"; }
 
 .callout[data-callout="abstract"] .callout-icon::before,
 .callout[data-callout="summary"] .callout-icon::before,
-.callout[data-callout="tldr"] .callout-icon::before {
-  content: "📋";
-}
+.callout[data-callout="tldr"] .callout-icon::before { content: "📋"; }
 
 .callout[data-callout="info"] .callout-icon::before,
-.callout[data-callout="todo"] .callout-icon::before {
-  content: "ℹ️";
-}
+.callout[data-callout="todo"] .callout-icon::before { content: "ℹ️"; }
 
 .callout[data-callout="tip"] .callout-icon::before,
 .callout[data-callout="hint"] .callout-icon::before,
-.callout[data-callout="important"] .callout-icon::before {
-  content: "💡";
-}
+.callout[data-callout="important"] .callout-icon::before { content: "💡"; }
 
 .callout[data-callout="success"] .callout-icon::before,
 .callout[data-callout="check"] .callout-icon::before,
-.callout[data-callout="done"] .callout-icon::before {
-  content: "✅";
-}
+.callout[data-callout="done"] .callout-icon::before { content: "✅"; }
 
 .callout[data-callout="question"] .callout-icon::before,
 .callout[data-callout="help"] .callout-icon::before,
-.callout[data-callout="faq"] .callout-icon::before {
-  content: "❓";
-}
+.callout[data-callout="faq"] .callout-icon::before { content: "❓"; }
 
 .callout[data-callout="warning"] .callout-icon::before,
 .callout[data-callout="caution"] .callout-icon::before,
-.callout[data-callout="attention"] .callout-icon::before {
-  content: "⚠️";
-}
+.callout[data-callout="attention"] .callout-icon::before { content: "⚠️"; }
 
 .callout[data-callout="failure"] .callout-icon::before,
 .callout[data-callout="fail"] .callout-icon::before,
-.callout[data-callout="missing"] .callout-icon::before {
-  content: "❌";
-}
+.callout[data-callout="missing"] .callout-icon::before { content: "❌"; }
 
 .callout[data-callout="danger"] .callout-icon::before,
-.callout[data-callout="error"] .callout-icon::before {
-  content: "🚨";
-}
+.callout[data-callout="error"] .callout-icon::before { content: "🚨"; }
 
-.callout[data-callout="bug"] .callout-icon::before {
-  content: "🐛";
-}
+.callout[data-callout="bug"] .callout-icon::before { content: "🐛"; }
 
-.callout[data-callout="example"] .callout-icon::before {
-  content: "🔍";
-}
+.callout[data-callout="example"] .callout-icon::before { content: "🔍"; }
 
 .callout[data-callout="quote"] .callout-icon::before,
-.callout[data-callout="cite"] .callout-icon::before {
-  content: "💬";
+.callout[data-callout="cite"] .callout-icon::before { content: "💬"; }
+
+/* ===== DARK MODE ANPASSUNGEN ===== */
+
+/* Passend zum obsidian-minimal-theme.css */
+@media (prefers-color-scheme: dark) {
+  .callout {
+    color: var(--text-normal, #dcddde);
+  }
+  
+  .callout-body code {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Explizite Dark-Mode-Styles (falls body-Klasse verwendet wird) */
+body.dark-mode .callout,
+body[data-theme="dark"] .callout {
+  color: var(--text-normal, #dcddde);
+}
+
+/* ===== RESPONSIVE ANPASSUNGEN ===== */
+
+@media (max-width: 600px) {
+  .callout {
+    margin: 1em 0;
+  }
+  
+  .callout-icon {
+    padding: 0.75em 0.5em 0.75em 0.75em;
+    font-size: 1em;
+  }
+  
+  .callout-content {
+    padding: 0.75em 0.75em 0.75em 0;
+  }
 }
