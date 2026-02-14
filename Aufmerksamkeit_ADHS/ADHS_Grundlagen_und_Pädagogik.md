@@ -1,4 +1,4 @@
-→ Download der [Karteikarten](\kolloqium__adhs.apkg)
+→ Download der [Karteikarten](kolloqium__adhs.apkg)
 
 ## 1. Was ist ADHS?
 
