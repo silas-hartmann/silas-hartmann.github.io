@@ -17,7 +17,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 ## Seminar
 
-{button: (ADHS - Kolloqium)(Aufmerksamkeit_ADHS/Start_Aufmerksamkeit_ADHS)}
+{button: (Kolloqium)(Aufmerksamkeit_ADHS/Start_Aufmerksamkeit_ADHS)}
 
 
 {button: (Leitfaden zur kritischen Verhaltensmodifikation)(Verhaltensmodifikation/22_Leitfaden%20zur%20kritisch%20reflektierten%20Verhaltensmodifikation)}
