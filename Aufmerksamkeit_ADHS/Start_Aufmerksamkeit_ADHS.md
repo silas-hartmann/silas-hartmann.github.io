@@ -1,7 +1,7 @@
 # Übersicht
 
 {button: (ADHS - Kolloqium)(Aufmerksamkeit_ADHS/ADHS_Grundlagen_und_Pädagogik)}
-{button: (ADHS - Kolloqium)(Aufmerksamkeit_ADHS/Aufmerksamkeit_Grundlagen_und_Pädagogik)}
+{button: (Aufmerksamkeit - Kolloqium)(Aufmerksamkeit_ADHS/Aufmerksamkeit_Grundlagen_und_Pädagogik)}
 
 
 ### Verwendete Literatur:
