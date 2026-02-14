@@ -1,22 +1,8 @@
-# Übersicht / Plan
+# Übersicht
 
-## Aufmerksamkeit
+{button: (ADHS - Kolloqium)(Aufmerksamkeit_ADHS/ADHS_Grundlagen_und_Pädagogik)}
+{button: (ADHS - Kolloqium)(Aufmerksamkeit_ADHS/Aufmerksamkeit_Grundlagen_und_Pädagogik)}
 
-1. Aufmerksamkeit - Konzept
-	1. Definition
-	2. Wofür ist Aufmerksamkeit wichtig (Alltag und Schule)
-	3. Wie funktioniert Aufmerksamkeit (psychologisch)
-2. Aufmerksamkeit - Einflussfaktoren
-	1. individuelle Einflussfaktoren (psych. / Stimmung / Entwicklung...)
-	2. externe Einflussfaktoren (privat, medial ...)
-	3. schulische Einflussfaktoren (Unterricht / Methodik /Lernumgebung)
-3. Aufmerksamkeit - Handlungsmaßnahmen
-	1. Förderung der Aufmerksamkeit in der Schule
-	2. Umgang mit Aufmerksamkeitsproblemen (Überleitung zu ADHS, hier ADHS noch nicht thematisieren)
-
-## ADHS
-
-[[ADHS_Grundlagen_und_Pädagogik]]
 
 ### Verwendete Literatur:
 
