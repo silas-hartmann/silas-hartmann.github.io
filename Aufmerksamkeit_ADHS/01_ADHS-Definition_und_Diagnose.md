@@ -2,6 +2,8 @@
 
 ## 1.1 Definition nach Diagnosemanualen
 
+→ Download der [Karteikarten](\kolloqium__adhs.apkg)
+
 ### Grundlegende Charakterisierung
 
 ADHS (Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung) ist eine psychische Störung, die sich durch drei **Kernsymptome** (Kardinalsymptome) auszeichnet:
