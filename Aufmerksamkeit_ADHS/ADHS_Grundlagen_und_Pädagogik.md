@@ -5,9 +5,21 @@
 
 ### Definition
 
-ADHS (Aufmerksamkeitsdefizit-Hyperaktivitätsstörung) ist eine **neurobiologisch bedingte Entwicklungsstörung der Selbststeuerung**. Sie zeigt sich durch drei Kernsymptome: Unaufmerksamkeit, Hyperaktivität und Impulsivität.
+ADHS (Aufmerksamkeitsdefizit-Hyperaktivitätsstörung) ist eine **neurobiologisch bedingte Entwicklungsstörung der Selbststeuerung**.
+Kardinalsymptome: 
+- Aufmerksamkeitsschwäche
+- Impulsivität
+- motorische Hyperaktivität
 
-ADHS ist keine Frage der Erziehung, des Willens oder der Intelligenz. Die Störung hat eine hohe genetische Komponente (Erblichkeit: 0.76 – vergleichbar mit der Körpergröße) und geht mit nachweisbaren Veränderungen der Hirnstruktur und -funktion einher.
+**Symptome:**
+- situationsübergreifend, aber nicht in allen Situationen, 
+- für das Alter und den Entwicklungsstand in unangemessenem Ausmaß 
+- zeitlich überdauernd auftreten
+- i.d.R. rückverfolgbar bis in die frühe Kindheit
+- nicht durch andere Störungsbilder bedingt
+- Beeinträchtigung wichtiger Alltagsfunktionen und des seelischen Befindens
+
+*ADHS ist keine Frage der Erziehung, des Willens oder der Intelligenz. Die Störung hat eine hohe genetische Komponente (Erblichkeit: 0.76 – vergleichbar mit der Körpergröße) und geht mit nachweisbaren Veränderungen der Hirnstruktur und -funktion einher.*
 
 > **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
 
@@ -25,13 +37,11 @@ Die Diagnose erfolgt nach ICD-10 (Hyperkinetische Störung) oder DSM-5 (ADHS). U
 
 Etwa **5% aller Kinder und Jugendlichen** sind betroffen. Jungen werden häufiger diagnostiziert (Verhältnis ca. 3:1), wobei Mädchen oft den vorwiegend unaufmerksamen Typ zeigen und daher unterdiagnostiziert sein können.
 
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
-
 ---
 
 ## 2. Neurologische Grundlagen
 
-Dieses Kapitel erklärt, **warum** Schüler mit ADHS bestimmte Verhaltensweisen zeigen. Dieses Verständnis ist Voraussetzung für wirksame pädagogische Interventionen.
+*Dieses Kapitel erklärt, **warum** Schüler mit ADHS bestimmte Verhaltensweisen zeigen. Ist Voraussetzung für wirksame Intervention.*
 
 ### 2.1 Das Grundprinzip: Kommunikation zwischen Nervenzellen
 
@@ -40,7 +50,7 @@ Nervenzellen kommunizieren über chemische Botenstoffe (Neurotransmitter). Diese
 ```mermaid
 flowchart LR
     subgraph Prozess["Synaptische Übertragung"]
-        A["Signal erreicht<br>Nervenendigung"] --> B["Botenstoff wird<br>in den Spalt<br>freigesetzt"] --> C["Botenstoff dockt<br>an Rezeptor an"] --> D["Signal wird<br>weitergeleitet"]
+        A["Signal erreicht<br>Nervenendung"] --> B["Botenstoff wird<br>in den Spalt<br>freigesetzt"] --> C["Botenstoff dockt<br>an Rezeptor an"] --> D["Signal wird<br>weitergeleitet"]
     end
 ```
 
@@ -51,7 +61,6 @@ Die beiden wichtigsten Botenstoffe für Aufmerksamkeit und Selbststeuerung:
 |**Dopamin**|Motivation, Antrieb, Belohnungsverarbeitung, Handlungsplanung|
 |**Noradrenalin**|Wachheit, Aufmerksamkeitslenkung|
 
-> **Quelle:** Dägling_Gehirn_und_ADHS.md; Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
 
 ### 2.2 Das Kernproblem bei ADHS: Dopamin wird zu schnell recycelt
 
@@ -99,22 +108,16 @@ flowchart TB
     end
 ```
 
-Diese Regionen sind über Regelkreisläufe verbunden. Bei ADHS ist dieser **fronto-striatale Regelkreislauf** gestört.
+Diese Regionen sind über Regelkreisläufe verbunden. Bei ADHS ist dieser [**fronto-striatale Regelkreislauf**](https://de.wikipedia.org/wiki/Striatofrontale_Dysfunktion#Striatofrontale_Dysfunktion_bei_ADHS) gestört. 
 
-**Entwicklungsbefund:** Bei Kindern mit ADHS erreicht der präfrontale Kortex seine volle Reife etwa **3 Jahre später** als bei nicht betroffenen Kindern.
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+>[!quote] **Entwicklungsbefund:** Bei Kindern mit ADHS erreicht der präfrontale Kortex seine volle Reife etwa **3 Jahre später** als bei nicht betroffenen Kindern.
+>
+>Eine Anzahl von Befunden konnte nachweisen, dass bei Kindern mit einer ADHS eine Reifungsverzögerung in der Entwicklung der genannten neuroanatomischen Strukturen vorliegt (Renner et al., 2008). Shaw et al. (2007) verglichen in einer prospektiven Studie die Hirnscans von 223 von einer ADHS betroffenen Kindern und Jugendlichen mit denen von 223 gesunden Probanden im Entwicklungsverlauf. Obwohl die zerebrale Reifung bei von ADHS Betroffenen insgesamt alterstypisch verlief, erreichten die Betroffenen erst ca. drei Jahre später eine den gesunden Kindern vergleichbare kortikale Dicke im gesamten Gehirn, vor allen Dingen aber im sogenannten präfrontalen Cortex.
 
 ### 2.4 Das Default Mode Network (Tagtraum-Netzwerk)
 
 Ein neuerer Befund: Das Gehirn besitzt ein Netzwerk, das im Ruhezustand aktiv ist (beim Tagträumen, ziellosem Nachdenken). Bei Aufgabenbearbeitung sollte es sich abschalten.
-
-||Normalerweise|Bei ADHS|
-|---|---|---|
-|Bei Aufgaben|Tagtraum-Netzwerk deaktiviert|Bleibt teilweise aktiv|
-|Folge|Fokussierung möglich|Gedanken schweifen ab, mehr Fehler|
-
-> **Quelle:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf
+Bei ADHS funktioniert das nur eingeschränkt, Fokussierung ist dabei eingeschränkt, Gedanken schweifen eher ab. 
 
 ### 2.5 Pädagogische Kernbotschaft der Neurobiologie
 
@@ -417,4 +420,7 @@ flowchart TB
     Verstaendnis --> Handeln --> Grenzen
 ```
 
-> **Quellen:** Frölich-Döpfner_ADHS_in_Schulen_und_Unterricht.pdf; Dägling_Gehirn_und_ADHS.md; Reh_Berdelmann_Dinkelaker_Aufmersamkeit_Geschichte-Theorie-Empirie.pdf; Lernpsychologie_1_Neurobiologische_Grundlagen_von_Lernen_und_Ged_chtnis.pdf
+
+
+
+![[Multimodale Therapie nach Döpfner.png]]
