@@ -11,6 +11,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 1. Übungs-Challenge: [game.educaplay.com](https://game.educaplay.com/)
 2. 🚀 [Sehr schwere Challenge](https://www.geoguessr.com/de/vgp/3163)
 
+{button: ( 💧Regen in den Tropen)(GPG_7/Arbeitsblätter_GPG_7/04_Afrika/Warum%20regnet%20es%20in%20den%20Tropen%20so%20viel)}
 
 
 
