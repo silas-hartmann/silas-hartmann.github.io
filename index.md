@@ -4,7 +4,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
-{button: (🗺️ Karte von Afrika)(GPG_7\Arbeitsblätter_GPG_7\04_Afrika\Afrika_Karte.html)}
+{button: (🗺️ Karte von Afrika)(GPG_7\Arbeitsblätter_GPG_7\04_Afrika\Afrika_Karte)}
 
 {button: (♻️ Wiederholung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wiederholung-home)}
 
