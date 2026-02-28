@@ -5,6 +5,7 @@ let extractedCodeword = null;
 let extractedSolutionPassword = null;
 let quizChecked = false;
 let quizHadErrors = false;
+let quizSkipAuth = false;
 
 // Globale Schülerdaten für Quiz-Authentifizierung
 let quizSchuelerDaten = null;
@@ -14,9 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Lade Schülerdaten für Authentifizierung
   loadQuizSchuelerDaten();
   
-  // Extrahiere das Codewort und Lösungspasswort beim Laden der Seite
+  // Extrahiere das Codewort, Lösungspasswort und Auth-Skip beim Laden der Seite
   extractCodewordFromMarkdown();
   extractSolutionPasswordFromMarkdown();
+  extractQuizAuthSkip();
   
   console.log('Quiz-System wird geladen...');
   
@@ -76,7 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
     checkButton.textContent = 'Alle Antworten überprüfen';
     checkButton.className = 'check-all-answers-btn';
     checkButton.addEventListener('click', function() {
-      showQuizAuthModal();
+      if (quizSkipAuth) {
+        checkAllAnswersWithAuth('Gast');
+      } else {
+        showQuizAuthModal();
+      }
     });
     buttonContainer.appendChild(checkButton);
     
@@ -129,6 +135,34 @@ function showReloadButton() {
     reloadBtn.style.display = 'flex';
     // Animation für Aufmerksamkeit
     reloadBtn.classList.add('quiz-reload-highlight');
+  }
+}
+
+// ===== QUIZ AUTH SKIP =====
+
+function extractQuizAuthSkip() {
+  const bodyText = document.body.textContent || document.body.innerText || '';
+  const skipRegex = /\[QuizAuth:\s*skip\]/i;
+  const match = bodyText.match(skipRegex);
+  
+  if (match) {
+    quizSkipAuth = true;
+    console.log('Quiz-Auth wird übersprungen (QuizAuth: skip)');
+    
+    // Verstecke den Marker im DOM
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false
+    );
+    
+    let node;
+    while (node = walker.nextNode()) {
+      if (skipRegex.test(node.textContent)) {
+        node.textContent = node.textContent.replace(skipRegex, '').trim();
+      }
+    }
   }
 }
 
