@@ -4,7 +4,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
-{button: (🏜️ Desertifikation - Warum breiten sich Wüsten aus?)(GPG_7/Arbeitsblätter_GPG_7/04_Afrika/Auswirkungen_Desertifikation_Text)}
+{button: (🏜️ Desertifikation - Warum breiten sich Wüsten aus?)(GPG_7/Arbeitsblätter_GPG_7/04_Afrika/Auswirkungen_Desertifikation_Bilder)}
 
 {button: (🗺️ Karte von Afrika)(GPG_7\Arbeitsblätter_GPG_7\04_Afrika\Afrika_Karte)}
 
