@@ -4,9 +4,10 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 # Aktuelles Unterrichtsmaterial
 
+{button: (🏜️ Desertifikation - Warum breiten sich Wüsten aus?)(GPG_7/Arbeitsblätter_GPG_7/04_Afrika/Auswirkungen_Desertifikation_Bilder)}
+
 {button: (🗺️ Karte von Afrika)(GPG_7\Arbeitsblätter_GPG_7\04_Afrika\Afrika_Karte)}
 
-{button: (♻️ Wiederholung)(GPG_7/Arbeitsblätter_GPG_7/02_Industrialisierung/05_wiederholung/wiederholung-home)}
 
 1. Übungs-Challenge: [game.educaplay.com](https://game.educaplay.com/)
 2. 🚀 [Sehr schwere Challenge](https://www.geoguessr.com/de/vgp/3163)
