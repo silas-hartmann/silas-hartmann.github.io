@@ -83,7 +83,7 @@ Spätere Forschung (u.a. Anne Treisman) zeigte, dass auch **Teile der Bedeutung*
 
 ### 2.5 Neurologische Verortung
 
-Die willkürliche Aufmerksamkeitssteuerung ist wesentlich an den **präfrontalen Kortex** gebunden (→ siehe [[ADHS_Grundlagen_und_Pädagogik#2.3 Betroffene Hirnregionen]]). Das limbische System – insbesondere Amygdala und Hippocampus – beeinflusst die Aufmerksamkeit über Emotionen und Motivation: Emotional aufgeladene Reize werden bevorzugt verarbeitet, weil das limbische System sensorische Informationen mit gespeicherten Erfahrungen abgleicht und ihnen Bedeutung zuweist.
+Die willkürliche Aufmerksamkeitssteuerung ist wesentlich an den **präfrontalen Kortex** gebunden (→ siehe [](ADHS_Grundlagen_und_Pädagogik.md#2.3%20Betroffene%20Hirnregionen)). Das limbische System – insbesondere Amygdala und Hippocampus – beeinflusst die Aufmerksamkeit über Emotionen und Motivation: Emotional aufgeladene Reize werden bevorzugt verarbeitet, weil das limbische System sensorische Informationen mit gespeicherten Erfahrungen abgleicht und ihnen Bedeutung zuweist.
 
 > **Quelle:** Lernpsychologie_1_Neurobiologische_Grundlagen_von_Lernen_und_Ged_chtnis.pdf
 
@@ -227,7 +227,7 @@ Novizen unterscheiden sich von Experten hier deutlich: Ihre Störungsinterventio
 
 ### 5.3 Aufmerksamkeit und ADHS
 
-Für Schüler mit ADHS gelten die genannten Prinzipien in verstärktem Maße, da bei ihnen die neurologischen Voraussetzungen für Aufmerksamkeitssteuerung beeinträchtigt sind (→ siehe [[ADHS_Grundlagen_und_Pädagogik#2. Neurologische Grundlagen]]). Die dort beschriebenen pädagogischen Maßnahmen – insbesondere Strukturgebung, Verstärkersysteme und Reizreduktion – bauen auf denselben aufmerksamkeitspsychologischen Grundlagen auf, berücksichtigen aber die spezifische neurobiologische Ausgangslage (→ siehe [[ADHS_Grundlagen_und_Pädagogik#4. Pädagogischer Umgang]]).
+Für Schüler mit ADHS gelten die genannten Prinzipien in verstärktem Maße, da bei ihnen die neurologischen Voraussetzungen für Aufmerksamkeitssteuerung beeinträchtigt sind (→ siehe [](ADHS_Grundlagen_und_Pädagogik.md#2.%20Neurologische%20Grundlagen)). Die dort beschriebenen pädagogischen Maßnahmen – insbesondere Strukturgebung, Verstärkersysteme und Reizreduktion – bauen auf denselben aufmerksamkeitspsychologischen Grundlagen auf, berücksichtigen aber die spezifische neurobiologische Ausgangslage (→ siehe [](ADHS_Grundlagen_und_Pädagogik.md#4.%20Pädagogischer%20Umgang)).
 
 ---
 

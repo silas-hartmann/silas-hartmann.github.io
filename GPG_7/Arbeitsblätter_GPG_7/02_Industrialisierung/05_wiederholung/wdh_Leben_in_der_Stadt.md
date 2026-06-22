@@ -1,8 +1,8 @@
 # Wiederholung: Wie war das Leben in der Stadt?
 
-![[Bild_Wohnung_Industrialisierung.png]]
+![Bild_Wohnung_Industrialisierung](bilder/Bild_Wohnung_Industrialisierung.png)
 
-![[TB_Leben_in_der_Stadt.png]]
+![TB_Leben_in_der_Stadt](bilder/TB_Leben_in_der_Stadt.png)
 
 ## Das Wichtigste in Kürze
 

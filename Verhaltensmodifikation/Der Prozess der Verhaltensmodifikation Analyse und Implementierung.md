@@ -14,7 +14,7 @@ Der Prozess der Verhaltensmodifikation folgt einem dreistufigen Grundmodell:
 Die Ausgangslage muss systematisch erfasst werden, beginnend mit der Kernfrage:
 *"Für wen ist das Verhalten ein Problem?"*
 
-![[Der Prozess der Verhaltensmodifikation_ Analyse.png]]
+![Der Prozess der Verhaltensmodifikation_ Analyse](Der%20Prozess%20der%20Verhaltensmodifikation_%20Analyse.png)
 
 Die erweiterte Analyse umfasst folgende Dimensionen:
 
@@ -40,7 +40,7 @@ Die erweiterte Analyse umfasst folgende Dimensionen:
 
 #### 2.1.2 Methodische Umsetzung der Beobachtung
 
-![[Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4.png]]
+![Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4](Der%20Prozess%20der%20Verhaltensmodifikation_%20Analyse%20und%20Implementierung%20-%20visual%20selection-4.png)
 
 1. **Systematische Dokumentation:**
    - Gelegenheitsbeobachtungen mit Datum, Situation und Verhalten
@@ -77,7 +77,7 @@ Die IST-Wert-Analyse erfolgt in drei parallel laufenden Analysesträngen:
    - Lehrer-Schüler-Interaktion
    - Peer-Interaktionen
    - Gruppenstrukturen
-![[2Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4.png]]
+![2Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4](2Der%20Prozess%20der%20Verhaltensmodifikation_%20Analyse%20und%20Implementierung%20-%20visual%20selection-4.png)
 #### B. Analyse der Systemumgebung
 3. **Mikrosozialer Bereich:**
    - Familiäre Strukturen
@@ -88,7 +88,7 @@ Die IST-Wert-Analyse erfolgt in drei parallel laufenden Analysesträngen:
    - Gesellschaftliche Einflüsse
    - Kulturelle Faktoren
    - Sozioökonomische Bedingungen
-![[3Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4.png]]
+![3Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4](3Der%20Prozess%20der%20Verhaltensmodifikation_%20Analyse%20und%20Implementierung%20-%20visual%20selection-4.png)
 #### C. Zielanalyse (SOLLWERT)
 1. **Legitimationsaspekte:**
    - Pädagogische Begründung
@@ -99,7 +99,7 @@ Die IST-Wert-Analyse erfolgt in drei parallel laufenden Analysesträngen:
    - Evidenzbasierung
    - Praktische Umsetzbarkeit
    - Erfolgsindikatoren
-![[4Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4.png]]
+![4Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4](4Der%20Prozess%20der%20Verhaltensmodifikation_%20Analyse%20und%20Implementierung%20-%20visual%20selection-4.png)
 
 ### Qualitätssicherung der Analyse
 
@@ -117,4 +117,4 @@ Die IST-Wert-Analyse erfolgt in drei parallel laufenden Analysesträngen:
 - Praktische Relevanz
 - Entwicklungsorientierung
 
-![[5Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4.png]]
+![5Der Prozess der Verhaltensmodifikation_ Analyse und Implementierung - visual selection-4](5Der%20Prozess%20der%20Verhaltensmodifikation_%20Analyse%20und%20Implementierung%20-%20visual%20selection-4.png)

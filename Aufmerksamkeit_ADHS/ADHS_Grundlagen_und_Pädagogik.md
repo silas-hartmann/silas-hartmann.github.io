@@ -423,4 +423,4 @@ flowchart TB
 
 
 
-![[Multimodale Therapie nach Döpfner.png]]
+![Multimodale Therapie nach Döpfner](bilder/Multimodale%20Therapie%20nach%20Döpfner.png)
