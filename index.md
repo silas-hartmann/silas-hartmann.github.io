@@ -17,7 +17,7 @@ title: Unterrichtsmaterial von Herrn Hartmann
 ---
 ## Seminar
 
-Allgemeine Tipps / Infos zum [Schulstart](Schulstart.md)
+Allgemeine Tipps / Infos zum [Schulstart](Schulstart)
 
 
 
